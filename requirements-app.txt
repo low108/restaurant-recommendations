@@ -1,0 +1,6 @@
+-r requirements-mcp.txt
+-r requirements-vector.txt
+gradio==6.9.0
+langchain-openai>=1.1.0,<2.0
+langchain-core>=1.4.7,<2.0
+langgraph>=1.0,<2.0
