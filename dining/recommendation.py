@@ -602,6 +602,7 @@ class Recommender:
                         at=now,
                         observations=person.get("observations", []),
                         venue_preferences=person.get("venue_preferences", []),
+                        attribute_preferences=person.get("attribute_preferences", []),
                         route=route_info
                         or person.get("route_estimates", {}).get(outlet.outlet_id),
                     )

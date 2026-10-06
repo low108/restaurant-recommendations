@@ -23,6 +23,10 @@ from pwdlib import PasswordHash
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 from .adaptive import build_m09_question
+from .attribute_learning import (
+    extract_attribute_signals,
+    propose_attribute_patterns,
+)
 from .consent import ConsentManager
 from .exposure import (
     EVENT_CANDIDATE_SELECTED,
@@ -442,10 +446,14 @@ class Feedback(Input):
             "queue",
             "service",
             "atmosphere",
+            "quietness",
             "dietary_information",
             "other",
         ]
-    ] = Field(default_factory=list, max_length=9)
+    ] = Field(default_factory=list, max_length=10)
+    attribute_ratings: dict[str, Literal["positive", "neutral", "negative"]] = Field(
+        default_factory=dict
+    )
     cost_expectation: (
         Literal["within_estimate", "higher", "lower", "not_sure"] | None
     ) = None
@@ -2088,7 +2096,19 @@ def build_router(
                         "created_at": r["created_at"],
                     }
                     for r in db.execute(
-                        "SELECT * FROM preference_proposals WHERE user_id=? AND status='accepted' ORDER BY reviewed_at DESC",
+                        "SELECT * FROM preference_proposals WHERE user_id=? AND status='accepted' AND (proposal_type='venue' OR proposal_type IS NULL) ORDER BY reviewed_at DESC",
+                        (uid,),
+                    )
+                ]
+                person["attribute_preferences"] = [
+                    {
+                        "attribute": r["attribute"],
+                        "proposed_value": r["proposed_value"],
+                        "description": r["description"],
+                        "created_at": r["created_at"],
+                    }
+                    for r in db.execute(
+                        "SELECT * FROM preference_proposals WHERE user_id=? AND status='accepted' AND proposal_type='attribute' ORDER BY reviewed_at DESC",
                         (uid,),
                     )
                 ]
@@ -3095,6 +3115,7 @@ def build_router(
                     ),
                     {},
                 )
+                attr_signals = extract_attribute_signals(body.model_dump())
                 observation_id = new_id()
                 db.execute(
                     "INSERT INTO observations VALUES(?,?,?,?,?)",
@@ -3114,6 +3135,7 @@ def build_router(
                                 "actual_cost_minor": body.actual_cost_minor,
                                 "dish_text": body.dish_text,
                                 "fairness": body.fairness,
+                                "attribute_signals": attr_signals,
                             }
                         ),
                         stamp(),
@@ -3121,6 +3143,7 @@ def build_router(
                 )
                 if body.would_repeat is not None and option.get("outlet_id"):
                     propose_repeat_pattern(db, auth["user_id"], option["outlet_id"])
+                propose_attribute_patterns(db, auth["user_id"], observation_id)
             # Feedback changes personal taste evidence, never another person's constraints.
             for upcoming in db.execute(
                 "SELECT meal_id FROM participants WHERE user_id=? AND meal_id!=?",
@@ -3232,33 +3255,48 @@ def build_router(
                 (user_id,),
             )
         ]
-        proposals = [
-            {
-                "id": row["id"],
-                "observation_id": row["observation_id"],
-                "source_observation_ids": [
-                    source["observation_id"]
-                    for source in db.execute(
-                        "SELECT observation_id FROM proposal_sources WHERE proposal_id=?",
-                        (row["id"],),
-                    )
-                ],
-                "outlet_id": row["outlet_id"],
-                "would_repeat": bool(row["would_repeat"]),
-                "status": row["status"],
-                "created_at": row["created_at"],
-                "reviewed_at": row["reviewed_at"],
-            }
-            for row in db.execute(
-                "SELECT * FROM preference_proposals WHERE user_id=? ORDER BY created_at DESC",
-                (user_id,),
+        proposals = []
+        for raw_row in db.execute(
+            "SELECT * FROM preference_proposals WHERE user_id=? ORDER BY created_at DESC",
+            (user_id,),
+        ):
+            r = dict(raw_row)
+            proposals.append(
+                {
+                    "id": r["id"],
+                    "proposal_type": r.get("proposal_type") or "venue",
+                    "attribute": r.get("attribute"),
+                    "proposed_value": r.get("proposed_value"),
+                    "description": r.get("description"),
+                    "observation_id": r["observation_id"],
+                    "source_observation_ids": [
+                        source["observation_id"]
+                        for source in db.execute(
+                            "SELECT observation_id FROM proposal_sources WHERE proposal_id=?",
+                            (r["id"],),
+                        )
+                    ],
+                    "outlet_id": r["outlet_id"],
+                    "would_repeat": bool(r["would_repeat"]),
+                    "status": r["status"],
+                    "created_at": r["created_at"],
+                    "reviewed_at": r["reviewed_at"],
+                }
             )
-        ]
         return {
             "enabled": bool(decode(user["profile"]).get("memory_enabled")),
             "observations": observations,
             "proposals": proposals,
-            "venue_preferences": [p for p in proposals if p["status"] == "accepted"],
+            "venue_preferences": [
+                p
+                for p in proposals
+                if p["status"] == "accepted" and p["proposal_type"] == "venue"
+            ],
+            "attribute_preferences": [
+                p
+                for p in proposals
+                if p["status"] == "accepted" and p["proposal_type"] == "attribute"
+            ],
         }
 
     def invalidate_learning(db, user_id):

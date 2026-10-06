@@ -187,8 +187,9 @@ class DiningStore:
             );
             CREATE TABLE IF NOT EXISTS preference_proposals (
               id TEXT PRIMARY KEY,user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
-              observation_id TEXT NOT NULL UNIQUE REFERENCES observations(id) ON DELETE CASCADE,
+              observation_id TEXT NOT NULL REFERENCES observations(id) ON DELETE CASCADE,
               outlet_id TEXT NOT NULL,would_repeat INTEGER NOT NULL,status TEXT NOT NULL DEFAULT 'pending',
+              proposal_type TEXT NOT NULL DEFAULT 'venue',attribute TEXT,proposed_value TEXT,description TEXT,
               created_at TEXT NOT NULL,reviewed_at TEXT
             );
             CREATE TABLE IF NOT EXISTS proposal_sources (
@@ -275,6 +276,12 @@ class DiningStore:
             additions = {
                 "generation_jobs": {"input_fingerprint": "TEXT"},
                 "votes": {"choice": "TEXT", "reason": "TEXT NOT NULL DEFAULT ''"},
+                "preference_proposals": {
+                    "proposal_type": "TEXT NOT NULL DEFAULT 'venue'",
+                    "attribute": "TEXT",
+                    "proposed_value": "TEXT",
+                    "description": "TEXT",
+                },
                 "meals": {
                     "original_answer_by": "TEXT",
                     "original_decision_by": "TEXT",
@@ -300,6 +307,35 @@ class DiningStore:
             self.connection.execute(
                 "UPDATE meals SET original_answer_by=COALESCE(original_answer_by,json_extract(payload,'$.answer_by')),original_decision_by=COALESCE(original_decision_by,json_extract(payload,'$.decision_by'))"
             )
+            # Remove legacy unique constraint on preference_proposals.observation_id if present
+            index_list = self.connection.execute(
+                "PRAGMA index_list(preference_proposals)"
+            ).fetchall()
+            has_unique_obs = any(
+                idx["unique"]
+                and any(
+                    c["name"] == "observation_id"
+                    for c in self.connection.execute(
+                        f"PRAGMA index_info({idx['name']})"
+                    ).fetchall()
+                )
+                for idx in index_list
+            )
+            if has_unique_obs:
+                self.connection.executescript(
+                    """
+                    CREATE TABLE preference_proposals_migrated (
+                      id TEXT PRIMARY KEY,user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+                      observation_id TEXT NOT NULL REFERENCES observations(id) ON DELETE CASCADE,
+                      outlet_id TEXT NOT NULL,would_repeat INTEGER NOT NULL,status TEXT NOT NULL DEFAULT 'pending',
+                      proposal_type TEXT NOT NULL DEFAULT 'venue',attribute TEXT,proposed_value TEXT,description TEXT,
+                      created_at TEXT NOT NULL,reviewed_at TEXT
+                    );
+                    INSERT INTO preference_proposals_migrated SELECT id, user_id, observation_id, outlet_id, would_repeat, status, proposal_type, attribute, proposed_value, description, created_at, reviewed_at FROM preference_proposals;
+                    DROP TABLE preference_proposals;
+                    ALTER TABLE preference_proposals_migrated RENAME TO preference_proposals;
+                    """
+                )
             # This pilot runs one application process. An interrupted generation must
             # become retryable after restart rather than remain "generating" forever.
             self.connection.execute(

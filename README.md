@@ -159,6 +159,11 @@ evidence remain blockers. Recheck dates are app policy, not publisher guarantees
   selections, and hard requirement rejections. Denominator calculations provide valid acceptance rates,
   events persist across recommendation result invalidation, and user deletion anonymizes diner references
   while preserving historical statistical aggregates.
+- Explicit attribute feedback learning (`dining/attribute_learning.py`) captures distinct signals for taste,
+  value, portion, atmosphere, quietness, service, queue, and travel. Service, queue, travel, and attendance
+  signals never pollute cuisine or taste affinity, and allergies stay strictly outside learning. Consistent
+  observations generate user-reviewable preference proposals (`preference_proposals`) that can be inspected
+  or rejected, with dependent proposals automatically purged upon observation source deletion.
 - Known date-specific exceptions override weekly hours. Current evidence must cover
   arrival, last orders and planned finish. Missing kitchen/date information remains
   unverified; the old holiday-known checkbox alone is insufficient.
