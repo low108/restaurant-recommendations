@@ -164,6 +164,10 @@ evidence remain blockers. Recheck dates are app policy, not publisher guarantees
   signals never pollute cuisine or taste affinity, and allergies stay strictly outside learning. Consistent
   observations generate user-reviewable preference proposals (`preference_proposals`) that can be inspected
   or rejected, with dependent proposals automatically purged upon observation source deletion.
+- A synthetic ILMU quality evaluation suite and harness (`dining/eval_harness.py`) covers English, Bahasa
+  Melayu, Manglish mixed-language, ambiguous queries, prohibited dietary texts, malformed JSON, invented
+  tags, and provider failures. The harness scores schema validity, tag precision, ambiguity detection,
+  fallback resilience, token usage, and latency, clearly separating contract compliance from recommendation quality.
 - Known date-specific exceptions override weekly hours. Current evidence must cover
   arrival, last orders and planned finish. Missing kitchen/date information remains
   unverified; the old holiday-known checkbox alone is insufficient.
