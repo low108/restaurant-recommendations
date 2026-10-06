@@ -22,6 +22,11 @@ from dining.ranking import (
     rank_diverse,
     score_item,
 )
+from dining.retrieval import (
+    EMBEDDING_MODEL_NAME,
+    RETRIEVAL_POLICY_VERSION,
+    CatalogEmbeddingIndex,
+)
 from dining.routing import (
     RouteCoordinate,
     RouteEvidence,
@@ -181,9 +186,11 @@ class Recommender:
         self,
         catalog: Catalog,
         routing_provider: RoutingProvider | None = None,
+        embedding_index: CatalogEmbeddingIndex | None = None,
     ):
         self.catalog = catalog
         self.routing_provider = routing_provider or get_routing_provider()
+        self.embedding_index = embedding_index
         self.fingerprint = hashlib.sha256(
             catalog.model_dump_json().encode()
         ).hexdigest()
@@ -209,6 +216,10 @@ class Recommender:
         now = datetime.now(timezone.utc)
         meal = snapshot["meal"]
         people = snapshot["participants"]
+        is_semantic = bool(
+            self.embedding_index
+            and self.embedding_index.is_usable_for_catalog(self.catalog)
+        )
         result = {
             "status": "no_options",
             "options": [],
@@ -220,6 +231,9 @@ class Recommender:
             "policy_version": POLICY_VERSION,
             "feature_version": FEATURE_VERSION,
             "ontology_version": ONTOLOGY_VERSION,
+            "retrieval_policy_version": RETRIEVAL_POLICY_VERSION,
+            "embedding_model": EMBEDDING_MODEL_NAME if is_semantic else None,
+            "retrieval_status": "semantic" if is_semantic else "structured_fallback",
             "coverage": public_catalog_status(self.catalog, at=now),
             "examined_outlets": 0,
             "explanation": "No verified common option was found in the imported catalog.",

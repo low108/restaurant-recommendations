@@ -173,6 +173,11 @@ evidence remain blockers. Recheck dates are app policy, not publisher guarantees
   cuisine diversity, participant floor distribution, price accuracy, route feasibility, and data-error frequency.
   Every rate explicitly declares numerator and denominator, small cohorts are suppressed (`< 5`), demo data
   exclusion is supported, and no private answer text is ever exposed.
+- Rights-aware semantic candidate retrieval (`dining/retrieval.py`) indexes only approved catalog sources where
+  `rights.embed = "allowed"` and evidence is current. It performs bounded multi-query hybrid fusion across safe
+  taste projections, group overlap, and keyword matches with duplicate menu invariance and per-outlet item caps.
+  All retrieved candidates pass through the existing deterministic hard eligibility and scoring gates, with
+  graceful structured fallback when the index is absent or unavailable.
 - Known date-specific exceptions override weekly hours. Current evidence must cover
   arrival, last orders and planned finish. Missing kitchen/date information remains
   unverified; the old holiday-known checkbox alone is insufficient.
