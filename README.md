@@ -15,8 +15,8 @@ holiday/kitchen checks, and repeatable browser tests. It also includes invitee
 selection for larger rooms, conflict-safe personal
 check-ins, three-state private voting, revocable delegation, manual unverified
 plans, explicit reconfirmation/deadline states, richer feedback and reviewable
-venue preferences. Core labels can switch to Bahasa Melayu; explanatory text is
-not yet fully translated. See the [PRD acceptance matrix](docs/PRD_ACCEPTANCE.md)
+venue preferences. Interface copy features comprehensive Bahasa Melayu coverage
+via an in-app language switch. See the [PRD acceptance matrix](docs/PRD_ACCEPTANCE.md)
 for remaining requirements and the [E2E guide](docs/E2E.md) for test scope.
 
 ## Run the web app
