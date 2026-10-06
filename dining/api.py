@@ -23,6 +23,7 @@ from pwdlib import PasswordHash
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 from .adaptive import build_m09_question
+from .consent import ConsentManager
 from .generation import (
     GenerationWorker,
     Superseded,
@@ -284,6 +285,20 @@ class PreparationConfirmationInput(Input):
         except ValueError as err:
             raise ValueError(f"Invalid timestamp: {err}") from err
         return self
+
+
+class ConsentInput(Input):
+    purpose: Literal[
+        "terms",
+        "sensitive_dietary_data",
+        "location_routing",
+        "learning",
+        "model_processing",
+        "analytics",
+    ]
+    notice_version: str = Field(min_length=1, max_length=50)
+    decision: Literal["accepted", "declined", "withdrawn"]
+    source_interface: str = Field(default="web_settings", max_length=100)
 
 
 class Generate(Input):
@@ -1180,6 +1195,25 @@ def build_router(
                 "SELECT profile_revision FROM users WHERE id=?", (auth["user_id"],)
             ).fetchone()[0]
             return profile
+
+    @router.get("/consent")
+    def get_consent(auth=Auth):
+        with store.transaction() as db:
+            return ConsentManager.get_consent_status(db, auth["user_id"])
+
+    @router.post("/consent")
+    def record_consent(body: ConsentInput, auth=Auth):
+        with store.transaction() as db:
+            record = ConsentManager.record_consent(
+                db,
+                auth["user_id"],
+                body.purpose,
+                body.notice_version,
+                body.decision,
+                body.source_interface,
+            )
+            audit(db, auth["user_id"], f"consent_{body.purpose}_{body.decision}")
+            return record
 
     @router.get("/rooms")
     def rooms(auth=Auth):
@@ -3313,6 +3347,21 @@ def build_router(
                     }
                     for r in db.execute(
                         "SELECT * FROM meal_origins WHERE user_id=?",
+                        (auth["user_id"],),
+                    )
+                ],
+                "consent_records": [
+                    {
+                        "id": r["id"],
+                        "notice_version": r["notice_version"],
+                        "purpose": r["purpose"],
+                        "decision": r["decision"],
+                        "source_interface": r["source_interface"],
+                        "timestamp": r["timestamp"],
+                        "created_at": r["created_at"],
+                    }
+                    for r in db.execute(
+                        "SELECT * FROM consent_records WHERE user_id=? ORDER BY created_at",
                         (auth["user_id"],),
                     )
                 ],

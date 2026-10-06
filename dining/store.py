@@ -235,6 +235,12 @@ class DiningStore:
               exact_bounded_claim TEXT NOT NULL,created_at TEXT NOT NULL
             );
             CREATE INDEX IF NOT EXISTS prep_conf_meal ON preparation_confirmations(meal_id,outlet_id);
+            CREATE TABLE IF NOT EXISTS consent_records (
+              id TEXT PRIMARY KEY,user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+              notice_version TEXT NOT NULL,purpose TEXT NOT NULL,decision TEXT NOT NULL,
+              source_interface TEXT NOT NULL,timestamp REAL NOT NULL,created_at TEXT NOT NULL
+            );
+            CREATE INDEX IF NOT EXISTS consent_records_user ON consent_records(user_id,purpose);
             """)
             # Additive migrations keep existing accounts, responses and historical votes.
             additions = {

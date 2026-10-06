@@ -105,6 +105,9 @@ evidence remain blockers. Recheck dates are app policy, not publisher guarantees
 
 - Passwords use Argon2; sessions use opaque HttpOnly/SameSite cookies and server-side
   revocation. Authenticated mutations require CSRF tokens and same-origin checks.
+- Purpose-specific versioned consent (`consent_records`) governs terms, sensitive dietary
+  data, location routing, taste learning, model processing, and analytics, requiring user
+  review upon notice revisions and preserving audit trails on withdrawal.
 - Room, participant, owner and organizer checks run on the server. Shared results
   omit private check-in contents and attributed dietary information.
 - Owner-scoped private meal origins (`meal_origins`) support precise coordinates,
