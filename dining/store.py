@@ -258,6 +258,17 @@ class DiningStore:
               acknowledged_at REAL,last_error TEXT,created_at TEXT NOT NULL,
               UNIQUE(user_id,subscription_id,event_id)
             );
+            CREATE TABLE IF NOT EXISTS exposure_events (
+              id TEXT PRIMARY KEY,event_type TEXT NOT NULL,
+              meal_id TEXT NOT NULL REFERENCES meals(id) ON DELETE CASCADE,
+              meal_revision INTEGER NOT NULL,policy_version TEXT NOT NULL,
+              outlet_id TEXT NOT NULL,option_id TEXT,
+              user_id TEXT REFERENCES users(id) ON DELETE SET NULL,
+              metadata TEXT,dedup_key TEXT NOT NULL UNIQUE,created_at TEXT NOT NULL
+            );
+            CREATE INDEX IF NOT EXISTS exposure_events_meal ON exposure_events(meal_id,meal_revision);
+            CREATE INDEX IF NOT EXISTS exposure_events_type ON exposure_events(event_type);
+            CREATE INDEX IF NOT EXISTS exposure_events_user ON exposure_events(user_id);
             CREATE INDEX IF NOT EXISTS push_jobs_status ON push_delivery_jobs(status,next_attempt_at);
             """)
             # Additive migrations keep existing accounts, responses and historical votes.

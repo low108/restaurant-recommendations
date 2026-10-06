@@ -154,6 +154,11 @@ evidence remain blockers. Recheck dates are app policy, not publisher guarantees
   only when provider, model, price version, and token usage are fully known. Historical cost
   calculations persist without being overwritten by subsequent price updates, and diner-facing
   interfaces remain completely free of internal model billing data.
+- Immutable exposure and impression events (`exposure_events`, `dining/exposure.py`) record candidate
+  eligibility, shortlisting, deduplicated card views, votes (strictly omitting private veto reasons),
+  selections, and hard requirement rejections. Denominator calculations provide valid acceptance rates,
+  events persist across recommendation result invalidation, and user deletion anonymizes diner references
+  while preserving historical statistical aggregates.
 - Known date-specific exceptions override weekly hours. Current evidence must cover
   arrival, last orders and planned finish. Missing kitchen/date information remains
   unverified; the old holiday-known checkbox alone is insufficient.

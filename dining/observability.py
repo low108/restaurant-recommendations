@@ -5,6 +5,7 @@ import os
 
 from fastapi import APIRouter, Header, HTTPException
 
+from dining.exposure import get_exposure_metrics
 from dining.generation import job_view, result_metadata
 from dining.store import decode
 
@@ -142,6 +143,7 @@ def operations_router(store, generation_worker=None, inference_settings=None):
             "inbox_jobs": jobs,
             "recent_runs": runs,
             "cost_summary": cost_summary,
+            "exposure_metrics": get_exposure_metrics(db),
             "data_error_reports": data_error_reports,
             "recommendation_archives_count": recommendation_archives_count,
             "email_delivery_health": email_delivery_health,

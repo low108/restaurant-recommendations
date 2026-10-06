@@ -279,6 +279,8 @@ class Recommender:
             )
             return result
         candidates = []
+        eligible_candidates = []
+        rejected_candidates = []
         preference_conflict = False
         # Coverage failures are distinct from a known lack of a suitable option.
         # Keep this aggregate-only: blocked sources may not publish outlet names.
@@ -295,6 +297,9 @@ class Recommender:
             result["examined_outlets"] += 1
             if not self.catalog.evidence_usable(outlet.source_ids, at=now):
                 evaluation_blocked = True
+                rejected_candidates.append(
+                    {"outlet_id": outlet.outlet_id, "category": "source_freshness"}
+                )
                 continue  # Permission/freshness failures must not publish source content.
             issues = []
             opening = _service_for(
@@ -305,6 +310,9 @@ class Recommender:
                 checked_at=now,
             )
             if opening.passes is False:
+                rejected_candidates.append(
+                    {"outlet_id": outlet.outlet_id, "category": "hours"}
+                )
                 continue
             if opening.passes is None:
                 issues.append(
@@ -617,6 +625,9 @@ class Recommender:
                     )
                     best.append(matches[0])
             if issues:
+                rejected_candidates.append(
+                    {"outlet_id": outlet.outlet_id, "category": "hard_requirement"}
+                )
                 result["verification"].append(
                     {
                         "outlet_id": outlet.outlet_id,
@@ -628,9 +639,15 @@ class Recommender:
                 )
                 continue
             if len(best) != len(people):
+                rejected_candidates.append(
+                    {"outlet_id": outlet.outlet_id, "category": "group_menu_fit"}
+                )
                 continue
             fits = [fit.fit for fit, item in best]
             if min(fits) < MINIMUM_INDIVIDUAL_FIT:
+                rejected_candidates.append(
+                    {"outlet_id": outlet.outlet_id, "category": "fit_floor"}
+                )
                 preference_conflict = True
                 continue
             novelty = sum(
@@ -718,6 +735,13 @@ class Recommender:
                     "_score": score,
                 }
             )
+            eligible_candidates.append(
+                {"outlet_id": outlet.outlet_id, "option_id": option_id}
+            )
+        result["_exposure_candidates"] = {
+            "eligible": eligible_candidates,
+            "rejected": rejected_candidates,
+        }
         selected = rank_diverse(candidates)
         for option in selected:
             option.pop("_score")

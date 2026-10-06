@@ -24,6 +24,13 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator, model_valida
 
 from .adaptive import build_m09_question
 from .consent import ConsentManager
+from .exposure import (
+    EVENT_CANDIDATE_SELECTED,
+    EVENT_CANDIDATE_VOTED_ON,
+    record_card_impressions,
+    record_exposure_event,
+    record_generation_exposures,
+)
 from .generation import (
     GenerationWorker,
     Superseded,
@@ -1534,9 +1541,19 @@ def build_router(
     @router.get("/meals/{meal_id}")
     def get_meal(meal_id: str, auth=Auth):
         with store.transaction() as db:
-            return meal_view(
+            view = meal_view(
                 db, meal_member(db, meal_id, auth["user_id"]), auth["user_id"]
             )
+            if view.get("result") and view["result"].get("options"):
+                record_card_impressions(
+                    db,
+                    meal_id=view["id"],
+                    meal_revision=view["revision"],
+                    policy_version=view["result"].get("policy_version", "1.0"),
+                    user_id=auth["user_id"],
+                    options=view["result"]["options"],
+                )
+            return view
 
     @router.get("/meals/{meal_id}/recommendation-history")
     def recommendation_history(meal_id: str, auth=Auth):
@@ -2186,6 +2203,7 @@ def build_router(
             "metrics",
             "run_id",
             "agent",
+            "_exposure_candidates",
         }
         return {k: v for k, v in result.items() if k in allowed}
 
@@ -2460,6 +2478,7 @@ def build_router(
                 stamp(),
             ),
         )
+        record_generation_exposures(db, job["meal_id"], job["context_revision"], result)
         notify(
             db,
             decode(meal["frozen_participants"], []),
@@ -2608,6 +2627,7 @@ def build_router(
                 "INSERT OR REPLACE INTO recommendation_archives(id,meal_id,revision,payload,created_at) VALUES(?,?,?,?,?)",
                 (f"{meal_id}:{revision}", meal_id, revision, encode(result), stamp()),
             )
+            record_generation_exposures(db, meal_id, revision, result)
             notify(
                 db,
                 included,
@@ -2646,6 +2666,27 @@ def build_router(
                     body.choice,
                     body.reason,
                 ),
+            )
+            outlet_id = next(
+                (
+                    opt.get("outlet_id")
+                    for opt in decode(meal["result"], {}).get("options", [])
+                    if opt.get("id") == body.option_id
+                    or opt.get("option_id") == body.option_id
+                ),
+                body.option_id,
+            )
+            policy_version = decode(meal["result"], {}).get("policy_version", "1.0")
+            record_exposure_event(
+                db,
+                EVENT_CANDIDATE_VOTED_ON,
+                meal_id=meal_id,
+                meal_revision=meal["revision"],
+                policy_version=policy_version,
+                outlet_id=outlet_id,
+                option_id=body.option_id,
+                user_id=auth["user_id"],
+                metadata={"choice": body.choice, "approved": body.choice == "works"},
             )
             audit(db, auth["user_id"], "private_vote_updated", meal["room_id"], meal_id)
             return meal_view(db, meal, auth["user_id"])
@@ -2796,6 +2837,26 @@ def build_router(
                 db.execute(
                     "UPDATE meals SET status='selected',decision=?,reconfirmation_required=0,lifecycle_reason=NULL WHERE id=?",
                     (encode(decision), meal_id),
+                )
+                outlet_id = next(
+                    (
+                        opt.get("outlet_id")
+                        for opt in prior_result.get("options", [])
+                        if opt.get("id") == target_option_id
+                        or opt.get("option_id") == target_option_id
+                    ),
+                    target_option_id,
+                )
+                record_exposure_event(
+                    db,
+                    EVENT_CANDIDATE_SELECTED,
+                    meal_id=meal_id,
+                    meal_revision=meal["revision"],
+                    policy_version=prior_result.get("policy_version", "1.0"),
+                    outlet_id=outlet_id,
+                    option_id=target_option_id,
+                    user_id=auth["user_id"],
+                    metadata={"choice_mode": body.choice_mode},
                 )
                 msg = (
                     "Everyone approved a meal option. A random draw selected the final place."
@@ -3386,6 +3447,20 @@ def build_router(
                     }
                     for r in db.execute(
                         "SELECT * FROM meal_origins WHERE user_id=?",
+                        (auth["user_id"],),
+                    )
+                ],
+                "exposure_events": [
+                    {
+                        "meal_id": r["meal_id"],
+                        "meal_revision": r["meal_revision"],
+                        "event_type": r["event_type"],
+                        "outlet_id": r["outlet_id"],
+                        "option_id": r["option_id"],
+                        "created_at": r["created_at"],
+                    }
+                    for r in db.execute(
+                        "SELECT * FROM exposure_events WHERE user_id=?",
                         (auth["user_id"],),
                     )
                 ],
