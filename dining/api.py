@@ -556,9 +556,11 @@ def build_router(
         ):
             raise HTTPException(415, "Send JSON")
         client = request.client.host if request.client else "unknown"
+        account_max = 500 if demo_mode else 10
+        ip_max = 2000 if demo_mode else 50
         buckets = [
-            (digest("account:" + client + ":" + email), 10),
-            (digest("ip:" + client), 50),
+            (digest("account:" + client + ":" + email), account_max),
+            (digest("ip:" + client), ip_max),
         ]
         blocked = False
         with store.transaction() as db:
