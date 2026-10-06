@@ -241,6 +241,13 @@ class DiningStore:
               source_interface TEXT NOT NULL,timestamp REAL NOT NULL,created_at TEXT NOT NULL
             );
             CREATE INDEX IF NOT EXISTS consent_records_user ON consent_records(user_id,purpose);
+            CREATE TABLE IF NOT EXISTS push_subscriptions (
+              id TEXT PRIMARY KEY,user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+              endpoint TEXT NOT NULL UNIQUE,p256dh TEXT NOT NULL,auth TEXT NOT NULL,
+              user_agent TEXT,status TEXT NOT NULL DEFAULT 'active',
+              created_at TEXT NOT NULL,updated_at TEXT NOT NULL
+            );
+            CREATE INDEX IF NOT EXISTS push_subs_user ON push_subscriptions(user_id);
             """)
             # Additive migrations keep existing accounts, responses and historical votes.
             additions = {

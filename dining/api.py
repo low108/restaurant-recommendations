@@ -37,6 +37,7 @@ from .geocoding import get_geocoding_provider
 from .inference import InferenceSettings
 from .lifecycle import planned_finish, post_meal_transition
 from .preferences import interpret_preferences
+from .push import PushSubscriptionManager
 from .store import DEFAULT_PROFILE, DiningStore, decode, encode
 
 COOKIE = "dining_session"
@@ -299,6 +300,17 @@ class ConsentInput(Input):
     notice_version: str = Field(min_length=1, max_length=50)
     decision: Literal["accepted", "declined", "withdrawn"]
     source_interface: str = Field(default="web_settings", max_length=100)
+
+
+class PushSubscriptionInput(Input):
+    endpoint: str = Field(min_length=10, max_length=500)
+    p256dh: str = Field(min_length=16, max_length=200)
+    auth: str = Field(min_length=10, max_length=100)
+    user_agent: str | None = Field(default=None, max_length=200)
+
+
+class PushUnsubscribeInput(Input):
+    endpoint: str = Field(min_length=10, max_length=500)
 
 
 class Generate(Input):
@@ -1214,6 +1226,33 @@ def build_router(
             )
             audit(db, auth["user_id"], f"consent_{body.purpose}_{body.decision}")
             return record
+
+    @router.post("/push/subscriptions", status_code=201)
+    def register_push_subscription(body: PushSubscriptionInput, auth=Auth):
+        with store.transaction() as db:
+            return PushSubscriptionManager.register(
+                db,
+                auth["user_id"],
+                body.endpoint,
+                body.p256dh,
+                body.auth,
+                body.user_agent,
+            )
+
+    @router.get("/push/subscriptions")
+    def list_push_subscriptions(auth=Auth):
+        with store.transaction() as db:
+            return PushSubscriptionManager.list_user_subscriptions(db, auth["user_id"])
+
+    @router.post("/push/unsubscribe")
+    def unsubscribe_push(body: PushUnsubscribeInput, auth=Auth):
+        with store.transaction() as db:
+            success = PushSubscriptionManager.unsubscribe(
+                db, auth["user_id"], body.endpoint
+            )
+            if not success:
+                raise HTTPException(404, "Subscription not found")
+            return {"unsubscribed": True}
 
     @router.get("/rooms")
     def rooms(auth=Auth):
@@ -3362,6 +3401,18 @@ def build_router(
                     }
                     for r in db.execute(
                         "SELECT * FROM consent_records WHERE user_id=? ORDER BY created_at",
+                        (auth["user_id"],),
+                    )
+                ],
+                "push_subscriptions": [
+                    {
+                        "id": r["id"],
+                        "endpoint": r["endpoint"],
+                        "status": r["status"],
+                        "created_at": r["created_at"],
+                    }
+                    for r in db.execute(
+                        "SELECT id, endpoint, status, created_at FROM push_subscriptions WHERE user_id=?",
                         (auth["user_id"],),
                     )
                 ],

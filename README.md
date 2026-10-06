@@ -137,7 +137,8 @@ evidence remain blockers. Recheck dates are app policy, not publisher guarantees
   The explicit-fit baseline and its weights are hypotheses, not a trained model or
   a claim that all recommendation bias has been removed.
 - In-app notifications, scoped polling, account export/deletion, expiring invites,
-  private post-visit feedback and optional bounded feedback observations work locally.
+  private post-visit feedback, optional bounded feedback observations, and privacy-safe
+  web push subscriptions (`web/sw.js`) work locally.
 - Durable in-app check-in and post-meal reminders run with duplicate suppression.
   SMTP verification/recovery is optional and disabled until configured. A restricted
   local operations view shows sanitized stage and usage summaries. See
