@@ -100,6 +100,16 @@ class Profile(Input):
     sensitive_data_consent: bool = False
     max_budget: float | None = Field(default=None, ge=1, le=2000)
     mobility_mode: Literal["drive", "walk", "transit", "ehailing"] = "drive"
+    accessibility_requirements: list[
+        Literal[
+            "step_free_entrance",
+            "wheelchair_accessible_seating",
+            "accessible_restroom",
+            "low_noise_seating",
+            "unknown",
+            "withheld",
+        ]
+    ] = Field(default_factory=list)
     language: Literal["en", "ms"] = "en"
     taste_preferences: dict[str, Literal["like", "neutral", "dislike"]] = Field(
         default_factory=dict, max_length=40
@@ -196,6 +206,16 @@ class CheckIn(Input):
     ] = Field(default_factory=list, max_length=7)
     must_leave_by: str | None = Field(default=None, max_length=50)
     suggested_time: str | None = Field(default=None, max_length=50)
+    accessibility_requirements: list[
+        Literal[
+            "step_free_entrance",
+            "wheelchair_accessible_seating",
+            "accessible_restroom",
+            "low_noise_seating",
+            "unknown",
+            "withheld",
+        ]
+    ] = Field(default_factory=list)
 
     @model_validator(mode="after")
     def ready_valid(self):

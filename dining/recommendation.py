@@ -328,6 +328,39 @@ class Recommender:
                 issues.append(
                     "Current certification for this outlet needs verification."
                 )
+
+            firm_accessibility_features = {
+                "step_free_entrance",
+                "wheelchair_accessible_seating",
+                "accessible_restroom",
+                "low_noise_seating",
+            }
+            needed_accessibility = set()
+            for p in people:
+                reqs = set(p["profile"].get("accessibility_requirements", [])) | set(
+                    p["response"].get("accessibility_requirements", [])
+                )
+                needed_accessibility |= reqs & firm_accessibility_features
+
+            for req in needed_accessibility:
+                feature = getattr(outlet.accessibility, req, None)
+                if feature is None or feature.status == "inaccessible":
+                    issues.append("Required accessibility features are not available.")
+                    break
+                if (
+                    feature.status != "accessible"
+                    or feature.review_status != "reviewed"
+                    or not feature.source_ids
+                ):
+                    issues.append("Required accessibility evidence needs verification.")
+                    break
+                if not self.catalog.evidence_usable(
+                    feature.source_ids, at=now
+                ) or not self.catalog.evidence_usable(feature.source_ids, at=at):
+                    issues.append(
+                        "Accessibility evidence has expired and needs review."
+                    )
+                    break
             # Entire local outlet pool is considered; no global dish top-K gate.
             unique, conflicts = {}, set()
             for item in self.catalog.menu_items:

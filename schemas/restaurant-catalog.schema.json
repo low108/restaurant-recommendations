@@ -1,0 +1,935 @@
+{
+  "$defs": {
+    "AccessibilityEvidence": {
+      "additionalProperties": false,
+      "properties": {
+        "step_free_entrance": {
+          "$ref": "#/$defs/AccessibilityFeature"
+        },
+        "wheelchair_accessible_seating": {
+          "$ref": "#/$defs/AccessibilityFeature"
+        },
+        "accessible_restroom": {
+          "$ref": "#/$defs/AccessibilityFeature"
+        },
+        "low_noise_seating": {
+          "$ref": "#/$defs/AccessibilityFeature"
+        }
+      },
+      "title": "AccessibilityEvidence",
+      "type": "object"
+    },
+    "AccessibilityFeature": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "default": "unknown",
+          "enum": [
+            "unknown",
+            "accessible",
+            "inaccessible"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "source_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Source Ids",
+          "type": "array"
+        },
+        "review_status": {
+          "default": "unreviewed",
+          "enum": [
+            "unreviewed",
+            "reviewed"
+          ],
+          "title": "Review Status",
+          "type": "string"
+        }
+      },
+      "title": "AccessibilityFeature",
+      "type": "object"
+    },
+    "Brand": {
+      "additionalProperties": false,
+      "properties": {
+        "brand_id": {
+          "minLength": 1,
+          "title": "Brand Id",
+          "type": "string"
+        },
+        "name": {
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        }
+      },
+      "required": [
+        "brand_id",
+        "name"
+      ],
+      "title": "Brand",
+      "type": "object"
+    },
+    "HalalEvidence": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "default": "unknown",
+          "enum": [
+            "unknown",
+            "certified",
+            "restaurant_claim",
+            "not_halal"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "certificate_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Certificate Id"
+        },
+        "authority": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Authority"
+        },
+        "source_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Source Ids",
+          "type": "array"
+        }
+      },
+      "title": "HalalEvidence",
+      "type": "object"
+    },
+    "MenuItem": {
+      "additionalProperties": false,
+      "properties": {
+        "item_id": {
+          "minLength": 1,
+          "title": "Item Id",
+          "type": "string"
+        },
+        "outlet_id": {
+          "minLength": 1,
+          "title": "Outlet Id",
+          "type": "string"
+        },
+        "name": {
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "description": {
+          "default": "",
+          "title": "Description",
+          "type": "string"
+        },
+        "variant": {
+          "default": "Regular",
+          "title": "Variant",
+          "type": "string"
+        },
+        "language": {
+          "default": "en",
+          "title": "Language",
+          "type": "string"
+        },
+        "menu_version": {
+          "minLength": 1,
+          "title": "Menu Version",
+          "type": "string"
+        },
+        "cuisine_tags": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Cuisine Tags",
+          "type": "array"
+        },
+        "attributes": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Attributes",
+          "type": "array"
+        },
+        "price": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Price"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "meal_role": {
+          "default": "unknown",
+          "enum": [
+            "main",
+            "set",
+            "side",
+            "dessert",
+            "beverage",
+            "add_on",
+            "unknown"
+          ],
+          "title": "Meal Role",
+          "type": "string"
+        },
+        "serves_min": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Serves Min"
+        },
+        "serves_max": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Serves Max"
+        },
+        "review_status": {
+          "default": "unreviewed",
+          "enum": [
+            "unreviewed",
+            "reviewed",
+            "quarantined"
+          ],
+          "title": "Review Status",
+          "type": "string"
+        },
+        "review_reasons": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Review Reasons",
+          "type": "array"
+        },
+        "ingredients": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Ingredients",
+          "type": "array"
+        },
+        "ingredients_complete": {
+          "default": false,
+          "title": "Ingredients Complete",
+          "type": "boolean"
+        },
+        "allergens_present": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Allergens Present",
+          "type": "array"
+        },
+        "allergen_assessment": {
+          "default": "unknown",
+          "enum": [
+            "unknown",
+            "published"
+          ],
+          "title": "Allergen Assessment",
+          "type": "string"
+        },
+        "cross_contact_status": {
+          "default": "unknown",
+          "enum": [
+            "unknown",
+            "possible",
+            "restaurant_confirmed_controlled"
+          ],
+          "title": "Cross Contact Status",
+          "type": "string"
+        },
+        "dietary_claims": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Dietary Claims",
+          "type": "array"
+        },
+        "live_availability": {
+          "default": "unknown",
+          "enum": [
+            "unknown",
+            "available",
+            "unavailable"
+          ],
+          "title": "Live Availability",
+          "type": "string"
+        },
+        "source_ids": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Source Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "item_id",
+        "outlet_id",
+        "name",
+        "menu_version",
+        "source_ids"
+      ],
+      "title": "MenuItem",
+      "type": "object"
+    },
+    "OpeningException": {
+      "additionalProperties": false,
+      "properties": {
+        "on_date": {
+          "format": "date",
+          "title": "On Date",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "closed",
+            "published",
+            "unknown"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "intervals": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/ServiceInterval"
+          },
+          "title": "Intervals",
+          "type": "array"
+        },
+        "source_ids": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Source Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "on_date",
+        "status",
+        "source_ids"
+      ],
+      "title": "OpeningException",
+      "type": "object"
+    },
+    "OpeningExceptionCoverage": {
+      "additionalProperties": false,
+      "properties": {
+        "starts_on": {
+          "format": "date",
+          "title": "Starts On",
+          "type": "string"
+        },
+        "ends_on": {
+          "format": "date",
+          "title": "Ends On",
+          "type": "string"
+        },
+        "source_ids": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Source Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "starts_on",
+        "ends_on",
+        "source_ids"
+      ],
+      "title": "OpeningExceptionCoverage",
+      "type": "object"
+    },
+    "OpeningInterval": {
+      "additionalProperties": false,
+      "properties": {
+        "opens": {
+          "pattern": "^(?:[01]\\d|2[0-3]):[0-5]\\d$",
+          "title": "Opens",
+          "type": "string"
+        },
+        "closes": {
+          "pattern": "^(?:[01]\\d|2[0-3]):[0-5]\\d$",
+          "title": "Closes",
+          "type": "string"
+        },
+        "closes_next_day": {
+          "default": false,
+          "title": "Closes Next Day",
+          "type": "boolean"
+        },
+        "last_order": {
+          "anyOf": [
+            {
+              "pattern": "^(?:[01]\\d|2[0-3]):[0-5]\\d$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Last Order"
+        },
+        "last_order_next_day": {
+          "default": false,
+          "title": "Last Order Next Day",
+          "type": "boolean"
+        },
+        "last_order_source_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Last Order Source Ids",
+          "type": "array"
+        },
+        "weekday": {
+          "description": "Monday=0, Sunday=6",
+          "maximum": 6,
+          "minimum": 0,
+          "title": "Weekday",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "opens",
+        "closes",
+        "weekday"
+      ],
+      "title": "OpeningInterval",
+      "type": "object"
+    },
+    "Outlet": {
+      "additionalProperties": false,
+      "properties": {
+        "outlet_id": {
+          "minLength": 1,
+          "title": "Outlet Id",
+          "type": "string"
+        },
+        "brand_id": {
+          "minLength": 1,
+          "title": "Brand Id",
+          "type": "string"
+        },
+        "name": {
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "address": {
+          "minLength": 1,
+          "title": "Address",
+          "type": "string"
+        },
+        "city": {
+          "minLength": 1,
+          "title": "City",
+          "type": "string"
+        },
+        "state": {
+          "minLength": 1,
+          "title": "State",
+          "type": "string"
+        },
+        "country": {
+          "const": "MY",
+          "default": "MY",
+          "title": "Country",
+          "type": "string"
+        },
+        "latitude": {
+          "anyOf": [
+            {
+              "maximum": 90,
+              "minimum": -90,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Latitude"
+        },
+        "longitude": {
+          "anyOf": [
+            {
+              "maximum": 180,
+              "minimum": -180,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Longitude"
+        },
+        "timezone": {
+          "default": "Asia/Kuala_Lumpur",
+          "title": "Timezone",
+          "type": "string"
+        },
+        "cuisine_tags": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Cuisine Tags",
+          "type": "array"
+        },
+        "opening_hours": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/OpeningInterval"
+          },
+          "title": "Opening Hours",
+          "type": "array"
+        },
+        "hours_status": {
+          "default": "unknown",
+          "enum": [
+            "unknown",
+            "published"
+          ],
+          "title": "Hours Status",
+          "type": "string"
+        },
+        "holiday_exceptions_known": {
+          "default": false,
+          "title": "Holiday Exceptions Known",
+          "type": "boolean"
+        },
+        "opening_exceptions": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/OpeningException"
+          },
+          "title": "Opening Exceptions",
+          "type": "array"
+        },
+        "opening_exceptions_coverage": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/OpeningExceptionCoverage"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "halal": {
+          "$ref": "#/$defs/HalalEvidence"
+        },
+        "accessibility": {
+          "$ref": "#/$defs/AccessibilityEvidence"
+        },
+        "source_ids": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Source Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "outlet_id",
+        "brand_id",
+        "name",
+        "address",
+        "city",
+        "state",
+        "source_ids"
+      ],
+      "title": "Outlet",
+      "type": "object"
+    },
+    "Price": {
+      "additionalProperties": false,
+      "properties": {
+        "amount_minor": {
+          "description": "Listed amount in integer sen",
+          "minimum": 0,
+          "title": "Amount Minor",
+          "type": "integer"
+        },
+        "currency": {
+          "const": "MYR",
+          "default": "MYR",
+          "title": "Currency",
+          "type": "string"
+        },
+        "channel": {
+          "enum": [
+            "dine_in",
+            "takeaway",
+            "delivery",
+            "unknown"
+          ],
+          "title": "Channel",
+          "type": "string"
+        },
+        "unit": {
+          "default": "unknown",
+          "enum": [
+            "portion",
+            "piece",
+            "person",
+            "set",
+            "bottle",
+            "glass",
+            "pot",
+            "weight_100g",
+            "weight_kg",
+            "unknown"
+          ],
+          "title": "Unit",
+          "type": "string"
+        },
+        "minimum_quantity": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Minimum Quantity"
+        },
+        "mandatory_charges_included": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Mandatory Charges Included"
+        },
+        "all_mandatory_charges_known": {
+          "default": false,
+          "title": "All Mandatory Charges Known",
+          "type": "boolean"
+        },
+        "payable_amount_minor": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Payable amount per listed unit, including known mandatory charges; not the minimum-order total",
+          "title": "Payable Amount Minor"
+        }
+      },
+      "required": [
+        "amount_minor",
+        "channel"
+      ],
+      "title": "Price",
+      "type": "object"
+    },
+    "Rights": {
+      "additionalProperties": false,
+      "properties": {
+        "display": {
+          "default": "unknown",
+          "enum": [
+            "allowed",
+            "prohibited",
+            "unknown"
+          ],
+          "title": "Display",
+          "type": "string"
+        },
+        "embed": {
+          "default": "unknown",
+          "enum": [
+            "allowed",
+            "prohibited",
+            "unknown"
+          ],
+          "title": "Embed",
+          "type": "string"
+        },
+        "basis": {
+          "minLength": 1,
+          "title": "Basis",
+          "type": "string"
+        }
+      },
+      "required": [
+        "basis"
+      ],
+      "title": "Rights",
+      "type": "object"
+    },
+    "ServiceInterval": {
+      "additionalProperties": false,
+      "properties": {
+        "opens": {
+          "pattern": "^(?:[01]\\d|2[0-3]):[0-5]\\d$",
+          "title": "Opens",
+          "type": "string"
+        },
+        "closes": {
+          "pattern": "^(?:[01]\\d|2[0-3]):[0-5]\\d$",
+          "title": "Closes",
+          "type": "string"
+        },
+        "closes_next_day": {
+          "default": false,
+          "title": "Closes Next Day",
+          "type": "boolean"
+        },
+        "last_order": {
+          "anyOf": [
+            {
+              "pattern": "^(?:[01]\\d|2[0-3]):[0-5]\\d$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Last Order"
+        },
+        "last_order_next_day": {
+          "default": false,
+          "title": "Last Order Next Day",
+          "type": "boolean"
+        },
+        "last_order_source_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Last Order Source Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "opens",
+        "closes"
+      ],
+      "title": "ServiceInterval",
+      "type": "object"
+    },
+    "Source": {
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "minLength": 1,
+          "title": "Source Id",
+          "type": "string"
+        },
+        "url": {
+          "minLength": 1,
+          "title": "Url",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "synthetic",
+            "official_website",
+            "restaurant_supplied",
+            "certification_registry",
+            "other"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "observed_at": {
+          "format": "date-time",
+          "title": "Observed At",
+          "type": "string"
+        },
+        "expires_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Expires At"
+        },
+        "publisher_updated_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Publisher Updated At"
+        },
+        "evidence_text": {
+          "minLength": 1,
+          "title": "Evidence Text",
+          "type": "string"
+        },
+        "rights": {
+          "$ref": "#/$defs/Rights"
+        }
+      },
+      "required": [
+        "source_id",
+        "url",
+        "kind",
+        "observed_at",
+        "evidence_text",
+        "rights"
+      ],
+      "title": "Source",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "enum": [
+        "1",
+        "2"
+      ],
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "catalog_id": {
+      "minLength": 1,
+      "title": "Catalog Id",
+      "type": "string"
+    },
+    "version": {
+      "minLength": 1,
+      "title": "Version",
+      "type": "string"
+    },
+    "generated_at": {
+      "format": "date-time",
+      "title": "Generated At",
+      "type": "string"
+    },
+    "synthetic": {
+      "title": "Synthetic",
+      "type": "boolean"
+    },
+    "brands": {
+      "items": {
+        "$ref": "#/$defs/Brand"
+      },
+      "title": "Brands",
+      "type": "array"
+    },
+    "outlets": {
+      "items": {
+        "$ref": "#/$defs/Outlet"
+      },
+      "title": "Outlets",
+      "type": "array"
+    },
+    "menu_items": {
+      "items": {
+        "$ref": "#/$defs/MenuItem"
+      },
+      "title": "Menu Items",
+      "type": "array"
+    },
+    "sources": {
+      "items": {
+        "$ref": "#/$defs/Source"
+      },
+      "title": "Sources",
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "catalog_id",
+    "version",
+    "generated_at",
+    "synthetic",
+    "brands",
+    "outlets",
+    "menu_items",
+    "sources"
+  ],
+  "title": "Catalog",
+  "type": "object"
+}

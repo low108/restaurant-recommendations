@@ -113,6 +113,9 @@ evidence remain blockers. Recheck dates are app policy, not publisher guarantees
 - Deterministic route evidence arrival checks apply when firm route evidence exists,
   evaluating meal start, kitchen last orders, and individual `must_leave_by` constraints.
   Missing or stale routing remains unknown and preserves neutral ranking without guessing.
+- Structured accessibility requirements (step-free entrance, wheelchair seating, accessible restroom,
+  low-noise seating) gate candidate publication using deterministic catalog evidence with freshness
+  and review status checks. Missing accessibility evidence remains unknown and never defaults to accessible.
 - Profiles and check-ins have explicit unknown states. Declared allergies and
   free-text must-avoid ingredients require additional verification; scraped menus
   do not establish preparation safety. This pilot has no restaurant-confirmation

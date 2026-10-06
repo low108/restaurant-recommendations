@@ -26,6 +26,7 @@ DEFAULT_PROFILE = {
     "sensitive_data_consent": False,
     "max_budget": None,
     "mobility_mode": "drive",
+    "accessibility_requirements": [],
     "language": "en",
     "taste_preferences": {},
 }
