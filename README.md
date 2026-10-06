@@ -149,6 +149,11 @@ evidence remain blockers. Recheck dates are app policy, not publisher guarantees
   regeneration; private inputs are not copied into receipts. See [worker details](docs/OPERATIONS.md).
   External LangSmith tracing is disabled by default and supports only privacy-reviewed structural
   metadata export (`dining/tracing.py`) with strict sentinel and PII redaction.
+- Versioned model pricing configuration (`dining/pricing.py`) records authoritative input,
+  output, total, and cached tokens per provider call, calculating estimated monetary costs
+  only when provider, model, price version, and token usage are fully known. Historical cost
+  calculations persist without being overwritten by subsequent price updates, and diner-facing
+  interfaces remain completely free of internal model billing data.
 - Known date-specific exceptions override weekly hours. Current evidence must cover
   arrival, last orders and planned finish. Missing kitchen/date information remains
   unverified; the old holiday-known checkbox alone is insufficient.

@@ -134,12 +134,25 @@ class DiningAgent:
         try:
             exporter = get_trace_exporter()
             for st in result["agent"]["stages"]:
+                raw_stage_metadata = None
+                if st.get("stage") == "after_model":
+                    raw_stage_metadata = {
+                        "model_calls": result["agent"].get("model_calls"),
+                        "input_tokens": result["agent"].get("input_tokens"),
+                        "output_tokens": result["agent"].get("output_tokens"),
+                        "total_tokens": result["agent"].get("total_tokens"),
+                        "cached_tokens": result["agent"].get("cached_tokens"),
+                        "estimated_cost": result["agent"].get("estimated_cost"),
+                        "currency": result["agent"].get("currency"),
+                        "price_version": result["agent"].get("price_version"),
+                    }
                 exporter.record_stage(
                     run_id=result["run_id"],
                     session_ref=snapshot.get("meal", {}).get("id", "default"),
                     stage_name=st.get("stage", "stage"),
                     duration_ms=st.get("duration_ms", 0),
                     status=st.get("status", "ok"),
+                    raw_metadata=raw_stage_metadata,
                 )
         except Exception:  # noqa: BLE001, S110 - trace exporter failures must never crash generation
             pass

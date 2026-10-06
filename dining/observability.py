@@ -101,6 +101,39 @@ def operations_router(store, generation_worker=None, inference_settings=None):
                     "pending_count": pending_email,
                     "failed_count": failed_email,
                 }
+        total_in = sum(
+            r.get("input_tokens") or 0
+            for r in runs
+            if r.get("input_tokens") is not None
+        )
+        total_out = sum(
+            r.get("output_tokens") or 0
+            for r in runs
+            if r.get("output_tokens") is not None
+        )
+        total_tok = sum(
+            r.get("total_tokens") or 0
+            for r in runs
+            if r.get("total_tokens") is not None
+        )
+        total_cost = round(
+            sum(
+                r.get("estimated_cost") or 0.0
+                for r in runs
+                if r.get("estimated_cost") is not None
+            ),
+            8,
+        )
+        currencies = sorted(
+            {r.get("currency") for r in runs if r.get("currency") is not None}
+        )
+        cost_summary = {
+            "total_input_tokens": total_in,
+            "total_output_tokens": total_out,
+            "total_tokens": total_tok,
+            "total_estimated_cost": total_cost,
+            "currencies": currencies,
+        }
         return {
             "inference": inference_settings.public()
             if inference_settings
@@ -108,6 +141,7 @@ def operations_router(store, generation_worker=None, inference_settings=None):
             "meal_states": states,
             "inbox_jobs": jobs,
             "recent_runs": runs,
+            "cost_summary": cost_summary,
             "data_error_reports": data_error_reports,
             "recommendation_archives_count": recommendation_archives_count,
             "email_delivery_health": email_delivery_health,
