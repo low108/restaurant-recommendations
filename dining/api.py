@@ -876,7 +876,14 @@ def build_router(
             ),
             None,
         )
-        result["result"] = decode(meal["result"])
+        decoded_result = decode(meal["result"])
+        if decoded_result and "_private_routes" in decoded_result:
+            result["my_route_estimates"] = decoded_result.pop(
+                "_private_routes", {}
+            ).get(user_id, {})
+        else:
+            result["my_route_estimates"] = {}
+        result["result"] = decoded_result
         result["decision"] = decode(meal["decision"])
         result["manual_plan"] = decode(meal["manual_plan"])
         acknowledged = {

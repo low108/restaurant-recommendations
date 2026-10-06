@@ -26,6 +26,7 @@ from dining.routing import (
     RouteCoordinate,
     RouteEvidence,
     RouteRequest,
+    RouteStatus,
     RoutingProvider,
     get_routing_provider,
 )
@@ -212,6 +213,7 @@ class Recommender:
             "status": "no_options",
             "options": [],
             "verification": [],
+            "_private_routes": {},
             "catalog_id": self.catalog.catalog_id,
             "catalog_version": self.catalog.version,
             "synthetic": self.catalog.synthetic,
@@ -344,9 +346,119 @@ class Recommender:
                 evaluation_blocked = True
             if conflicts:
                 issues.append("Conflicting menu records need review.")
+
+            person_routes = {}
+            for person in people:
+                uid = person.get("user_id", str(id(person)))
+                origin = person.get("origin")
+                if (
+                    origin
+                    and origin.get("origin_mode") == "precise"
+                    and origin.get("route_consent")
+                    and origin.get("latitude") is not None
+                    and origin.get("longitude") is not None
+                    and outlet.latitude is not None
+                    and outlet.longitude is not None
+                ):
+                    origin_coord = RouteCoordinate(
+                        latitude=float(origin["latitude"]),
+                        longitude=float(origin["longitude"]),
+                    )
+                    dest_coord = RouteCoordinate(
+                        latitude=float(outlet.latitude),
+                        longitude=float(outlet.longitude),
+                    )
+                    mobility_mode = person.get("profile", {}).get(
+                        "mobility_mode", "drive"
+                    )
+                    evidence = self.request_route(
+                        origin=origin_coord,
+                        destination=dest_coord,
+                        mobility_mode=mobility_mode,
+                        arrival_time=at,
+                        departure_time=at,
+                    )
+                    if evidence.status == RouteStatus.OK and evidence.is_usable(at=now):
+                        person_routes[uid] = evidence
+
+            for person in people:
+                uid = person.get("user_id", str(id(person)))
+                evidence = person_routes.get(uid)
+                if evidence is not None and evidence.duration_minutes is not None:
+                    travel_min = evidence.duration_minutes
+                    arrival_dt = at + timedelta(minutes=travel_min)
+
+                    meal_end = at + timedelta(minutes=meal.get("duration_minutes", 60))
+                    if arrival_dt >= meal_end:
+                        issues.append(
+                            "Travel time prevents arriving before the planned meal concludes."
+                        )
+                        break
+
+                    arrival_service = _service_for(
+                        outlet,
+                        arrival_dt,
+                        max(15, meal.get("duration_minutes", 60) - travel_min),
+                        catalog=self.catalog,
+                        checked_at=now,
+                    )
+                    if arrival_service.passes is False:
+                        issues.append(
+                            "Travel time prevents arriving during open kitchen hours."
+                        )
+                        break
+
+                    must_leave_by_str = person.get("response", {}).get("must_leave_by")
+                    if must_leave_by_str:
+                        leave_dt = None
+                        try:
+                            leave_dt = datetime.fromisoformat(
+                                must_leave_by_str.replace("Z", "+00:00")
+                            )
+                            if leave_dt.tzinfo is None:
+                                leave_dt = leave_dt.replace(tzinfo=at.tzinfo)
+                        except (ValueError, TypeError):
+                            try:
+                                parts = must_leave_by_str.strip().split(":")
+                                if len(parts) == 2:
+                                    hh, mm = int(parts[0]), int(parts[1])
+                                    local_at = at.astimezone(ZoneInfo(outlet.timezone))
+                                    leave_dt = datetime.combine(
+                                        local_at.date(),
+                                        local_time(hh, mm),
+                                        tzinfo=local_at.tzinfo,
+                                    )
+                                    if leave_dt < local_at:
+                                        leave_dt += timedelta(days=1)
+                            except (ValueError, TypeError, IndexError):
+                                leave_dt = None
+                        if leave_dt is not None and arrival_dt >= leave_dt:
+                            issues.append(
+                                "Travel time prevents arriving before required departure or kitchen close."
+                            )
+                            break
+
             best = []
             for person in people:
                 profile, response = person["profile"], person["response"]
+                uid = person.get("user_id", str(id(person)))
+                evidence = person_routes.get(uid)
+                route_info = None
+                if evidence is not None and evidence.duration_minutes is not None:
+                    route_info = {
+                        "eta_minutes": evidence.duration_minutes,
+                        "source_id": evidence.provider_id,
+                        "observed_at": (
+                            evidence.provider_timestamp.isoformat()
+                            if evidence.provider_timestamp
+                            else now.isoformat()
+                        ),
+                        "expires_at": (
+                            evidence.evidence_expiry.isoformat()
+                            if evidence.evidence_expiry
+                            else (now + timedelta(hours=1)).isoformat()
+                        ),
+                    }
                 matches = []
                 unknown = False
                 budget = response.get("budget", profile.get("max_budget"))
@@ -408,7 +520,8 @@ class Recommender:
                         at=now,
                         observations=person.get("observations", []),
                         venue_preferences=person.get("venue_preferences", []),
-                        route=person.get("route_estimates", {}).get(outlet.outlet_id),
+                        route=route_info
+                        or person.get("route_estimates", {}).get(outlet.outlet_id),
                     )
                     matches.append((fit, item))
                 if not matches:
@@ -465,6 +578,24 @@ class Recommender:
             option_id = hashlib.sha256(
                 f"{POLICY_VERSION}:{FEATURE_VERSION}:{ONTOLOGY_VERSION}:{meal.get('id', '')}:{snapshot.get('revision', meal.get('revision'))}:{self.fingerprint}:{outlet.outlet_id}".encode()
             ).hexdigest()[:24]
+            travel_aggregate = {
+                "evidence_status": "firm" if person_routes else "unknown",
+                "route_checked_count": len(person_routes),
+            }
+            for uid, ev in person_routes.items():
+                if uid not in result["_private_routes"]:
+                    result["_private_routes"][uid] = {}
+                result["_private_routes"][uid][option_id] = {
+                    "outlet_id": outlet.outlet_id,
+                    "eta_minutes": ev.duration_minutes,
+                    "distance_km": (
+                        round(ev.distance_meters / 1000.0, 1)
+                        if ev.distance_meters is not None
+                        else None
+                    ),
+                    "evidence_fresh": ev.is_usable(at=now),
+                    "provider_id": ev.provider_id,
+                }
             candidates.append(
                 {
                     "id": option_id,
@@ -478,6 +609,7 @@ class Recommender:
                     "fit_confidence": "limited" if low_coverage else "supported",
                     "distance_km": round(distance, 1),
                     "price_range": {"min_minor": min(prices), "max_minor": max(prices)},
+                    "travel_aggregate": travel_aggregate,
                     "reasons": [
                         "A suitable menu choice for each included person",
                         "Listed payable meal prices fit all submitted caps",
