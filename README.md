@@ -147,7 +147,8 @@ evidence remain blockers. Recheck dates are app policy, not publisher guarantees
   the browser does not cancel processing. Leases, at most three attempts and context/
   evidence checks prevent stale publication. Sanitized attempt history survives
   regeneration; private inputs are not copied into receipts. See [worker details](docs/OPERATIONS.md).
-  Native external LangSmith tracing is disabled for private graph snapshots.
+  External LangSmith tracing is disabled by default and supports only privacy-reviewed structural
+  metadata export (`dining/tracing.py`) with strict sentinel and PII redaction.
 - Known date-specific exceptions override weekly hours. Current evidence must cover
   arrival, last orders and planned finish. Missing kitchen/date information remains
   unverified; the old holiday-known checkbox alone is insufficient.
