@@ -1,5 +1,4 @@
 from dining.eval_harness import (
-    EVALUATION_CASES,
     EvaluationHarness,
     run_synthetic_evaluation,
 )

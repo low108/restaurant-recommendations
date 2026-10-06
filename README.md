@@ -168,6 +168,11 @@ evidence remain blockers. Recheck dates are app policy, not publisher guarantees
   Melayu, Manglish mixed-language, ambiguous queries, prohibited dietary texts, malformed JSON, invented
   tags, and provider failures. The harness scores schema validity, tag precision, ambiguity detection,
   fallback resilience, token usage, and latency, clearly separating contract compliance from recommendation quality.
+- Restricted outcome and fairness dashboards (`dining/outcomes.py`, `/api/operations/outcomes`) report time to
+  decision, shortlist acceptance, veto frequency, unanimous agreement, manual-plan rate, repeat venue rate,
+  cuisine diversity, participant floor distribution, price accuracy, route feasibility, and data-error frequency.
+  Every rate explicitly declares numerator and denominator, small cohorts are suppressed (`< 5`), demo data
+  exclusion is supported, and no private answer text is ever exposed.
 - Known date-specific exceptions override weekly hours. Current evidence must cover
   arrival, last orders and planned finish. Missing kitchen/date information remains
   unverified; the old holiday-known checkbox alone is insufficient.

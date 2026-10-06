@@ -7,6 +7,7 @@ from fastapi import APIRouter, Header, HTTPException
 
 from dining.exposure import get_exposure_metrics
 from dining.generation import job_view, result_metadata
+from dining.outcomes import compute_outcome_metrics
 from dining.store import decode
 
 
@@ -144,6 +145,7 @@ def operations_router(store, generation_worker=None, inference_settings=None):
             "recent_runs": runs,
             "cost_summary": cost_summary,
             "exposure_metrics": get_exposure_metrics(db),
+            "outcomes": compute_outcome_metrics(db, min_cohort_size=5),
             "data_error_reports": data_error_reports,
             "recommendation_archives_count": recommendation_archives_count,
             "email_delivery_health": email_delivery_health,
@@ -156,5 +158,18 @@ def operations_router(store, generation_worker=None, inference_settings=None):
             "projection": "structural_only",
             "scope": "Current results and the latest 50 durable generation jobs with sanitized attempt receipts. Counts are not the PRD outcome metrics.",
         }
+
+    @router.get("/outcomes")
+    def outcomes(
+        x_operations_token: str = Header(default=""),
+        exclude_demo: bool = False,
+    ):
+        key = os.getenv("DINING_OPERATIONS_TOKEN", "")
+        if len(key) < 32:
+            raise HTTPException(503, "Operations access is not configured")
+        if not hmac.compare_digest(key, x_operations_token):
+            raise HTTPException(403, "Operations access denied")
+        with store.transaction() as db:
+            return compute_outcome_metrics(db, exclude_demo=exclude_demo)
 
     return router

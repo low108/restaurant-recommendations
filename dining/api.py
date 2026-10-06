@@ -1501,6 +1501,8 @@ def build_router(
                 exclude={"participant_ids", "idempotency_key", "deadline_minutes"},
             )
             payload["timezone"] = "Asia/Kuala_Lumpur"
+            if demo_mode:
+                payload["synthetic"] = True
             db.execute(
                 "INSERT INTO meals(id,room_id,organizer_id,payload,created_at,idempotency_key,original_answer_by,original_decision_by,original_invited_count) VALUES(?,?,?,?,?,?,?,?,?)",
                 (
@@ -1607,6 +1609,7 @@ def build_router(
             revision_check(meal, body.get("expected_revision"))
             values = decode(meal["payload"])
             values.pop("timezone", None)
+            values.pop("synthetic", None)
             values.update({k: v for k, v in body.items() if k in fields})
             values["idempotency_key"] = meal["idempotency_key"]
             try:
@@ -1620,6 +1623,8 @@ def build_router(
                 exclude={"participant_ids", "idempotency_key", "deadline_minutes"},
             )
             payload["timezone"] = "Asia/Kuala_Lumpur"
+            if demo_mode:
+                payload["synthetic"] = True
             db.execute(
                 "UPDATE meals SET payload=? WHERE id=?", (encode(payload), meal_id)
             )

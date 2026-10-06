@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import json
 import time
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Any
 
 from langchain_core.messages import AIMessage
@@ -21,7 +21,11 @@ class EvalCase:
     description: str
     input_text: str
     mock_response: Any = None
-    expected_status: tuple[str, ...] = ("validated", "uncertain", "needs_requirement_review")
+    expected_status: tuple[str, ...] = (
+        "validated",
+        "uncertain",
+        "needs_requirement_review",
+    )
 
 
 EVALUATION_CASES: list[EvalCase] = [
@@ -45,7 +49,11 @@ EVALUATION_CASES: list[EvalCase] = [
                     "uncertain": False,
                 }
             ),
-            usage_metadata={"input_tokens": 85, "output_tokens": 42, "total_tokens": 127},
+            usage_metadata={
+                "input_tokens": 85,
+                "output_tokens": 42,
+                "total_tokens": 127,
+            },
             response_metadata={"model_name": "ilmu-mini-v3.3"},
         ),
         expected_status=("proposed",),
@@ -70,7 +78,11 @@ EVALUATION_CASES: list[EvalCase] = [
                     "uncertain": False,
                 }
             ),
-            usage_metadata={"input_tokens": 80, "output_tokens": 40, "total_tokens": 120},
+            usage_metadata={
+                "input_tokens": 80,
+                "output_tokens": 40,
+                "total_tokens": 120,
+            },
             response_metadata={"model_name": "ilmu-mini-v3.3"},
         ),
         expected_status=("proposed",),
@@ -95,7 +107,11 @@ EVALUATION_CASES: list[EvalCase] = [
                     "uncertain": False,
                 }
             ),
-            usage_metadata={"input_tokens": 92, "output_tokens": 45, "total_tokens": 137},
+            usage_metadata={
+                "input_tokens": 92,
+                "output_tokens": 45,
+                "total_tokens": 137,
+            },
             response_metadata={"model_name": "ilmu-mini-v3.3"},
         ),
         expected_status=("proposed",),
@@ -120,7 +136,11 @@ EVALUATION_CASES: list[EvalCase] = [
                     "uncertain": True,
                 }
             ),
-            usage_metadata={"input_tokens": 75, "output_tokens": 30, "total_tokens": 105},
+            usage_metadata={
+                "input_tokens": 75,
+                "output_tokens": 30,
+                "total_tokens": 105,
+            },
             response_metadata={"model_name": "ilmu-mini-v3.3"},
         ),
         expected_status=("uncertain",),
@@ -140,7 +160,11 @@ EVALUATION_CASES: list[EvalCase] = [
         input_text="Craving fried chicken",
         mock_response=AIMessage(
             content="Here is your recommendation: {not valid json...}",
-            usage_metadata={"input_tokens": 60, "output_tokens": 20, "total_tokens": 80},
+            usage_metadata={
+                "input_tokens": 60,
+                "output_tokens": 20,
+                "total_tokens": 80,
+            },
             response_metadata={"model_name": "ilmu-mini-v3.3"},
         ),
         expected_status=("unavailable", "fallback"),
@@ -165,7 +189,11 @@ EVALUATION_CASES: list[EvalCase] = [
                     "uncertain": False,
                 }
             ),
-            usage_metadata={"input_tokens": 70, "output_tokens": 35, "total_tokens": 105},
+            usage_metadata={
+                "input_tokens": 70,
+                "output_tokens": 35,
+                "total_tokens": 105,
+            },
             response_metadata={"model_name": "ilmu-mini-v3.3"},
         ),
         expected_status=("unavailable", "fallback"),
@@ -271,7 +299,12 @@ class EvaluationHarness:
             if is_valid_status:
                 passed += 1
 
-            if status in {"proposed", "uncertain", "needs_requirement_review", "unavailable"}:
+            if status in {
+                "proposed",
+                "uncertain",
+                "needs_requirement_review",
+                "unavailable",
+            }:
                 valid_schemas += 1
 
             if status == "unavailable":
@@ -335,7 +368,9 @@ class EvaluationHarness:
         )
 
 
-def run_synthetic_evaluation(settings: InferenceSettings | None = None) -> EvaluationReport:
+def run_synthetic_evaluation(
+    settings: InferenceSettings | None = None,
+) -> EvaluationReport:
     active_settings = settings
     if active_settings is None or not active_settings.enabled:
         active_settings = InferenceSettings(
