@@ -32,6 +32,7 @@ from .generation import (
     snapshot_identity,
     supersede_jobs,
 )
+from .geocoding import get_geocoding_provider
 from .inference import InferenceSettings
 from .lifecycle import planned_finish, post_meal_transition
 from .preferences import interpret_preferences
@@ -1399,6 +1400,18 @@ def build_router(
                 db.execute("SELECT * FROM meals WHERE id=?", (meal_id,)).fetchone(),
                 auth["user_id"],
             )
+
+    @router.get("/locations/neighbourhoods")
+    def lookup_neighbourhoods(query: str = ""):
+        provider = get_geocoding_provider()
+        res = provider.lookup_neighbourhood(query)
+        return res.to_dict()
+
+    @router.get("/locations/reverse")
+    def reverse_lookup_location(latitude: float, longitude: float):
+        provider = get_geocoding_provider()
+        res = provider.reverse_lookup(latitude, longitude)
+        return res.to_dict()
 
     @router.get("/meals/{meal_id}")
     def get_meal(meal_id: str, auth=Auth):

@@ -159,6 +159,7 @@ npm run test:e2e
 `web/` owns the responsive interface; `dining/api.py` and `dining/store.py` own
 authenticated application state; `dining/catalog.py` is the collector contract;
 `dining/routing.py` owns the provider-neutral routing contract;
+`dining/geocoding.py` owns the provider-neutral geocoding and neighbourhood lookup contract;
 `dining/recommendation.py` owns deterministic eligibility/ranking; `dining/agent.py`
 owns the bounded LangGraph flow; `dining/generation.py` owns persisted job attempts.
 Browser tests start a disposable fictional-data server and isolated diner contexts.
