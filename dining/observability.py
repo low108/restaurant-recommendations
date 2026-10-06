@@ -1,0 +1,124 @@
+"""Restricted, structural operations summaries; raw profiles/prompts are never exported."""
+
+import hmac
+import os
+
+from fastapi import APIRouter, Header, HTTPException
+
+from dining.generation import job_view, result_metadata
+from dining.store import decode
+
+
+def public_run(meal):
+    result = decode(meal["result"], {})
+    metadata = result_metadata(result)
+    return {
+        **metadata,
+        "session_ref": meal["id"],
+        "context_version": meal["revision"],
+        "status": metadata["result_status"],
+        "eligible_count": metadata["option_count"],
+    }
+
+
+def operations_router(store, generation_worker=None, inference_settings=None):
+    router = APIRouter(prefix="/api/operations")
+
+    @router.get("/summary")
+    def summary(x_operations_token: str = Header(default="")):
+        key = os.getenv("DINING_OPERATIONS_TOKEN", "")
+        if len(key) < 32:
+            raise HTTPException(503, "Operations access is not configured")
+        if not hmac.compare_digest(key, x_operations_token):
+            raise HTTPException(403, "Operations access denied")
+        with store.transaction() as db:
+            states = {
+                r["status"]: r["count"]
+                for r in db.execute(
+                    "SELECT status,COUNT(*) AS count FROM meals GROUP BY status"
+                )
+            }
+            jobs = {
+                r["status"]: r["count"]
+                for r in db.execute(
+                    "SELECT status,COUNT(*) AS count FROM notification_jobs GROUP BY status"
+                )
+            }
+            generation_jobs = {
+                row["status"]: row["count"]
+                for row in db.execute(
+                    "SELECT status,COUNT(*) AS count FROM generation_jobs GROUP BY status"
+                )
+            }
+            generation_history = [
+                {**job_view(db, row), "session_ref": row["meal_id"]}
+                for row in db.execute(
+                    "SELECT * FROM generation_jobs ORDER BY created_at DESC,id DESC LIMIT 50"
+                ).fetchall()
+            ]
+            runs = [
+                public_run(row)
+                for row in db.execute(
+                    "SELECT id,revision,result FROM meals WHERE result IS NOT NULL ORDER BY created_at DESC LIMIT 100"
+                )
+            ]
+            data_error_reports = [
+                {
+                    "id": row["id"],
+                    "meal_id": row["meal_id"],
+                    "outlet_id": row["outlet_id"],
+                    "category": row["category"],
+                    "status": row["status"],
+                    "created_at": row["created_at"],
+                }
+                for row in db.execute(
+                    "SELECT id,meal_id,outlet_id,category,status,created_at FROM data_error_reports ORDER BY created_at DESC LIMIT 50"
+                ).fetchall()
+            ]
+            recommendation_archives_count = db.execute(
+                "SELECT COUNT(*) FROM recommendation_archives"
+            ).fetchone()[0]
+            has_email_table = db.execute(
+                "SELECT 1 FROM sqlite_master WHERE type='table' AND name='account_email_outbox'"
+            ).fetchone()
+            email_delivery_health = None
+            if has_email_table:
+                total_email = db.execute(
+                    "SELECT COUNT(*) FROM account_email_outbox"
+                ).fetchone()[0]
+                sent_email = db.execute(
+                    "SELECT COUNT(*) FROM account_email_outbox WHERE status='sent'"
+                ).fetchone()[0]
+                pending_email = db.execute(
+                    "SELECT COUNT(*) FROM account_email_outbox WHERE status='pending'"
+                ).fetchone()[0]
+                failed_email = db.execute(
+                    "SELECT COUNT(*) FROM account_email_outbox WHERE status='failed'"
+                ).fetchone()[0]
+                email_delivery_health = {
+                    "total_jobs": total_email,
+                    "sent_count": sent_email,
+                    "pending_count": pending_email,
+                    "failed_count": failed_email,
+                }
+        return {
+            "inference": inference_settings.public()
+            if inference_settings
+            else {"configuration_status": "unknown"},
+            "meal_states": states,
+            "inbox_jobs": jobs,
+            "recent_runs": runs,
+            "data_error_reports": data_error_reports,
+            "recommendation_archives_count": recommendation_archives_count,
+            "email_delivery_health": email_delivery_health,
+            "generation_jobs": generation_jobs,
+            "generation_worker": generation_worker.health()
+            if generation_worker
+            else {"status": "unavailable"},
+            "recent_generation_jobs": generation_history,
+            "trace_export": "disabled",
+            "projection": "structural_only",
+            "scope": "Current results and the latest 50 durable generation jobs with sanitized attempt receipts. Counts are not the PRD outcome metrics.",
+        }
+
+    return router
