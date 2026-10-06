@@ -47,6 +47,11 @@ from .generation import (
 from .geocoding import get_geocoding_provider
 from .inference import InferenceSettings
 from .lifecycle import planned_finish, post_meal_transition
+from .personal_recommendations import (
+    get_personal_recommendations,
+    save_personal_recommendations,
+    score_personal_options,
+)
 from .preferences import interpret_preferences
 from .push import PushSubscriptionManager
 from .store import DEFAULT_PROFILE, DiningStore, decode, encode
@@ -421,6 +426,11 @@ class DataErrorReport(Input):
         "other",
     ]
     description: str = Field(min_length=5, max_length=1000)
+
+
+class PersonalAction(Input):
+    expected_revision: int
+    action: Literal["save_backup", "choose_separately", "dismiss"]
 
 
 class Feedback(Input):
@@ -972,6 +982,9 @@ def build_router(
         else:
             result["my_route_estimates"] = {}
         result["result"] = decoded_result
+        result["my_personal_recommendations"] = get_personal_recommendations(
+            db, meal["id"], user_id, meal["revision"]
+        )
         result["decision"] = decode(meal["decision"])
         result["manual_plan"] = decode(meal["manual_plan"])
         acknowledged = {
@@ -2504,6 +2517,33 @@ def build_router(
             ),
         )
         record_generation_exposures(db, job["meal_id"], job["context_revision"], result)
+        for uid in decode(meal["frozen_participants"], []):
+            p_row = db.execute(
+                "SELECT p.*, u.profile FROM participants p JOIN users u ON u.id=p.user_id WHERE p.meal_id=? AND p.user_id=?",
+                (job["meal_id"], uid),
+            ).fetchone()
+            if p_row:
+                diner_dict = {
+                    "user_id": uid,
+                    "profile": decode(p_row["profile"], {}),
+                    "response": decode(p_row["response"], {}),
+                }
+                active_cat = getattr(recommend, "catalog", None) or getattr(
+                    getattr(recommend, "recommender", None), "catalog", None
+                )
+                if active_cat:
+                    personal_opts = score_personal_options(
+                        diner=diner_dict,
+                        candidate_options=result.get("options", []),
+                        catalog=active_cat,
+                    )
+                    save_personal_recommendations(
+                        db,
+                        meal_id=job["meal_id"],
+                        user_id=uid,
+                        meal_revision=job["context_revision"],
+                        options=personal_opts,
+                    )
         notify(
             db,
             decode(meal["frozen_participants"], []),
@@ -2653,6 +2693,33 @@ def build_router(
                 (f"{meal_id}:{revision}", meal_id, revision, encode(result), stamp()),
             )
             record_generation_exposures(db, meal_id, revision, result)
+            for uid in included:
+                p_row = db.execute(
+                    "SELECT p.*, u.profile FROM participants p JOIN users u ON u.id=p.user_id WHERE p.meal_id=? AND p.user_id=?",
+                    (meal_id, uid),
+                ).fetchone()
+                if p_row:
+                    diner_dict = {
+                        "user_id": uid,
+                        "profile": decode(p_row["profile"], {}),
+                        "response": decode(p_row["response"], {}),
+                    }
+                    active_cat = getattr(recommend, "catalog", None) or getattr(
+                        getattr(recommend, "recommender", None), "catalog", None
+                    )
+                    if active_cat:
+                        personal_opts = score_personal_options(
+                            diner=diner_dict,
+                            candidate_options=result.get("options", []),
+                            catalog=active_cat,
+                        )
+                        save_personal_recommendations(
+                            db,
+                            meal_id=meal_id,
+                            user_id=uid,
+                            meal_revision=revision,
+                            options=personal_opts,
+                        )
             notify(
                 db,
                 included,
@@ -2669,6 +2736,71 @@ def build_router(
                 db.execute("SELECT * FROM meals WHERE id=?", (meal_id,)).fetchone(),
                 auth["user_id"],
             )
+
+    @router.post("/meals/{meal_id}/personal-recommendations/{rank}/action")
+    def personal_action(meal_id: str, rank: int, body: PersonalAction, auth=Auth):
+        with store.transaction() as db:
+            meal = meal_member(
+                db, meal_id, auth["user_id"], mutable=True, allow_selected=True
+            )
+            revision_check(meal, body.expected_revision)
+            rec = db.execute(
+                "SELECT * FROM personal_recommendations WHERE meal_id=? AND user_id=? AND meal_revision=? AND rank=?",
+                (meal_id, auth["user_id"], meal["revision"], rank),
+            ).fetchone()
+            if not rec:
+                raise HTTPException(404, "Personal recommendation not found")
+            now_stamp = stamp()
+            if body.action == "save_backup":
+                db.execute(
+                    "UPDATE personal_recommendations SET status='saved_backup', updated_at=? WHERE meal_id=? AND user_id=? AND meal_revision=? AND rank=?",
+                    (now_stamp, meal_id, auth["user_id"], meal["revision"], rank),
+                )
+                audit(
+                    db,
+                    auth["user_id"],
+                    "personal_rec_saved_backup",
+                    meal["room_id"],
+                    meal_id,
+                )
+            elif body.action == "dismiss":
+                db.execute(
+                    "UPDATE personal_recommendations SET status='dismissed', updated_at=? WHERE meal_id=? AND user_id=? AND meal_revision=? AND rank=?",
+                    (now_stamp, meal_id, auth["user_id"], meal["revision"], rank),
+                )
+                audit(
+                    db,
+                    auth["user_id"],
+                    "personal_rec_dismissed",
+                    meal["room_id"],
+                    meal_id,
+                )
+            elif body.action == "choose_separately":
+                db.execute(
+                    "UPDATE personal_recommendations SET status='chosen_separately', updated_at=? WHERE meal_id=? AND user_id=? AND meal_revision=? AND rank=?",
+                    (now_stamp, meal_id, auth["user_id"], meal["revision"], rank),
+                )
+                audit(
+                    db,
+                    auth["user_id"],
+                    "personal_rec_chosen_separately",
+                    meal["room_id"],
+                    meal_id,
+                )
+                if meal["status"] in {"collecting", "generating", "shortlisted"}:
+                    db.execute(
+                        "UPDATE participants SET attendance='decline' WHERE meal_id=? AND user_id=?",
+                        (meal_id, auth["user_id"]),
+                    )
+                    db.execute(
+                        "UPDATE meals SET revision=revision+1, status='collecting' WHERE id=?",
+                        (meal_id,),
+                    )
+                    invalidate(db, meal_id)
+                    meal = db.execute(
+                        "SELECT * FROM meals WHERE id=?", (meal_id,)
+                    ).fetchone()
+            return meal_view(db, meal, auth["user_id"])
 
     @router.post("/meals/{meal_id}/votes")
     def vote(meal_id: str, body: Vote, auth=Auth):
@@ -3504,6 +3636,22 @@ def build_router(
                     }
                     for r in db.execute(
                         "SELECT * FROM exposure_events WHERE user_id=?",
+                        (auth["user_id"],),
+                    )
+                ],
+                "personal_recommendations": [
+                    {
+                        "meal_id": r["meal_id"],
+                        "meal_revision": r["meal_revision"],
+                        "outlet_id": r["outlet_id"],
+                        "item_id": r["item_id"],
+                        "rank": r["rank"],
+                        "score": r["score"],
+                        "status": r["status"],
+                        "created_at": r["created_at"],
+                    }
+                    for r in db.execute(
+                        "SELECT * FROM personal_recommendations WHERE user_id=?",
                         (auth["user_id"],),
                     )
                 ],

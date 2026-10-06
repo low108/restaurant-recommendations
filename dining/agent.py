@@ -43,6 +43,7 @@ class DiningAgent:
         use_model: bool = False,
         settings: InferenceSettings | None = None,
     ):
+        self.catalog = catalog
         self.recommender = Recommender(catalog)
         self.revalidate = self.recommender
         self.settings = settings or InferenceSettings.from_env(use_model=use_model)

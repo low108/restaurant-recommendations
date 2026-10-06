@@ -178,6 +178,11 @@ evidence remain blockers. Recheck dates are app policy, not publisher guarantees
   taste projections, group overlap, and keyword matches with duplicate menu invariance and per-outlet item caps.
   All retrieved candidates pass through the existing deterministic hard eligibility and scoring gates, with
   graceful structured fallback when the index is absent or unavailable.
+- Owner-scoped personal recommendations (`personal_recommendations`, `dining/personal_recommendations.py`) rank
+  the group-eligible pool for each individual diner, presenting private "Best fit for you" alternatives with
+  specific eligible menu items and reason codes. Diners can keep personal backups without altering group votes,
+  or choose separately (pre-selection separate choices withdraw from group consensus and trigger fresh generation;
+  post-selection choices record the diner's personal alternative while preserving shared group history).
 - Known date-specific exceptions override weekly hours. Current evidence must cover
   arrival, last orders and planned finish. Missing kitchen/date information remains
   unverified; the old holiday-known checkbox alone is insufficient.

@@ -270,6 +270,24 @@ class DiningStore:
             CREATE INDEX IF NOT EXISTS exposure_events_meal ON exposure_events(meal_id,meal_revision);
             CREATE INDEX IF NOT EXISTS exposure_events_type ON exposure_events(event_type);
             CREATE INDEX IF NOT EXISTS exposure_events_user ON exposure_events(user_id);
+            CREATE TABLE IF NOT EXISTS personal_recommendations (
+              meal_id TEXT NOT NULL REFERENCES meals(id) ON DELETE CASCADE,
+              user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+              meal_revision INTEGER NOT NULL,
+              outlet_id TEXT NOT NULL,
+              item_id TEXT NOT NULL,
+              rank INTEGER NOT NULL,
+              score REAL NOT NULL,
+              scoring_version TEXT NOT NULL,
+              retrieval_version TEXT NOT NULL,
+              eligibility_receipt TEXT NOT NULL,
+              reason_codes TEXT NOT NULL,
+              status TEXT NOT NULL DEFAULT 'suggested',
+              created_at TEXT NOT NULL,
+              updated_at TEXT NOT NULL,
+              PRIMARY KEY (meal_id, user_id, meal_revision, rank)
+            );
+            CREATE INDEX IF NOT EXISTS personal_recs_user ON personal_recommendations(user_id, meal_id, meal_revision);
             CREATE INDEX IF NOT EXISTS push_jobs_status ON push_delivery_jobs(status,next_attempt_at);
             """)
             # Additive migrations keep existing accounts, responses and historical votes.

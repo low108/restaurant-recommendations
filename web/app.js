@@ -538,12 +538,42 @@ function evidenceHTML(evidence) {
     return `<li>${url ? `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)}</a>` : esc(label)}${item.claim || item.value ? ': '+esc(item.claim || (typeof item.value === 'object' ? JSON.stringify(item.value) : item.value)) : ''}${(item.fetched_at || item.observed_at) ? ' · observed '+esc(dateLabel(item.fetched_at || item.observed_at)) : ''}${item.status ? ' · '+esc(title(item.status)) : ''}</li>`;
   }).join('')}</ul>`;
 }
+function personalRecommendationsHTML(meal) {
+  const recs = list(meal.my_personal_recommendations);
+  if (!recs.length || meal.decision) return '';
+  const top = recs[0];
+  const others = recs.slice(1);
+  const statusLabels = {
+    suggested: 'Private suggestion',
+    saved_backup: 'Saved as your backup',
+    chosen_separately: 'Chosen separately',
+    dismissed: 'Dismissed',
+  };
+  return `<section class="card personal-recommendation-card" style="border-left: 4px solid var(--accent, #e53e3e); margin-bottom: 1.5rem;">
+    <div class="spread">
+      <span class="tag outline">BEST FIT FOR YOU</span>
+      <small class="muted">Private to you · Does not alter group vote</small>
+    </div>
+    <h3 style="margin-top: 0.5rem;">${esc(top.item_name || 'Recommended Dish')} at ${esc(top.outlet_name || 'Restaurant')}</h3>
+    ${top.price_minor != null ? `<p class="muted">${esc(currency(top.price_minor))} · Status: ${esc(statusLabels[top.status] || top.status)}</p>` : ''}
+    <ul class="reason-list" style="margin: 0.5rem 0;">
+      ${list(top.reason_codes).map(code => `<li>${icon('check')}<span>${esc(readableText(code))}</span></li>`).join('')}
+    </ul>
+    <div class="inline" style="gap: 0.5rem; margin-top: 0.75rem;">
+      ${top.status !== 'saved_backup' ? `<button class="btn secondary small" data-action="personal-action" data-rank="${top.rank}" data-personal-action="save_backup">Keep as my backup</button>` : '<span class="tag">Backup saved</span>'}
+      ${top.status !== 'chosen_separately' ? `<button class="btn secondary small" data-action="personal-action" data-rank="${top.rank}" data-personal-action="choose_separately">Choose this instead</button>` : '<span class="tag">Chosen separately</span>'}
+      ${top.status !== 'dismissed' ? `<button class="text-button small" data-action="personal-action" data-rank="${top.rank}" data-personal-action="dismiss">Dismiss</button>` : ''}
+    </div>
+    ${others.length ? `<details style="margin-top: 0.75rem;"><summary>See other personal options (${others.length})</summary><div style="margin-top: 0.5rem;">${others.map(o => `<div style="padding: 0.5rem 0; border-top: 1px solid var(--border, #eee);"><div class="spread"><strong>${esc(o.item_name)} at ${esc(o.outlet_name)}</strong><small>${esc(currency(o.price_minor))}</small></div><div class="inline" style="gap: 0.5rem; margin-top: 0.25rem;"><button class="btn secondary small" data-action="personal-action" data-rank="${o.rank}" data-personal-action="save_backup">Backup</button><button class="btn secondary small" data-action="personal-action" data-rank="${o.rank}" data-personal-action="choose_separately">Choose</button></div></div>`).join('')}</div></details>` : ''}
+  </section>`;
+}
+
 function optionsHTML(meal) {
   const result = meal.result; if (!result) return '';
   const options = list(result.options || result.candidates);
   let header = `<div class="section-heading"><div class="eyebrow">A LITTLE COMMON GROUND</div><h2 data-i18n="Your%20table%E2%80%99s%20shortlist">Your table’s shortlist</h2><p data-i18n="Compare%20the%20evidence%2C%20share%20a%20vote%2C%20and%20choose%20together.">Compare the evidence, share a vote, and choose together.</p></div>`;
   if (result.explanation) header += `<div class="notice">${esc(readableText(result.explanation))}</div>`;
-  header += resultCoverage(result) + delegationHTML(meal);
+  header += resultCoverage(result) + delegationHTML(meal) + personalRecommendationsHTML(meal);
   if (result.status !== 'shortlisted' && !options.length) {
     const status = result.status === 'needs_verification' ? 'A few facts need checking first.' : 'No supported matches in this catalog yet.';
     return header + empty(status, readableText(result.message) || readableText(result.reason) || 'We won’t fill the gap with a guess. Review the information below. A limited collection cannot tell us that no suitable restaurant exists elsewhere.', '', 'shield') + verificationHTML(result.verification);
@@ -806,6 +836,22 @@ document.addEventListener('click', async event => {
       const data=await api(`/meals/${encodeURIComponent(state.meal.id)}/adaptive-question/${encodeURIComponent(button.dataset.requestId)}`,{method:'POST',body:{choice:skipped?null:button.dataset.choice,skip:skipped}});
       state.meal=data.meal||data;state.adaptiveQuestion={status:skipped?'already_skipped':'already_answered'};render();toast(skipped?'Optional question skipped. Your saved answer is unchanged.':'Your choice is saved. The group context will use the updated answer.');
     });return;
+  }
+  if (action === 'personal-action') {
+    const rank = Number(button.dataset.rank);
+    const personalAction = button.dataset.personalAction;
+    await mutate(button, async () => {
+      const updated = await api(`/meals/${encodeURIComponent(state.meal.id)}/personal-recommendations/${encodeURIComponent(rank)}/action`, {
+        method: 'POST',
+        body: { expected_revision: state.meal.revision, action: personalAction },
+      });
+      state.meal = updated.meal || updated;
+      render();
+      if (personalAction === 'save_backup') toast('Personal backup saved. Group votes are unchanged.');
+      else if (personalAction === 'choose_separately') toast('Personal separate choice recorded.');
+      else toast('Personal suggestion dismissed.');
+    });
+    return;
   }
   if (action === 'choose-vote') {
     const prior = state.meal.my_votes?.[button.dataset.id];
