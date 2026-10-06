@@ -107,6 +107,9 @@ evidence remain blockers. Recheck dates are app policy, not publisher guarantees
   revocation. Authenticated mutations require CSRF tokens and same-origin checks.
 - Room, participant, owner and organizer checks run on the server. Shared results
   omit private check-in contents and attributed dietary information.
+- Owner-scoped private meal origins (`meal_origins`) support precise coordinates,
+  approximate areas, or opting out, with explicit route processing consent. Private
+  origins are never exposed to other participants, shared responses, or model prompts.
 - Profiles and check-ins have explicit unknown states. Declared allergies and
   free-text must-avoid ingredients require additional verification; scraped menus
   do not establish preparation safety. This pilot has no restaurant-confirmation
