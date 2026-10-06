@@ -248,6 +248,17 @@ class DiningStore:
               created_at TEXT NOT NULL,updated_at TEXT NOT NULL
             );
             CREATE INDEX IF NOT EXISTS push_subs_user ON push_subscriptions(user_id);
+            CREATE TABLE IF NOT EXISTS push_delivery_jobs (
+              id TEXT PRIMARY KEY,user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+              subscription_id TEXT NOT NULL REFERENCES push_subscriptions(id) ON DELETE CASCADE,
+              event_id TEXT NOT NULL,kind TEXT NOT NULL,payload TEXT NOT NULL,
+              status TEXT NOT NULL DEFAULT 'pending',attempts INTEGER NOT NULL DEFAULT 0,
+              max_attempts INTEGER NOT NULL DEFAULT 3,next_attempt_at REAL NOT NULL DEFAULT 0,
+              lease_token TEXT,lease_until REAL,expires_at REAL NOT NULL,
+              acknowledged_at REAL,last_error TEXT,created_at TEXT NOT NULL,
+              UNIQUE(user_id,subscription_id,event_id)
+            );
+            CREATE INDEX IF NOT EXISTS push_jobs_status ON push_delivery_jobs(status,next_attempt_at);
             """)
             # Additive migrations keep existing accounts, responses and historical votes.
             additions = {
