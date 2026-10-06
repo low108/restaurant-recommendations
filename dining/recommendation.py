@@ -266,19 +266,13 @@ class Recommender:
                 explanation="Some requirements need private clarification before suitability can be checked.",
             )
             return result
-        # A general scraped ingredient list cannot establish an order-specific preparation agreement.
-        if any(
+        has_allergy_needs = any(
             p["profile"].get("allergy_status") == "declared"
             or p["profile"].get("allergens")
+            or p["response"].get("avoid")
             for p in people
-        ):
-            result.update(
-                status="needs_verification",
-                explanation="Some private requirements need further verification before options can be shared.",
-            )
-            return result
-        if any(p["response"].get("avoid") for p in people):
-            # Arbitrary ingredient text is not an allergen ontology or proof of absence.
+        )
+        if has_allergy_needs and not snapshot.get("preparation_confirmations"):
             result.update(
                 status="needs_verification",
                 explanation="Some private requirements need further verification before options can be shared.",
@@ -379,6 +373,53 @@ class Recommender:
                 evaluation_blocked = True
             if conflicts:
                 issues.append("Conflicting menu records need review.")
+
+            if has_allergy_needs:
+                outlet_confs = [
+                    c
+                    for c in snapshot.get("preparation_confirmations", [])
+                    if c.get("outlet_id") == outlet.outlet_id
+                ]
+                valid_confs = []
+                for c in outlet_confs:
+                    try:
+                        exp = datetime.fromisoformat(
+                            c["expires_at"].replace("Z", "+00:00")
+                        )
+                        if exp.tzinfo is None:
+                            exp = exp.replace(tzinfo=timezone.utc)
+                        if exp >= now and exp >= at:
+                            valid_confs.append(c)
+                    except (KeyError, TypeError, ValueError):
+                        pass
+
+                allergy_unconfirmed = False
+                for p in people:
+                    allergens = {
+                        s.casefold() for s in p["profile"].get("allergens", [])
+                    }
+                    for a in allergens:
+                        if not any(
+                            a in c.get("exact_bounded_claim", "").casefold()
+                            for c in valid_confs
+                        ):
+                            allergy_unconfirmed = True
+                            break
+                    avoids = {s.casefold() for s in p["response"].get("avoid", [])}
+                    for av in avoids:
+                        if not any(
+                            av in c.get("exact_bounded_claim", "").casefold()
+                            for c in valid_confs
+                        ):
+                            allergy_unconfirmed = True
+                            break
+                    if allergy_unconfirmed:
+                        break
+
+                if allergy_unconfirmed:
+                    issues.append(
+                        "Preparation safety and cross-contact for declared requirements need confirmation."
+                    )
 
             person_routes = {}
             for person in people:

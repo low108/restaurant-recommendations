@@ -263,6 +263,29 @@ class MealOriginInput(Input):
         return self
 
 
+class PreparationConfirmationInput(Input):
+    outlet_id: str = Field(min_length=1)
+    requirement_category: Literal["allergen", "dietary", "cross_contact", "other"]
+    exact_bounded_claim: str = Field(min_length=5, max_length=500)
+    confirmed_by: str = Field(min_length=1, max_length=120)
+    confirmation_channel: Literal[
+        "phone", "in_person", "written_statement", "platform_chat"
+    ]
+    confirmed_at: str
+    expires_at: str
+
+    @model_validator(mode="after")
+    def validate_times(self):
+        try:
+            c = datetime.fromisoformat(self.confirmed_at.replace("Z", "+00:00"))
+            e = datetime.fromisoformat(self.expires_at.replace("Z", "+00:00"))
+            if e <= c:
+                raise ValueError("expires_at must be strictly after confirmed_at")
+        except ValueError as err:
+            raise ValueError(f"Invalid timestamp: {err}") from err
+        return self
+
+
 class Generate(Input):
     expected_revision: int = Field(ge=1)
     participant_ids: list[str] | None = Field(default=None, min_length=2, max_length=8)
@@ -1833,6 +1856,93 @@ def build_router(
             audit(db, auth["user_id"], "meal_origin_deleted", meal["room_id"], meal_id)
             return {"deleted": True}
 
+    @router.post("/meals/{meal_id}/preparation-confirmations", status_code=201)
+    def add_preparation_confirmation(
+        meal_id: str, body: PreparationConfirmationInput, auth=Auth
+    ):
+        with store.transaction() as db:
+            meal = meal_member(db, meal_id, auth["user_id"], mutable=True)
+            conf_id = str(uuid.uuid4())
+            now_iso = stamp()
+            db.execute(
+                """
+                INSERT INTO preparation_confirmations(
+                    id, meal_id, outlet_id, requirement_category, confirmed_by,
+                    confirmation_channel, confirmed_at, expires_at, exact_bounded_claim, created_at
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                (
+                    conf_id,
+                    meal_id,
+                    body.outlet_id,
+                    body.requirement_category,
+                    body.confirmed_by,
+                    body.confirmation_channel,
+                    body.confirmed_at,
+                    body.expires_at,
+                    body.exact_bounded_claim,
+                    now_iso,
+                ),
+            )
+            invalidate(db, meal_id)
+            audit(
+                db, auth["user_id"], "preparation_confirmed", meal["room_id"], meal_id
+            )
+            return {
+                "id": conf_id,
+                "meal_id": meal_id,
+                "outlet_id": body.outlet_id,
+                "requirement_category": body.requirement_category,
+                "confirmed_by": body.confirmed_by,
+                "confirmation_channel": body.confirmation_channel,
+                "confirmed_at": body.confirmed_at,
+                "expires_at": body.expires_at,
+                "exact_bounded_claim": body.exact_bounded_claim,
+                "created_at": now_iso,
+            }
+
+    @router.get("/meals/{meal_id}/preparation-confirmations")
+    def list_preparation_confirmations(meal_id: str, auth=Auth):
+        with store.transaction() as db:
+            meal_member(db, meal_id, auth["user_id"])
+            rows = db.execute(
+                "SELECT * FROM preparation_confirmations WHERE meal_id=? ORDER BY created_at",
+                (meal_id,),
+            ).fetchall()
+            return [
+                {
+                    "id": r["id"],
+                    "meal_id": r["meal_id"],
+                    "outlet_id": r["outlet_id"],
+                    "requirement_category": r["requirement_category"],
+                    "confirmed_by": r["confirmed_by"],
+                    "confirmation_channel": r["confirmation_channel"],
+                    "confirmed_at": r["confirmed_at"],
+                    "expires_at": r["expires_at"],
+                    "exact_bounded_claim": r["exact_bounded_claim"],
+                    "created_at": r["created_at"],
+                }
+                for r in rows
+            ]
+
+    @router.delete("/meals/{meal_id}/preparation-confirmations/{confirmation_id}")
+    def delete_preparation_confirmation(meal_id: str, confirmation_id: str, auth=Auth):
+        with store.transaction() as db:
+            meal = meal_member(db, meal_id, auth["user_id"], mutable=True)
+            db.execute(
+                "DELETE FROM preparation_confirmations WHERE id=? AND meal_id=?",
+                (confirmation_id, meal_id),
+            )
+            invalidate(db, meal_id)
+            audit(
+                db,
+                auth["user_id"],
+                "preparation_confirmation_deleted",
+                meal["room_id"],
+                meal_id,
+            )
+            return {"deleted": True}
+
     def snapshot_for(db, meal, included):
         participants = []
         for uid in included:
@@ -1929,6 +2039,23 @@ def build_router(
                     "meal_at": decode(old["payload"])["meal_at"],
                 }
             )
+        confirmations = [
+            {
+                "id": r["id"],
+                "meal_id": r["meal_id"],
+                "outlet_id": r["outlet_id"],
+                "requirement_category": r["requirement_category"],
+                "confirmed_by": r["confirmed_by"],
+                "confirmation_channel": r["confirmation_channel"],
+                "confirmed_at": r["confirmed_at"],
+                "expires_at": r["expires_at"],
+                "exact_bounded_claim": r["exact_bounded_claim"],
+            }
+            for r in db.execute(
+                "SELECT * FROM preparation_confirmations WHERE meal_id=?",
+                (meal["id"],),
+            )
+        ]
         return {
             "meal": {
                 **decode(meal["payload"]),
@@ -1938,6 +2065,7 @@ def build_router(
             },
             "participants": participants,
             "history": history,
+            "preparation_confirmations": confirmations,
             "revision": meal["revision"],
         }
 

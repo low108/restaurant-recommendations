@@ -116,6 +116,9 @@ evidence remain blockers. Recheck dates are app policy, not publisher guarantees
 - Structured accessibility requirements (step-free entrance, wheelchair seating, accessible restroom,
   low-noise seating) gate candidate publication using deterministic catalog evidence with freshness
   and review status checks. Missing accessibility evidence remains unknown and never defaults to accessible.
+- Session-specific preparation and cross-contact confirmations (`preparation_confirmations`) allow
+  bounded staff or kitchen confirmations to verify exact allergen and dietary claims for a meal,
+  without letting scraped menus prove absence or storing inferred medical conclusions.
 - Profiles and check-ins have explicit unknown states. Declared allergies and
   free-text must-avoid ingredients require additional verification; scraped menus
   do not establish preparation safety. This pilot has no restaurant-confirmation

@@ -227,6 +227,14 @@ class DiningStore:
               PRIMARY KEY(meal_id, user_id)
             );
             CREATE INDEX IF NOT EXISTS meal_origins_user ON meal_origins(user_id);
+            CREATE TABLE IF NOT EXISTS preparation_confirmations (
+              id TEXT PRIMARY KEY,meal_id TEXT NOT NULL REFERENCES meals(id) ON DELETE CASCADE,
+              outlet_id TEXT NOT NULL,requirement_category TEXT NOT NULL,
+              confirmed_by TEXT NOT NULL,confirmation_channel TEXT NOT NULL,
+              confirmed_at TEXT NOT NULL,expires_at TEXT NOT NULL,
+              exact_bounded_claim TEXT NOT NULL,created_at TEXT NOT NULL
+            );
+            CREATE INDEX IF NOT EXISTS prep_conf_meal ON preparation_confirmations(meal_id,outlet_id);
             """)
             # Additive migrations keep existing accounts, responses and historical votes.
             additions = {
