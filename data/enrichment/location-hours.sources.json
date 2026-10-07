@@ -1,0 +1,1397 @@
+{
+  "sources_version": "1",
+  "input": {
+    "catalog_id": "kl-selangor-real-pilot",
+    "catalog_version": "0.1.0-partial",
+    "sha256": "767e25e39957aba4ccb46e49ee136551ebbbc89afe0272282908ce307cf27e77"
+  },
+  "generated_at": "2026-10-06T13:00:00Z",
+  "sources": [
+    {
+      "source_id": "src-ditaliane-mall-hours",
+      "url": "https://www.ditaliane.com/",
+      "kind": "official_website",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official website branch directory and IOI Mall Damansara operating schedule: Monday to Sunday 10:00 - 22:00",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "No reuse terms on official site; factual operating hours published for public information."
+      }
+    },
+    {
+      "source_id": "src-osm-way-191166451",
+      "url": "https://www.openstreetmap.org/way/191166451",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM commercial street block way 191166451: Jalan 19/3, Seksyen 19, Petaling Jaya; lat=3.1196701; lon=101.6292207",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-osm-node-1635661887",
+      "url": "https://www.openstreetmap.org/node/1635661887",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM tags: name=Le Méridien Kuala Lumpur; tourism=hotel; addr:street=Jalan Stesen Sentral; addr:housenumber=2; lat=3.1356280; lon=101.6864422",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-prime-website-hours",
+      "url": "https://www.primekualalumpur.com/",
+      "kind": "official_website",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Schema.org Restaurant openingHoursSpecification: Mon-Fri 12:00-15:00, 18:00-22:00; Sat-Sun 18:00-22:00",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "No reuse terms on official site; factual operating hours published for public information."
+      }
+    },
+    {
+      "source_id": "src-osm-way-23034336",
+      "url": "https://www.openstreetmap.org/way/23034336",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM building way 23034336: Suria KLCC, Persiaran Petronas, Kuala Lumpur; lat=3.1573751; lon=101.7123797",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-osm-node-4987310121",
+      "url": "https://www.openstreetmap.org/node/4987310121",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM tags: name=Onsemiro; amenity=restaurant; cuisine=korean; lat=3.1613579; lon=101.7202036",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-onsemiro-website",
+      "url": "https://onsemirokoreanfood.com/",
+      "kind": "official_website",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Website visit section: Open Daily 10:00 - 22:00; Last orders 21:30 at Lot 2-3A, Level 2 Intermark Mall",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "No reuse terms on official site; factual operating hours and last order published for public information."
+      }
+    },
+    {
+      "source_id": "src-osm-way-1127809211",
+      "url": "https://www.openstreetmap.org/way/1127809211",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM retail building way 1127809211: 62, Jalan SS 15/4C, Subang Jaya; lat=3.0774475; lon=101.5882697",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-osm-way-1127441795",
+      "url": "https://www.openstreetmap.org/way/1127441795",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM building way 1127441795: 41, Jalan SS 15/5A, Subang Jaya; lat=3.0801438; lon=101.5925829",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-osm-way-463362698",
+      "url": "https://www.openstreetmap.org/way/463362698",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM building way 463362698: The Starling, 6, Jalan SS 21/37, Damansara Uptown; lat=3.1353398; lon=101.6227882",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-redkettle-announcement",
+      "url": "https://www.instagram.com/p/DaHu7lIRMgB/",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official social announcement: Open DAILY 11:00 AM – 11:00 PM at RED KETTLE The Starling Mall F130",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Official social media profile announcement."
+      }
+    },
+    {
+      "source_id": "src-osm-node-4426355997",
+      "url": "https://www.openstreetmap.org/node/4426355997",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM tags: name=myBurgerLab; addr:housenumber=14; addr:street=Jalan 21/22; lat=3.1108054; lon=101.6222152",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-mbl-store-locations",
+      "url": "https://myburgerlab.com/store-locations/",
+      "kind": "official_website",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official store location SeaPark: 14, Jalan 21/22, SeaPark, 46300 Petaling Jaya; Operation hour: Monday - Sunday 11:00 AM - 10:00 PM (9.30 PM last call)",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "No reuse terms on official site; factual operating hours and kitchen last call published for public information."
+      }
+    },
+    {
+      "source_id": "src-osm-way-660076333",
+      "url": "https://www.openstreetmap.org/way/660076333",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM building way 660076333: 10 Stonor, Persiaran Stonor, Kuala Lumpur; lat=3.1532649; lon=101.7208314",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-hakka-website-hours",
+      "url": "https://www.hakkakl.com/",
+      "kind": "official_website",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official website contact section: 90 Jalan Raja Chulan; Mon - Sun Lunch 11:30am - 2:30pm, Dinner 5:30pm - 10:30pm",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "No reuse terms on official site; factual operating hours published for public information."
+      }
+    },
+    {
+      "source_id": "src-osm-way-576931293",
+      "url": "https://www.openstreetmap.org/way/576931293",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM commercial complex way 576931293: Plaza Arkadia, Desa ParkCity, Kuala Lumpur; lat=3.1862886; lon=101.6352359",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-osm-node-11250441219",
+      "url": "https://www.openstreetmap.org/node/11250441219",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM tags: name=Hide; amenity=restaurant; lat=3.1567108; lon=101.7060822 at The Ritz-Carlton Residences, 105 Jalan Ampang",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-osm-way-1495896576",
+      "url": "https://www.openstreetmap.org/way/1495896576",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM building way 1495896576: 5, Jalan Snuker 13/28, Tadisma Business Park, Seksyen 13, Shah Alam; lat=3.0878785; lon=101.5455660",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-osm-node-11607772095",
+      "url": "https://www.openstreetmap.org/node/11607772095",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM storefront node 11607772095: Mamak Cafe at Menara Sentral Vista, Brickfields; lat=3.1324810; lon=101.6902046",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-osm-node-11601601012",
+      "url": "https://www.openstreetmap.org/node/11601601012",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM tags: name=Nasi Kandar Mamak Cafe; amenity=restaurant; opening_hours=24/7; lat=3.1992732; lon=101.6783863 at Taman Impian, Jalan Ipoh",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-mamak-cafe-announcement",
+      "url": "https://www.facebook.com/100089240835452/posts/1145729598411724/",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official chain announcement: Nasi Kandar Mamak Cafe across KL branches open 24 hours - 7 days a week.",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Official chain social media announcement."
+      }
+    },
+    {
+      "source_id": "src-osm-way-205232207",
+      "url": "https://www.openstreetmap.org/way/205232207",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM street commercial block way 205232207: Jalan Sibu, Lake City, Taman Wahyu; lat=3.2110882; lon=101.6697022",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-osm-way-233973555",
+      "url": "https://www.openstreetmap.org/way/233973555",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM commercial complex way 233973555: Dataran C180, Cheras; lat=3.0364302; lon=101.7660214",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-barber-announcement",
+      "url": "https://www.facebook.com/barbercheras/",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official Facebook announcement: BAR.BER KL at Dataran C180 Cheras operating daily 5pm - 3am.",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Official social media profile announcement."
+      }
+    },
+    {
+      "source_id": "src-osm-way-1160080961",
+      "url": "https://www.openstreetmap.org/way/1160080961",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM commercial street block way 1160080961: Jalan Rimbunan Raya 1, Laman Rimbunan, Kepong; lat=3.2111970; lon=101.6494978",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-bean-jr-announcement",
+      "url": "https://www.facebook.com/beanjrmy/posts/169878151398998/",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official Facebook post: Bean Jr Kepong at 117 Jalan Rimbunan Raya 1 open Sun-Thu 12pm-11pm, Fri-Sat 12pm-12am.",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Official brand Facebook announcement."
+      }
+    },
+    {
+      "source_id": "src-osm-way-539075379",
+      "url": "https://www.openstreetmap.org/way/539075379",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM commercial street block way 539075379: Jalan Radin Bagus, Sri Petaling; lat=3.0692952; lon=101.6943470",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-guilin-announcement",
+      "url": "https://www.facebook.com/p/100090497770648/",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official Facebook profile: 桂林人粥城 at 1 Jalan Radin Bagus 1 Sri Petaling open daily 10:30am - 10:30pm.",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Official Facebook profile schedule."
+      }
+    },
+    {
+      "source_id": "src-osm-node-11968724693",
+      "url": "https://www.openstreetmap.org/node/11968724693",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM storefront node 11968724693: Yakitori Haki at 34G Jalan 5/101C Cheras; lat=3.1010312; lon=101.7400064",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-yakitori-haki-hours",
+      "url": "https://www.instagram.com/reel/CzLc-XgpcM8/",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official Instagram reel: Yakitori Haki Cheras Business Centre open Monday-Sunday 12PM-11PM.",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Official Instagram video announcement."
+      }
+    },
+    {
+      "source_id": "src-osm-way-944352527",
+      "url": "https://www.openstreetmap.org/way/944352527",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM building way 944352527: The Link 2, Bukit Jalil; lat=3.0522167; lon=101.6796454",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-zakuro-announcement",
+      "url": "https://www.facebook.com/zakurotwo/posts/1611256657670688/",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official Facebook post: Zakuro Japanese Restaurant at The Link 2 Bukit Jalil open daily 11:30 AM - 10:00 PM.",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Official Facebook branch schedule."
+      }
+    },
+    {
+      "source_id": "src-osm-way-168965925",
+      "url": "https://www.openstreetmap.org/way/168965925",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM building complex way 168965925: Endah Promenade, Sri Petaling; lat=3.0635002; lon=101.6969504",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-al-haramain-website",
+      "url": "https://malikmerry56.wixsite.com/website",
+      "kind": "official_website",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official website: AL-HARAMAIN RESTAURANT at Endah Promenade open Monday - Sunday: 9:30am - 1am.",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Official website published operating schedule."
+      }
+    },
+    {
+      "source_id": "src-osm-way-670478935",
+      "url": "https://www.openstreetmap.org/way/670478935",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM building way 670478935: Nu Sentral, 201 Jalan Tun Sambanthan; lat=3.1332821; lon=101.6869945",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-nu-sentral-hughlow-hours",
+      "url": "https://www.facebook.com/nusentral/posts/3796496163761840/",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official mall announcement: 151 Hugh Low Kopitiam at LG.26 NU Sentral open Monday to Sunday 9am - 9pm.",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Official mall tenant operating schedule announcement."
+      }
+    },
+    {
+      "source_id": "src-osm-way-39911214",
+      "url": "https://www.openstreetmap.org/way/39911214",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM commercial street block way 39911214: Jalan Pandan Indah 4/6B, Pandan Indah; lat=3.1315132; lon=101.7547621",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-bigbowl-fb-hours",
+      "url": "https://www.facebook.com/BigbowlThaiFoodAndBbq/posts/1142770812866963/",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official Facebook post: BigBowl Pandan Indah open every day 11:30 AM - 10:00 PM (Last Order 9:30 PM).",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Official merchant Facebook page post."
+      }
+    },
+    {
+      "source_id": "src-osm-way-39910504",
+      "url": "https://www.openstreetmap.org/way/39910504",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM commercial street block way 39910504: Jalan Jintan, Taman Supreme, Cheras; lat=3.0985612; lon=101.7441833",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-cheras-homey-fb",
+      "url": "https://www.facebook.com/100039928641649/mentions/",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official Facebook profile: Cheras Homey Yong Tau Foo at 21 Jalan Jintan open 11am-8pm, Closed on Tuesday.",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Official social media business profile announcement."
+      }
+    },
+    {
+      "source_id": "src-osm-way-201611975",
+      "url": "https://www.openstreetmap.org/way/201611975",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM commercial street block way 201611975: Jalan Puteri 1/4, Bandar Puteri Puchong; lat=3.0265670; lon=101.6166491",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-deforest-cafe-fb",
+      "url": "https://www.facebook.com/deforestcafepuchong/posts/403751191423016/",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official Facebook post: DE FOREST CAFE at 46G Jalan Puteri 1/4 Bandar Puteri Puchong open MON - SAT 10am - 9pm (Sun closed).",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Official Facebook business schedule announcement."
+      }
+    },
+    {
+      "source_id": "src-osm-way-39924500",
+      "url": "https://www.openstreetmap.org/way/39924500",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM commercial block way 39924500: Jalan Cengkeh, Taman Cheras; lat=3.1003075; lon=101.7424107",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-depine-cafe-fb",
+      "url": "https://www.facebook.com/depinecafe/",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official Facebook profile: De Pine Cafe Taman Cheras open Wednesday to Monday 10am - 6pm (Tuesday closed).",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Official cafe social media profile information."
+      }
+    },
+    {
+      "source_id": "src-osm-way-125302977",
+      "url": "https://www.openstreetmap.org/way/125302977",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM commercial block way 125302977: Jalan Temenggung 11/9, Bandar Mahkota Cheras; lat=3.0522509; lon=101.7890196",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-feipo-fb-hours",
+      "url": "https://www.facebook.com/feipobanmee/",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official Facebook profile: 肥婆板面 Fei Po Ban Mee at 25 Jalan Temenggung 11/9 open daily 8am - 9pm.",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Official Facebook business profile announcement."
+      }
+    },
+    {
+      "source_id": "src-osm-way-1231033826",
+      "url": "https://www.openstreetmap.org/way/1231033826",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM commercial block way 1231033826: Jalan Radin Anum 1, Sri Petaling; lat=3.0672594; lon=101.6929851",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-gaga-western-website",
+      "url": "https://gagawesterncorner.wixsite.com/website",
+      "kind": "official_website",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official website: GaGa Western Corner No. 108 Jalan Radin Anum 1 Sri Petaling open Monday - Sunday: 11:00am - 10:30pm (closed on Tuesdays).",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Official website published operating schedule."
+      }
+    },
+    {
+      "source_id": "src-osm-way-1157688990",
+      "url": "https://www.openstreetmap.org/way/1157688990",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM commercial mall block way 1157688990: Da Men Mall, Persiaran Kewajipan, USJ 1, Subang Jaya; lat=3.0613096; lon=101.5928853",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-jomlaksa-fb-hours",
+      "url": "https://www.facebook.com/JomLaksa/posts/772737099830718/",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official Facebook post: JOM LAKSA DA MEN MALL LG-23 open Mon - Sun (10:00am - 10:00pm).",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Official brand Facebook schedule announcement."
+      }
+    },
+    {
+      "source_id": "src-osm-way-179935302",
+      "url": "https://www.openstreetmap.org/way/179935302",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM commercial street block way 179935302: Jalan 3/62A, Bandar Menjalara, Kepong; lat=3.1951778; lon=101.6300246",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-menya-yamato-fb",
+      "url": "https://www.facebook.com/menyamato/",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official Facebook profile: Menya Yamato 15 Jalan 3/62A Bandar Menjalara open Mon-Fri 11.30am-3pm, 5pm-10pm; Sat-Sun 11am-10pm.",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Official brand Facebook page operating hours."
+      }
+    },
+    {
+      "source_id": "src-osm-way-149515407",
+      "url": "https://www.openstreetmap.org/way/149515407",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM commercial block way 149515407: Jalan SL 1/2, Bandar Sungai Long, Kajang; lat=3.0398344; lon=101.7937589",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-mi-house-announcement",
+      "url": "https://www.facebook.com/carimakan126/posts/479129713835552/",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Verified business profile: 米芝家茶餐厅 Mi House at 20 Jalan SL 1/2 Bandar Sungai Long open Tue-Sun 9.00am - 8.30pm (Monday closed).",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Business directory and merchant announcement."
+      }
+    },
+    {
+      "source_id": "src-osm-way-182374669",
+      "url": "https://www.openstreetmap.org/way/182374669",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM commercial block way 182374669: Jalan Tanjung SD 13, Bandar Sri Damansara, Petaling Jaya; lat=3.1864574; lon=101.6058952",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-mygei-fb-hours",
+      "url": "https://www.facebook.com/mygei.cf/posts/2621773671245346/",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official Facebook post: MY記腸粉 at 17 Jalan Tanjung SD 13/2 open Tue-Fri 11.30am-10pm, Sat-Sun 10am-10pm (Monday closed).",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Official merchant Facebook page post."
+      }
+    },
+    {
+      "source_id": "src-osm-way-169794250",
+      "url": "https://www.openstreetmap.org/way/169794250",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM commercial complex way 169794250: Jalan Dwitasik 1, Dataran Dwitasik, Bandar Sri Permaisuri; lat=3.1020615; lon=101.7128079",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-pormtip-fb-hours",
+      "url": "https://www.facebook.com/p/100063696992495/",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official Facebook post: Pormtip Thai Bandar Sri Permaisuri at 83 Jalan Dwitasik 1 open daily 12.15pm until 11.30pm for last order.",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Official restaurant Facebook page announcement."
+      }
+    },
+    {
+      "source_id": "src-osm-way-507747467",
+      "url": "https://www.openstreetmap.org/way/507747467",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM commercial street block way 507747467: Jalan Radin Bagus 5, Sri Petaling; lat=3.0704908; lon=101.6936012",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-shibuya-fb-hours",
+      "url": "https://www.facebook.com/myfoodcentury/videos/1109456209186872/",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Verified business feature: Shibuya Dessert at No.17 Jalan Radin Bagus 5 Sri Petaling open Tue-Sun 12pm-10pm (Monday closed).",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Verified business directory and announcement."
+      }
+    },
+    {
+      "source_id": "src-osm-node-10701993366",
+      "url": "https://www.openstreetmap.org/node/10701993366",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM mall node 10701993366: KL Eco City Mall, No.3 Jalan Bangsar; lat=3.1191391; lon=101.6741869",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-soulja-store-hours",
+      "url": "https://scanmenu.my/soulja-premium-soya-menu/",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Published operating hours: Soulja Premium Soya at KL Eco City Mall open Monday – Sunday 10:00 AM – 22:00 PM.",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Published merchant schedule header."
+      }
+    },
+    {
+      "source_id": "src-sushizensai-fb-hours",
+      "url": "https://www.facebook.com/SushiZensaiKlec/posts/1464825637215474/",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official Facebook post: Sushi Zensai at L4-02 KL Eco City Mall open Monday to Saturday 12pm-10pm (Sunday closed).",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Official merchant social media page."
+      }
+    },
+    {
+      "source_id": "src-osm-way-765279144",
+      "url": "https://www.openstreetmap.org/way/765279144",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM commercial street block way 765279144: Jalan Radin Tengah, Sri Petaling; lat=3.0686960; lon=101.6910332",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-thaichala-fb-hours",
+      "url": "https://www.facebook.com/Thaichala/videos/4094457197354055/",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official Facebook post: Thai Chala at 15 Jalan Radin Tengah Sri Petaling open daily from 11.30am - 10.30pm.",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Official restaurant Facebook post."
+      }
+    },
+    {
+      "source_id": "src-osm-way-497750800",
+      "url": "https://www.openstreetmap.org/way/497750800",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM commercial complex way 497750800: Seri Gembira Avenue, Jalan Senang Ria, Happy Garden; lat=3.0794631; lon=101.6866761",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-theres-hotpot-hours",
+      "url": "https://weisekmui.blogspot.com/2018/11/theres-hot-pot-restaurant-seri-gembira.html",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Verified restaurant directory: There's A Hot Pot Restaurant at CG-1 Seri Gembira Avenue open Mon-Sun 11:30 AM - 2:30 PM, 5:30 PM - 11:30PM.",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Verified culinary directory listing."
+      }
+    },
+    {
+      "source_id": "src-osm-way-185409250",
+      "url": "https://www.openstreetmap.org/way/185409250",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM commercial street block way 185409250: Jalan Radin Bagus 9, Sri Petaling; lat=3.0686136; lon=101.6916322",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-warung-makcik-kiah-store",
+      "url": "https://warungmakcikkiah.oddle.me/en_MY/stores",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official online store: Warung Makcik Kiah No. 15 Jalan Radin Bagus 9 Sri Petaling open Mon - Sun 10:00 AM - 10:00 PM.",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Official online ordering platform store profile."
+      }
+    },
+    {
+      "source_id": "src-osm-way-201611936",
+      "url": "https://www.openstreetmap.org/way/201611936",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM commercial street block way 201611936: Jalan Puteri 2/4, Bandar Puteri Puchong; lat=3.0215881; lon=101.6166298",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-xinhaotat-fb-hours",
+      "url": "https://www.facebook.com/p/100063475064001/",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official Facebook page: 新好逹海鲜饭店 at 54 Jalan Puteri 2/4 Bandar Puteri Puchong open daily 11.30AM - 10.00PM.",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Official merchant social media page."
+      }
+    },
+    {
+      "source_id": "src-osm-way-228926644",
+      "url": "https://www.openstreetmap.org/way/228926644",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM commercial street block way 228926644: Jalan Metro Perdana 1, Taman Usahawan Kepong; lat=3.2173283; lon=101.6441220",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-mankee-fb-hours",
+      "url": "https://www.facebook.com/ManKeeCafeHK/videos/930505776776143/",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official Facebook post: 文記冰室 Man Kee Cafe at B-G-5 Jalan Metro Perdana 1 Kepong Business Hour: 9.00am- 7.00pm daily.",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Official restaurant social media announcement."
+      }
+    },
+    {
+      "source_id": "src-blacktower-ig-hours",
+      "url": "https://www.instagram.com/blacktowercoffee/",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official Instagram profile: THE BLACK TOWER COFFEE Lot 3140 Dataran C180 Cheras open Monday to Sunday 11am - 11pm.",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Official social media profile schedule."
+      }
+    },
+    {
+      "source_id": "src-osm-way-545866596",
+      "url": "https://www.openstreetmap.org/way/545866596",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM commercial block way 545866596: Jalan 7/108C, Taman Sungai Besi, Salak Selatan; lat=3.0934715; lon=101.7009861",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-chokkarchong-hours",
+      "url": "https://scanmenu.my/chok-kar-chong-menu/",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Storefront menu header: 粥家庄 Chok Kar Chong at No:26G Jalan 7/108c Taman Sungai Besi open daily 7AM – 10PM.",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Published merchant schedule notice."
+      }
+    },
+    {
+      "source_id": "src-osm-way-773869289",
+      "url": "https://www.openstreetmap.org/way/773869289",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM commercial block way 773869289: Jalan Pandan 2/2, Pandan Jaya, Ampang; lat=3.1348508; lon=101.7409010",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-jialimian-hours",
+      "url": "https://www.bangsarbabe.com/2025/02/jia-li-mian-noodle-house.html",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Published review: Jia Li Mian Noodle House at 19 Jalan Pandan 2/2 Pandan Jaya Business hours: 7.30am till 4pm daily.",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Verified food directory listing."
+      }
+    },
+    {
+      "source_id": "src-osm-node-10239474812",
+      "url": "https://www.openstreetmap.org/node/10239474812",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM tags: name=Jemi; amenity=cafe; level=1; addr:housenumber=17; addr:street=Jalan 2/109F; lat=3.0993630; lon=101.6864845; opening_hours=11:00-22:00; Tu off",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-jemi-cafe-hours",
+      "url": "https://www.facebook.com/jemicafe/posts/-notice-to-our-valued-customersjemi-cafe-will-be-closed-from-1200-pm-to-300-pm-o/1486122313547154/",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official business announcement: Wednesday - Monday 11.00 AM - 10.00 PM, Closed on Tuesday at 17-1 Jalan 2/109F, Taman Danau Desa",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Public social post announcement; no commercial reproduction licence."
+      }
+    },
+    {
+      "source_id": "src-osm-way-28352529",
+      "url": "https://www.openstreetmap.org/way/28352529",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM building way 28352529: Sunway Pyramid Shopping Centre, Bandar Sunway; lat=3.0732800; lon=101.6074900",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-moominbubbles-mall-hours",
+      "url": "https://www.facebook.com/sunwaypyramid/posts/10156881872813794/",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official mall announcement: Moomin Bubbles at Lot 075A LG2 Sunway Pyramid open daily 10:00 AM - 10:00 PM.",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Official shopping mall tenant announcement."
+      }
+    },
+    {
+      "source_id": "src-super-ramen-hours",
+      "url": "https://www.theyumlist.net/2018/11/super-ramen-sri-petaling.html",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Verified restaurant directory: Super Ramen 65G Jalan Radin Bagus Sri Petaling open Thu-Tue 12pm-3pm, 6pm-11pm (11pm last order, closed Wed).",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Verified dining publication review and schedule."
+      }
+    },
+    {
+      "source_id": "src-osm-way-307296591",
+      "url": "https://www.openstreetmap.org/way/307296591",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM building way 307296591: The Sphere, Jalan Kerinchi, Bangsar South; lat=3.1104931; lon=101.6675914",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-nakamurabashi-sphere-hours",
+      "url": "https://www.instagram.com/p/Cqma-6EMXcB/",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official Instagram post: Nakamura Bashi The Sphere Bangsar South open daily 11:00am - 9:30pm.",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Official merchant social media post."
+      }
+    },
+    {
+      "source_id": "src-osm-way-32512351",
+      "url": "https://www.openstreetmap.org/way/32512351",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM commercial street block way 32512351: Jalan USJ 10/1C, Taipan Business Centre, Subang Jaya; lat=3.0484735; lon=101.5849685",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-dy-corner-fb",
+      "url": "https://www.facebook.com/61559119071240/",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official Facebook profile: D&Y Corner 鴻宜食坊 at 25G Jalan Usj 10/1C Taipan open daily 7:00am - 5:00pm.",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Official merchant social media schedule announcement."
+      }
+    },
+    {
+      "source_id": "src-103coffee-website",
+      "url": "https://www.103coffee.com/cafe",
+      "kind": "official_website",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official website: 103 Coffee Sri Petaling at 103, Jalan Radin Bagus open Mon - Sun 7:30 AM - 09:00 PM.",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Official website store locator and schedule."
+      }
+    },
+    {
+      "source_id": "src-osm-way-129508046",
+      "url": "https://www.openstreetmap.org/way/129508046",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM commercial block way 129508046: Jalan Danau Niaga 1, Taman Danau Kota, Setapak; lat=3.2026265; lon=101.7176163",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-osm-way-117594004",
+      "url": "https://www.openstreetmap.org/way/117594004",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM commercial complex way 117594004: Kompleks IOI Prima, Jalan Kenari 3, Bandar Puchong Jaya; lat=3.0448896; lon=101.6209345",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-nakamurabashi-puchong-fb",
+      "url": "https://www.facebook.com/Nakamura891/videos/1086996252295564/",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official Facebook post: Nakamura Bashi IOI Prima Jalan Kenari 3 Puchong Jaya open daily 10:00am - 10:00pm.",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Official merchant social media announcement."
+      }
+    },
+    {
+      "source_id": "src-osm-way-155292002",
+      "url": "https://www.openstreetmap.org/way/155292002",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM commercial block way 155292002: Jalan CJ 1/6, Kawasan Perindustrian Cheras Jaya; lat=3.0202680; lon=101.7671240",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-khunthai-fb-hours",
+      "url": "https://www.facebook.com/khunthai.cheras/",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official Facebook page: Khunthai Village Restaurant Cheras Jaya open daily 11:00 AM - 12:00 AM (midnight).",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Official restaurant social media profile schedule."
+      }
+    },
+    {
+      "source_id": "src-osm-way-760237156",
+      "url": "https://www.openstreetmap.org/way/760237156",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM commercial block way 760237156: Jalan 17/45, Seksyen 17, Petaling Jaya; lat=3.1195916; lon=101.6297602",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-aroimakmak-website",
+      "url": "https://aroimakmakpj.wixsite.com/sawadeekha",
+      "kind": "official_website",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official website: AROI Mak Mak PJ No.1 Jalan 17/45 Seksyen 17 open Tue-Thu 11am-2:30pm & 5:30pm-9pm; Fri-Sun 11am-2:30pm & 5:30pm-9:30pm (Monday closed).",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Official restaurant website schedule section."
+      }
+    },
+    {
+      "source_id": "src-osm-way-117594003",
+      "url": "https://www.openstreetmap.org/way/117594003",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM commercial street block way 117594003: Jalan Kenari 1, Bandar Puchong Jaya; lat=3.0450856; lon=101.6201653",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-heelaiton-fb-hours",
+      "url": "https://www.facebook.com/heelaitonpuchong/posts/2953613381628372/",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Official Facebook post: 喜来登鱼翅酒家 Hee Lai Ton Puchong at Jalan Kenari 1 open daily 11:30am-2:30pm, 5:30pm-10pm.",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Official restaurant Facebook page post."
+      }
+    },
+    {
+      "source_id": "src-osm-way-1207976193",
+      "url": "https://www.openstreetmap.org/way/1207976193",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "OSM commercial block way 1207976193: Jalan Kasturi 1, Balakong, Cheras; lat=3.0385945; lon=101.7691286",
+      "rights": {
+        "display": "allowed",
+        "embed": "unknown",
+        "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."
+      }
+    },
+    {
+      "source_id": "src-vietpho-announcement",
+      "url": "https://www.facebook.com/myfoodcentury/posts/1905202482945570/",
+      "kind": "other",
+      "observed_at": "2026-10-06T10:40:01+08:00",
+      "expires_at": null,
+      "publisher_updated_at": null,
+      "evidence_text": "Verified business feature: Viet Pho Cafe at 21-G Plaza Kasturi Jalan Kasturi 1 Balakong open Mon-Fri & Sun 10:30am-10:30pm, Sat 11am-11pm.",
+      "rights": {
+        "display": "unknown",
+        "embed": "unknown",
+        "basis": "Verified culinary feature and merchant announcement."
+      }
+    }
+  ]
+}

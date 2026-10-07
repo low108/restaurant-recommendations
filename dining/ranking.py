@@ -40,6 +40,13 @@ ALIASES = {
     "bbq": "grill",
     "no chilli": "none",
     "no chili": "none",
+    # Local dish names mapped to the curated dish families used by catalog tags.
+    "ramen": "noodle_soup",
+    "laksa": "noodle_soup",
+    "pho": "noodle_soup",
+    "biryani": "rice",
+    "briyani": "rice",
+    "beriani": "rice",
 }
 DIMENSIONS = {
     "dish": {
@@ -59,6 +66,18 @@ DIMENSIONS = {
 }
 OCCASIONS = {"quick", "quiet", "indoor"}
 NEUTRAL_WORDS = {"anything", "any", "open", "no preference", "whatever"}
+# A drink, side, dessert or add-on is never someone's meal (product decision, 7 Oct 2026).
+NON_MEAL_ROLES = frozenset({"drink", "beverage", "dessert", "side", "add_on"})
+CONFIRMED_MEAL_ROLES = frozenset({"main", "set"})
+# Multi-word dish families map to one curated tag before tokenizing.
+PHRASES = (
+    (re.compile(r"\b(?:noodles? soups?|soup noodles?)\b"), "noodle_soup"),
+    (re.compile(r"\b(?:curry (?:mee|mi|noodles?)|(?:mee|mi) kari)\b"), "noodle_soup"),
+    (re.compile(r"\btom ?y[au]m (?:mee|noodles?|kuey ?teow)\b"), "noodle_soup"),
+    (re.compile(r"\btom ?y[au]m\b"), "soup"),
+    (re.compile(r"\bnasi lemak\b"), "rice"),
+)
+NEGATION = re.compile(r"\b(?:no|not|without|avoid|except)\b|don['’]?t")
 
 
 @dataclass(frozen=True)
@@ -149,8 +168,10 @@ def _current_dimensions(response: dict) -> dict[str, set[str]]:
         text = ""  # A diner removed/edited the chips; old prose has no authority.
     # Whole-token matches only. Unrecognized prose stays unknown; no LLM guesses.
     # Do not invert a negated free-text request into a positive preference.
-    if re.search(r"\b(?:no|not|without|avoid|except)\b|don['’]?t", text):
+    if NEGATION.search(text):
         text = ""
+    for pattern, tag in PHRASES:
+        text = pattern.sub(tag, text)
     words = _tags(re.findall(r"[\w]+", text))
     for dimension in ("dish", "flavour"):
         wanted = words & DIMENSIONS[dimension]
@@ -185,6 +206,76 @@ def _craving(item: MenuItem, response: dict) -> Feature:
     if response.get("craving", "").casefold().strip() in NEUTRAL_WORDS:
         return Feature(0.5, 1)
     return UNKNOWN
+
+
+CJK = re.compile(r"[\u3040-\u30ff\u3400-\u9fff]+")
+
+
+PER_WEIGHT = re.compile(
+    r"\bper\s*\d*\s*(?:g|gm|kg|100\s*g)\b|\(\s*per\s+100", re.IGNORECASE
+)
+NEGATED_PHRASE = re.compile(
+    r"(?:\b(?:no|not|without|avoid|except)\b|don['’]?t)\s+[\w-]+"
+)
+
+
+def _stem(word: str) -> str:
+    return word[:-1] if len(word) > 3 and word.endswith("s") else word
+
+
+def item_search_text(item: MenuItem) -> str:
+    """Dish name and variant plus its reviewed translations (en/ms/zh), for matching only."""
+    terms = [item.name, item.variant]
+    for values in item.name_translations.values():
+        terms.extend(values)
+    return " | ".join(terms)
+
+
+def name_term_overlap(query: str, text: str) -> float:
+    """Share of the query's dish words found in a dish's searchable text (tie-break only).
+
+    Latin words match whole words (light plural stemming); Chinese/Japanese runs match as
+    substrings, since they have no spaces. Cross-language matching comes from each dish's
+    reviewed ``name_translations``, not from a hard-coded word list. Negated phrases
+    ("not spicy") are dropped rather than voiding the whole craving.
+    """
+    query = NEGATED_PHRASE.sub(" ", query.casefold())
+    text = text.casefold()
+    cjk_terms = set(CJK.findall(query))
+    words = {
+        _stem(w)
+        for w in re.findall(r"[a-z0-9\u00c0-\u024f]+", query)
+        if len(w) >= 3 and w not in NEUTRAL_WORDS
+    }
+    total = len(cjk_terms) + len(words)
+    if not total:
+        return 0.0
+    have = {_stem(w) for w in re.findall(r"[a-z0-9\u00c0-\u024f]+", text)}
+    hits = sum(term in text for term in cjk_terms) + len(words & have)
+    return hits / total
+
+
+def craving_name_overlap(item: MenuItem, response: dict) -> float:
+    """Tie-break signal: today's craving words found in the dish's searchable text."""
+    if response.get("taste_input_mode") == "structured":
+        return 0.0
+    return name_term_overlap(response.get("craving") or "", item_search_text(item))
+
+
+def craving_match_level(item: MenuItem, response: dict) -> str | None:
+    """'exact' / 'broader' match of today's dish, flavour or chilli wish (not cuisine)."""
+    attributes = _tags(item.attributes)
+    level = None
+    for dimension, wanted in _current_dimensions(response).items():
+        if dimension == "cuisine":
+            continue
+        available = attributes & DIMENSIONS[dimension]
+        result = _match(wanted, available, broader=dimension == "dish")
+        if result.coverage and result.value == 1:
+            return "exact"
+        if result.coverage and result.value >= 0.7:
+            level = "broader"
+    return level
 
 
 def _event_time(event: dict, at: datetime) -> datetime | None:
@@ -453,7 +544,15 @@ def rank_diverse(candidates: list[dict], *, limit: int = 3) -> list[dict]:
     """
     remaining = sorted(
         candidates,
-        key=lambda row: (-row["_score"], row["distance_km"], row["outlet_id"]),
+        key=lambda row: (
+            -row["_score"],
+            -row.get("_relevance", 0.0),  # Relevance beats distance (decision 3).
+            not row.get(
+                "_confirmed_meal", True
+            ),  # Then confirmed meals before unknown roles.
+            row["distance_km"],
+            row["outlet_id"],
+        ),
     )
     selected = []
     while remaining and len(selected) < limit:
@@ -470,6 +569,24 @@ def rank_diverse(candidates: list[dict], *, limit: int = 3) -> list[dict]:
         if not comparable:
             break
         best = comparable[0]
+        covered = {p for row in selected for p in row.get("_serves", ())}
+        # Coverage: prefer an outlet that is the best match for a diner whose wish isn't
+        # served yet. Slot 1 stays the highest score (PRD §9.3), so there coverage only
+        # breaks an exact tie; later slots use the .10 diversity margin.
+        margin = DIVERSITY_MARGIN if selected else 1e-9
+        uncovered = next(
+            (
+                row
+                for row in comparable
+                if set(row.get("_serves", ())) - covered
+                and row["_score"] >= best["_score"] - margin
+            ),
+            None,
+        )
+        if uncovered:
+            selected.append(uncovered)
+            remaining.remove(uncovered)
+            continue
         if selected:
             used = {
                 row["cuisines"][0].casefold() for row in selected if row.get("cuisines")

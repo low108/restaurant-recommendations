@@ -1,0 +1,17 @@
+{
+  "name": "Makan Together",
+  "short_name": "Makan",
+  "description": "Good food. Better company.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

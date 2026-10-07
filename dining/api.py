@@ -982,8 +982,11 @@ def build_router(
         else:
             result["my_route_estimates"] = {}
         result["result"] = decoded_result
+        active_cat = getattr(recommend, "catalog", None) or getattr(
+            getattr(recommend, "recommender", None), "catalog", None
+        )
         result["my_personal_recommendations"] = get_personal_recommendations(
-            db, meal["id"], user_id, meal["revision"]
+            db, meal["id"], user_id, meal["revision"], catalog=active_cat
         )
         result["decision"] = decode(meal["decision"])
         result["manual_plan"] = decode(meal["manual_plan"])
@@ -2236,6 +2239,10 @@ def build_router(
             "policy_version",
             "feature_version",
             "ontology_version",
+            "retrieval_status",
+            "retrieval_policy_version",
+            "embedding_model",
+            "retrieval_receipt",
             "examined_outlets",
             "coverage",
             "metrics",

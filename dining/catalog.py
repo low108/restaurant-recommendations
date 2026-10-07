@@ -277,6 +277,11 @@ class MenuItem(Record):
     menu_version: str = Field(min_length=1)
     cuisine_tags: tuple[str, ...] = ()
     attributes: tuple[str, ...] = ()
+    # Reviewed English/Malay/Chinese names and dish words (search and tie-breaks only;
+    # never eligibility). The original name, variant and description are unchanged.
+    name_translations: dict[Literal["en", "ms", "zh"], tuple[str, ...]] = Field(
+        default_factory=dict
+    )
     price: Price | None = None
     meal_role: Literal[
         "main", "set", "side", "dessert", "beverage", "add_on", "unknown"

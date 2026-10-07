@@ -1,0 +1,39 @@
+name: Web pilot checks
+on:
+  pull_request:
+  push:
+    branches: [main, 'codex/**']
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: 'requirements-*.txt'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: python -m pip install -r requirements-test.txt
+      - run: python -m ruff check dining tests webapp.py scripts
+      - run: python -m ruff format --check dining tests webapp.py scripts
+      - run: python -m pytest tests -q
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium webkit
+      - run: npm run test:e2e
+        env:
+          DINING_TEST_PYTHON: python
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: fictional-browser-test-report
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7

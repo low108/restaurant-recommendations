@@ -1,0 +1,190 @@
+{
+  "schema_version": "2",
+  "catalog_id": "kl-selangor-fictional-demo",
+  "version": "1",
+  "generated_at": "2026-10-05T00:00:00+08:00",
+  "synthetic": true,
+  "brands": [
+    {
+      "brand_id": "demo-brand-soup",
+      "name": "Demo Soup Kitchen"
+    }
+  ],
+  "outlets": [
+    {
+      "outlet_id": "demo-outlet-soup",
+      "brand_id": "demo-brand-soup",
+      "name": "Demo Soup Kitchen — Fictional PJ branch",
+      "address": "Fictional fixture location soup; not a real address",
+      "city": "Petaling Jaya",
+      "state": "Selangor",
+      "country": "MY",
+      "latitude": 3.12,
+      "longitude": 101.62,
+      "timezone": "Asia/Kuala_Lumpur",
+      "cuisine_tags": [
+        "Malaysian"
+      ],
+      "opening_hours": [
+        {
+          "weekday": 0,
+          "opens": "08:00",
+          "closes": "22:00",
+          "closes_next_day": false,
+          "last_order": "21:00",
+          "last_order_next_day": false,
+          "last_order_source_ids": [
+            "synthetic-menu-v1"
+          ]
+        },
+        {
+          "weekday": 1,
+          "opens": "08:00",
+          "closes": "22:00",
+          "closes_next_day": false,
+          "last_order": "21:00",
+          "last_order_next_day": false,
+          "last_order_source_ids": [
+            "synthetic-menu-v1"
+          ]
+        },
+        {
+          "weekday": 2,
+          "opens": "08:00",
+          "closes": "22:00",
+          "closes_next_day": false,
+          "last_order": "21:00",
+          "last_order_next_day": false,
+          "last_order_source_ids": [
+            "synthetic-menu-v1"
+          ]
+        },
+        {
+          "weekday": 3,
+          "opens": "08:00",
+          "closes": "22:00",
+          "closes_next_day": false,
+          "last_order": "21:00",
+          "last_order_next_day": false,
+          "last_order_source_ids": [
+            "synthetic-menu-v1"
+          ]
+        },
+        {
+          "weekday": 4,
+          "opens": "08:00",
+          "closes": "22:00",
+          "closes_next_day": false,
+          "last_order": "21:00",
+          "last_order_next_day": false,
+          "last_order_source_ids": [
+            "synthetic-menu-v1"
+          ]
+        },
+        {
+          "weekday": 5,
+          "opens": "08:00",
+          "closes": "22:00",
+          "closes_next_day": false,
+          "last_order": "21:00",
+          "last_order_next_day": false,
+          "last_order_source_ids": [
+            "synthetic-menu-v1"
+          ]
+        },
+        {
+          "weekday": 6,
+          "opens": "08:00",
+          "closes": "22:00",
+          "closes_next_day": false,
+          "last_order": "21:00",
+          "last_order_next_day": false,
+          "last_order_source_ids": [
+            "synthetic-menu-v1"
+          ]
+        }
+      ],
+      "hours_status": "published",
+      "holiday_exceptions_known": false,
+      "halal": {
+        "status": "unknown",
+        "certificate_id": null,
+        "authority": null,
+        "source_ids": []
+      },
+      "source_ids": [
+        "synthetic-menu-v1"
+      ],
+      "opening_exceptions_coverage": {
+        "starts_on": "2026-10-05",
+        "ends_on": "2098-12-31",
+        "source_ids": [
+          "synthetic-menu-v1"
+        ]
+      },
+      "opening_exceptions": []
+    }
+  ],
+  "menu_items": [
+    {
+      "item_id": "demo-item-soup-1",
+      "outlet_id": "demo-outlet-soup",
+      "name": "Chicken noodle soup",
+      "description": "Rice noodles in light chicken broth.",
+      "variant": "Regular",
+      "language": "en",
+      "menu_version": "demo-2026-10-05",
+      "cuisine_tags": [
+        "Malaysian"
+      ],
+      "attributes": [
+        "light",
+        "soupy"
+      ],
+      "price": {
+        "amount_minor": 1800,
+        "currency": "MYR",
+        "channel": "dine_in",
+        "mandatory_charges_included": true,
+        "all_mandatory_charges_known": true,
+        "payable_amount_minor": 1800,
+        "unit": "portion",
+        "minimum_quantity": 1
+      },
+      "ingredients": [
+        "chicken",
+        "rice noodles"
+      ],
+      "ingredients_complete": false,
+      "allergens_present": [],
+      "allergen_assessment": "unknown",
+      "cross_contact_status": "unknown",
+      "dietary_claims": [],
+      "live_availability": "unknown",
+      "source_ids": [
+        "synthetic-menu-v1"
+      ],
+      "meal_role": "main",
+      "serves_min": 1,
+      "serves_max": 1,
+      "review_status": "reviewed",
+      "review_reasons": []
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "synthetic-menu-v1",
+      "url": "https://restaurant.example/fictional-fixture",
+      "kind": "synthetic",
+      "observed_at": "2026-10-05T00:00:00+08:00",
+      "expires_at": "2099-01-01T00:00:00+08:00",
+      "publisher_updated_at": null,
+      "evidence_text": "Entire catalog is invented test data. No restaurant, address, dish, price, dietary claim or opening schedule is verified. Not suitable for real recommendations. Fictional demo service has last orders at 21:00 and no holiday exceptions during the explicit demo coverage window; these invented facts describe no real restaurant.",
+      "rights": {
+        "display": "allowed",
+        "embed": "allowed",
+        "basis": "Project-authored fictional test fixture only; no third-party restaurant data."
+      }
+    }
+  ]
+}

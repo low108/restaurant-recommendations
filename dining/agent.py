@@ -42,9 +42,11 @@ class DiningAgent:
         catalog: Catalog,
         use_model: bool = False,
         settings: InferenceSettings | None = None,
+        embedding_index: Any | None = None,
     ):
         self.catalog = catalog
-        self.recommender = Recommender(catalog)
+        self.embedding_index = embedding_index
+        self.recommender = Recommender(catalog, embedding_index=embedding_index)
         self.revalidate = self.recommender
         self.settings = settings or InferenceSettings.from_env(use_model=use_model)
         self.use_model = self.settings.enabled

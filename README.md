@@ -92,6 +92,18 @@ states. V1 files still load; omitted fields stay unknown. `--upgrade` preserves
 source assertions and flags obvious contradictory dietary text for review. It does
 not approve sources, classify meals, verify channels or manufacture expiry dates.
 The [v2 integration notes](docs/CATALOG_V2.md) describe the current collected snapshot.
+
+**Current production catalog (7 Oct 2026):** `0.4.0-translated`, which is the 58 verified outlets
+with reviewed taste tags, meal roles and English/Malay/Chinese dish-name translations. The
+live vector index in `var/vector/catalog` matches it. Start the app with:
+
+```bash
+python webapp.py --catalog var/catalog-import/kl-selangor-real-pilot-58-translated/catalog.validated.json
+```
+
+The search index is only used when its version matches the catalog, so starting with an
+older catalog falls back to structured search. The previous index is backed up under
+`var/backups/vector-catalog-before-translated-*`.
 The home screen and meal results show aggregate coverage and outstanding checks;
 failed coverage requests do not block accounts, tables or private check-ins.
 

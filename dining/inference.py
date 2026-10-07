@@ -421,9 +421,17 @@ def invoke_explanations(
                 {"id": i, "allowed_reason_ids": list(REASONS)} for i in option_ids
             ]
         },
-        instruction="Return only a JSON object mapping every option id to two distinct allowed_reason_ids. Do not add facts, keys, tools or prose.",
+        # v3: ilmu-mini-v3.3 answered v2 with one string per option; the explicit array
+        # shape fixes that without loosening validation (verified live, 7 Oct 2026).
+        instruction=(
+            "Return only a JSON object. Use every option id exactly once as a key. "
+            "Each value must be a JSON array of exactly two different strings chosen "
+            "from that option's allowed_reason_ids. "
+            'Example shape: {"<option id>": ["group_fit", "budget"]}. '
+            "No other keys, text, tools or code fences."
+        ),
         validate=validate,
-        prompt_version="allowed-reasons-v2",
+        prompt_version="allowed-reasons-v3",
         role="explanation_labels_only",
         skip=not option_ids,
     )

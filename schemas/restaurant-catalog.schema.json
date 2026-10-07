@@ -178,6 +178,23 @@
           "title": "Attributes",
           "type": "array"
         },
+        "name_translations": {
+          "additionalProperties": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "propertyNames": {
+            "enum": [
+              "en",
+              "ms",
+              "zh"
+            ]
+          },
+          "title": "Name Translations",
+          "type": "object"
+        },
         "price": {
           "anyOf": [
             {

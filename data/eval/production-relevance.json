@@ -1,0 +1,2420 @@
+{
+  "label_version": "production-relevance-v1",
+  "source": "tests/golden/test_golden_production.py expectations (★ → 2, required/allowed → 1)",
+  "catalog_version": "0.4.0-translated",
+  "cases": {
+    "P-001": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.069,
+          "longitude": 101.693,
+          "radius_km": 3
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "ramen"
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "ramen"
+            },
+            "user_id": "P2"
+          }
+        ]
+      },
+      "relevance": {
+        "scan-super-ramen-menu-9c56df": 2
+      }
+    },
+    "P-002": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T19:00:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.205,
+          "longitude": 101.66,
+          "radius_km": 4
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "ramen"
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "ramen"
+            },
+            "user_id": "P2"
+          }
+        ]
+      },
+      "relevance": {
+        "scan-menya-yamato-e9-ba-b5-e5-b1-8b-e5-a4-a7--d7cfa9": 2
+      }
+    },
+    "P-003": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T19:00:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.205,
+          "longitude": 101.66,
+          "radius_km": 4
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "拉面"
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "拉面"
+            },
+            "user_id": "P2"
+          }
+        ]
+      },
+      "relevance": {
+        "scan-menya-yamato-e9-ba-b5-e5-b1-8b-e5-a4-a7--d7cfa9": 2
+      }
+    },
+    "P-004": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.133,
+          "longitude": 101.688,
+          "radius_km": 1
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "nasi lemak"
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "nasi lemak"
+            },
+            "user_id": "P2"
+          }
+        ]
+      },
+      "relevance": {
+        "scan-151-hugh-low-kopitiam-nu-sentral-menu-c7e400": 2
+      }
+    },
+    "P-005": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.0879,
+          "longitude": 101.5456,
+          "radius_km": 6
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "nasi lemak"
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "nasi lemak"
+            },
+            "user_id": "P2"
+          }
+        ]
+      },
+      "relevance": {
+        "lambogrill-shah-alam": 2
+      }
+    },
+    "P-006": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.0775,
+          "longitude": 101.5883,
+          "radius_km": 3
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "laksa"
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "laksa"
+            },
+            "user_id": "P2"
+          }
+        ]
+      },
+      "relevance": {
+        "scan-jom-laksa-menu-57b2d4": 2
+      }
+    },
+    "P-007": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.1,
+          "longitude": 101.74,
+          "radius_km": 5
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "curry mee"
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "curry mee"
+            },
+            "user_id": "P2"
+          }
+        ]
+      },
+      "relevance": {
+        "scan-jia-li-mian-noodle-house-menu-4e3e36": 2
+      }
+    },
+    "P-008": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.1,
+          "longitude": 101.74,
+          "radius_km": 5
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "mi kari"
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "mi kari"
+            },
+            "user_id": "P2"
+          }
+        ]
+      },
+      "relevance": {
+        "scan-jia-li-mian-noodle-house-menu-4e3e36": 2
+      }
+    },
+    "P-009": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.1579,
+          "longitude": 101.7123,
+          "radius_km": 2
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "cuisines": [
+                "Malay"
+              ]
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "cuisines": [
+                "Malay"
+              ]
+            },
+            "user_id": "P2"
+          }
+        ]
+      },
+      "relevance": {
+        "cili-kampung-suria-klcc": 2
+      }
+    },
+    "P-010": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.1579,
+          "longitude": 101.7123,
+          "radius_km": 2
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "cuisines": [
+                "Turkish"
+              ]
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "cuisines": [
+                "Turkish"
+              ]
+            },
+            "user_id": "P2"
+          }
+        ]
+      },
+      "relevance": {
+        "grand-hisar-stonor": 2
+      }
+    },
+    "P-011": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.1579,
+          "longitude": 101.7123,
+          "radius_km": 2
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "cuisines": [
+                "Hakka"
+              ]
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "cuisines": [
+                "Hakka"
+              ]
+            },
+            "user_id": "P2"
+          }
+        ]
+      },
+      "relevance": {
+        "hakka-raja-chulan": 2
+      }
+    },
+    "P-012": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.12,
+          "longitude": 101.625,
+          "radius_km": 2
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "burger"
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "burger"
+            },
+            "user_id": "P2"
+          }
+        ]
+      },
+      "relevance": {
+        "myburgerlab-seapark": 2
+      }
+    },
+    "P-013": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.12,
+          "longitude": 101.625,
+          "radius_km": 2
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "cuisines": [
+                "Thai"
+              ]
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "cuisines": [
+                "Thai"
+              ]
+            },
+            "user_id": "P2"
+          }
+        ]
+      },
+      "relevance": {
+        "scan-aroi-mak-mak-pj-menu-b9c07f": 2
+      }
+    },
+    "P-014": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.12,
+          "longitude": 101.625,
+          "radius_km": 2
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "seafood"
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "seafood"
+            },
+            "user_id": "P2"
+          }
+        ]
+      },
+      "relevance": {
+        "green-view-pj": 2
+      }
+    },
+    "P-016": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.0364,
+          "longitude": 101.766,
+          "radius_km": 1
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "beef pho"
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "beef pho"
+            },
+            "user_id": "P2"
+          }
+        ]
+      },
+      "relevance": {
+        "scan-viet-pho-cafe-menu-ec6e18": 2
+      }
+    },
+    "P-017": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.0364,
+          "longitude": 101.766,
+          "radius_km": 2
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "cuisines": [
+                "Thai"
+              ]
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "cuisines": [
+                "Thai"
+              ]
+            },
+            "user_id": "P2"
+          }
+        ]
+      },
+      "relevance": {
+        "scan-khunthai-village-restaurant-menu-4aa842": 2
+      }
+    },
+    "P-018": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.0364,
+          "longitude": 101.766,
+          "radius_km": 1
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "pizza"
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "pizza"
+            },
+            "user_id": "P2"
+          }
+        ]
+      },
+      "relevance": {
+        "bar-ber-cheras": 2,
+        "scan-black-tower-coffee-menu-e23e6d": 2
+      }
+    },
+    "P-019": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.04,
+          "longitude": 101.618,
+          "radius_km": 3
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "sushi"
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "sushi"
+            },
+            "user_id": "P2"
+          }
+        ]
+      },
+      "relevance": {
+        "scan-nakamura-bashi-menu-ab95e6": 2
+      }
+    },
+    "P-020": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.04,
+          "longitude": 101.618,
+          "radius_km": 3
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "Hokkien mee"
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "Hokkien mee"
+            },
+            "user_id": "P2"
+          }
+        ]
+      },
+      "relevance": {
+        "scan-xin-hao-tat-restaurant-menu-c65b3b": 2
+      }
+    },
+    "P-021": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.04,
+          "longitude": 101.618,
+          "radius_km": 3
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "fish ball noodles"
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "fish ball noodles"
+            },
+            "user_id": "P2"
+          }
+        ]
+      },
+      "relevance": {
+        "scan-de-forest-cafe-menu-f5b778": 2,
+        "scan-xin-hao-tat-restaurant-menu-c65b3b": 2
+      }
+    },
+    "P-022": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.205,
+          "longitude": 101.66,
+          "radius_km": 3
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "char siu rice"
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "char siu rice"
+            },
+            "user_id": "P2"
+          }
+        ]
+      },
+      "relevance": {
+        "scan-man-kee-cafe-menu-0adc1b": 2
+      }
+    },
+    "P-024": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.1,
+          "longitude": 101.74,
+          "radius_km": 1
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "yong tau foo"
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "yong tau foo"
+            },
+            "user_id": "P2"
+          }
+        ]
+      },
+      "relevance": {
+        "scan-cheras-homey-yong-tau-foo-menu-100d39": 2
+      }
+    },
+    "P-025": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.1,
+          "longitude": 101.74,
+          "radius_km": 1
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "yakitori"
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "yakitori"
+            },
+            "user_id": "P2"
+          }
+        ]
+      },
+      "relevance": {
+        "scan-yakitori-haki-menu-e067c1": 2
+      }
+    },
+    "P-026": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.069,
+          "longitude": 101.693,
+          "radius_km": 1
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "Arabic food"
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "Arabic food"
+            },
+            "user_id": "P2"
+          }
+        ]
+      },
+      "relevance": {
+        "scan-al-haramain-restaurant-menu-b385ba": 2
+      }
+    },
+    "P-027": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.069,
+          "longitude": 101.693,
+          "radius_km": 1
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "tom yam"
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "tom yam"
+            },
+            "user_id": "P2"
+          }
+        ]
+      },
+      "relevance": {
+        "scan-warung-makcik-kiah-menu-f13d31": 2,
+        "scan-thai-chala-menu-24fda2": 2
+      }
+    },
+    "P-028": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.069,
+          "longitude": 101.693,
+          "radius_km": 2
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "hot pot steamboat"
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "hot pot steamboat"
+            },
+            "user_id": "P2"
+          }
+        ]
+      },
+      "relevance": {
+        "scan-theres-a-hot-pot-restaurant-menu-557005": 2
+      }
+    },
+    "P-029": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.069,
+          "longitude": 101.693,
+          "radius_km": 1
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "chicken chop"
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "chicken chop"
+            },
+            "user_id": "P2"
+          }
+        ]
+      },
+      "relevance": {
+        "scan-gaga-western-corner-menu-54b37b": 2
+      }
+    },
+    "P-030": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.0775,
+          "longitude": 101.5883,
+          "radius_km": 1
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "biryani"
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "biryani"
+            },
+            "user_id": "P2"
+          }
+        ]
+      },
+      "relevance": {
+        "big-singh-chapati-ss15": 2
+      }
+    },
+    "P-031": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.069,
+          "longitude": 101.693,
+          "radius_km": 1
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "ramen"
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "nasi goreng"
+            },
+            "user_id": "P2"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "kakigori dessert"
+            },
+            "user_id": "P3"
+          }
+        ]
+      },
+      "relevance": {
+        "scan-super-ramen-menu-9c56df": 2,
+        "scan-warung-makcik-kiah-menu-f13d31": 2,
+        "scan-shibuya-dessert-menu-b30866": 2
+      }
+    },
+    "P-032": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.1579,
+          "longitude": 101.7123,
+          "radius_km": 1.2
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "cuisines": [
+                "Malay"
+              ]
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "cuisines": [
+                "Turkish"
+              ]
+            },
+            "user_id": "P2"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "cuisines": [
+                "Chinese"
+              ]
+            },
+            "user_id": "P3"
+          }
+        ]
+      },
+      "relevance": {
+        "cili-kampung-suria-klcc": 2,
+        "hakka-raja-chulan": 2,
+        "grand-hisar-stonor": 2
+      }
+    },
+    "P-033": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.12,
+          "longitude": 101.625,
+          "radius_km": 2
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "burger"
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "cuisines": [
+                "Thai"
+              ]
+            },
+            "user_id": "P2"
+          }
+        ]
+      },
+      "relevance": {
+        "myburgerlab-seapark": 2,
+        "scan-aroi-mak-mak-pj-menu-b9c07f": 2
+      }
+    },
+    "P-034": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.0775,
+          "longitude": 101.5883,
+          "radius_km": 2.5
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "laksa"
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "biryani"
+            },
+            "user_id": "P2"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "pad kra pao"
+            },
+            "user_id": "P3"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "bubble tea"
+            },
+            "user_id": "P4"
+          }
+        ]
+      },
+      "relevance": {
+        "soi55-ss15-subang-jaya": 2,
+        "big-singh-chapati-ss15": 2,
+        "scan-jom-laksa-menu-57b2d4": 2
+      }
+    },
+    "P-035": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.0364,
+          "longitude": 101.766,
+          "radius_km": 1
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "beef pho"
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "pizza"
+            },
+            "user_id": "P2"
+          }
+        ]
+      },
+      "relevance": {
+        "scan-viet-pho-cafe-menu-ec6e18": 2,
+        "bar-ber-cheras": 1,
+        "scan-black-tower-coffee-menu-e23e6d": 1
+      }
+    },
+    "P-036": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.04,
+          "longitude": 101.618,
+          "radius_km": 2.5
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "sushi"
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "Hokkien mee"
+            },
+            "user_id": "P2"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "chicken chop"
+            },
+            "user_id": "P3"
+          }
+        ]
+      },
+      "relevance": {
+        "scan-nakamura-bashi-menu-ab95e6": 2,
+        "scan-de-forest-cafe-menu-f5b778": 2,
+        "scan-xin-hao-tat-restaurant-menu-c65b3b": 2
+      }
+    },
+    "P-037": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.205,
+          "longitude": 101.66,
+          "radius_km": 3
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "char siu rice"
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "cheese naan"
+            },
+            "user_id": "P2"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "tau fu fa"
+            },
+            "user_id": "P3"
+          }
+        ]
+      },
+      "relevance": {
+        "scan-man-kee-cafe-menu-0adc1b": 2,
+        "mamak-cafe-taman-impian": 2
+      }
+    },
+    "P-038": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.133,
+          "longitude": 101.688,
+          "radius_km": 0.5
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "nasi lemak"
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "roti canai"
+            },
+            "user_id": "P2"
+          }
+        ]
+      },
+      "relevance": {
+        "scan-151-hugh-low-kopitiam-nu-sentral-menu-c7e400": 2,
+        "mamak-cafe-brickfields": 2
+      }
+    },
+    "P-039": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T19:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.1579,
+          "longitude": 101.7123,
+          "radius_km": 1.2
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "cuisines": [
+                "Malay"
+              ]
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "cuisines": [
+                "Korean"
+              ]
+            },
+            "user_id": "P2"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "cuisines": [
+                "Turkish"
+              ]
+            },
+            "user_id": "P3"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "cuisines": [
+                "Japanese"
+              ]
+            },
+            "user_id": "P4"
+          }
+        ]
+      },
+      "relevance": {
+        "cili-kampung-suria-klcc": 1,
+        "hakka-raja-chulan": 1,
+        "grand-hisar-stonor": 1
+      }
+    },
+    "P-042": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.069,
+          "longitude": 101.693,
+          "radius_km": 1
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "tom yam"
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "chicken chop, not spicy"
+            },
+            "user_id": "P2"
+          }
+        ]
+      },
+      "relevance": {
+        "scan-gaga-western-corner-menu-54b37b": 2,
+        "scan-warung-makcik-kiah-menu-f13d31": 1,
+        "scan-thai-chala-menu-24fda2": 1
+      }
+    },
+    "P-071": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-10T08:00:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.069,
+          "longitude": 101.693,
+          "radius_km": 3
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60
+            },
+            "user_id": "P2"
+          }
+        ]
+      },
+      "relevance": {
+        "scan-103-coffee-workshop-menu-6d4e54": 1,
+        "scan-chok-kar-chong-menu-5f1467": 1
+      }
+    },
+    "P-080": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T21:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.12,
+          "longitude": 101.625,
+          "radius_km": 2
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60
+            },
+            "user_id": "P2"
+          }
+        ]
+      },
+      "relevance": {
+        "red-kettle-starling": 1
+      }
+    },
+    "P-101": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.1579,
+          "longitude": 101.7123,
+          "radius_km": 1.2
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "cuisines": [
+                "Malay"
+              ]
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "cuisines": [
+                "Malay"
+              ]
+            },
+            "user_id": "P2"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "cuisines": [
+                "Turkish"
+              ]
+            },
+            "user_id": "P3"
+          }
+        ]
+      },
+      "relevance": {
+        "cili-kampung-suria-klcc": 2,
+        "grand-hisar-stonor": 1
+      }
+    },
+    "P-102": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.1579,
+          "longitude": 101.7123,
+          "radius_km": 1.2
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "cuisines": [
+                "Malay"
+              ]
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "cuisines": [
+                "Malay"
+              ]
+            },
+            "user_id": "P2"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "cuisines": [
+                "Japanese"
+              ]
+            },
+            "user_id": "P3"
+          }
+        ]
+      },
+      "relevance": {
+        "cili-kampung-suria-klcc": 2
+      }
+    },
+    "P-103": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.1579,
+          "longitude": 101.7123,
+          "radius_km": 1.2
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "cuisines": [
+                "Malay"
+              ]
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "cuisines": [
+                "Malay"
+              ]
+            },
+            "user_id": "P2"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "cuisines": [
+                "Chinese"
+              ]
+            },
+            "user_id": "P3"
+          }
+        ]
+      },
+      "relevance": {
+        "cili-kampung-suria-klcc": 2,
+        "hakka-raja-chulan": 1
+      }
+    },
+    "P-104": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.1579,
+          "longitude": 101.7123,
+          "radius_km": 1.2
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "cuisines": [
+                "Malay"
+              ]
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "cuisines": [
+                "Malay"
+              ]
+            },
+            "user_id": "P2"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "cuisines": [
+                "Korean"
+              ]
+            },
+            "user_id": "P3"
+          }
+        ]
+      },
+      "relevance": {
+        "cili-kampung-suria-klcc": 2
+      }
+    },
+    "P-105": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.069,
+          "longitude": 101.693,
+          "radius_km": 1
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "ramen"
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "ramen"
+            },
+            "user_id": "P2"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "nasi goreng"
+            },
+            "user_id": "P3"
+          }
+        ]
+      },
+      "relevance": {
+        "scan-super-ramen-menu-9c56df": 2,
+        "scan-warung-makcik-kiah-menu-f13d31": 1
+      }
+    },
+    "P-106": {
+      "snapshot": {
+        "revision": 1,
+        "meal": {
+          "id": "eval",
+          "meal_at": "2026-10-08T12:30:00+08:00",
+          "duration_minutes": 60,
+          "latitude": 3.12,
+          "longitude": 101.625,
+          "radius_km": 2
+        },
+        "participants": [
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "cuisines": [
+                "Thai"
+              ]
+            },
+            "user_id": "P1"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "cuisines": [
+                "Thai"
+              ]
+            },
+            "user_id": "P2"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "cuisines": [
+                "Thai"
+              ]
+            },
+            "user_id": "P3"
+          },
+          {
+            "profile": {
+              "allergy_status": "none",
+              "halal_policy": "none",
+              "requirements_reviewed": true,
+              "dietary_requirements": []
+            },
+            "response": {
+              "requirements_confirmed": true,
+              "budget": 60,
+              "craving": "burger"
+            },
+            "user_id": "P4"
+          }
+        ]
+      },
+      "relevance": {
+        "scan-aroi-mak-mak-pj-menu-b9c07f": 2,
+        "myburgerlab-seapark": 1
+      }
+    }
+  }
+}
