@@ -1,0 +1,4 @@
+-r requirements-web.txt
+pytest>=8,<10
+httpx>=0.27,<1
+ruff>=0.12,<1

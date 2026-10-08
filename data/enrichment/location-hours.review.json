@@ -1,0 +1,838 @@
+{
+  "review_version": "1",
+  "input": {
+    "catalog_id": "kl-selangor-real-pilot",
+    "catalog_version": "0.1.0-partial",
+    "sha256": "767e25e39957aba4ccb46e49ee136551ebbbc89afe0272282908ce307cf27e77"
+  },
+  "generated_at": "2026-10-06T13:00:00Z",
+  "review_entries": [
+    {
+      "outlet_id": "mantra-bar-bangsar",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_conflict"
+      ],
+      "candidate_urls": [
+        "https://mantrabarkl.com/contact/"
+      ],
+      "notes": "Rooftop mall venue lacks independent building point. Contact page hours text contains conflicting intervals."
+    },
+    {
+      "outlet_id": "la-delima-bukit-jalil",
+      "status": "needs_review",
+      "reason_codes": [
+        "possibly_renamed",
+        "possibly_closed",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/restoran-la-delima-bukit-jalil-menu/"
+      ],
+      "notes": "Shares identical address with Restoran Jihan Maju (outlet 60). Historical signage suggests rename or replacement; hours unverified."
+    },
+    {
+      "outlet_id": "scan-little-jungle-coffee-house-menu-e6ef4c",
+      "status": "needs_review",
+      "reason_codes": [
+        "hours_incomplete"
+      ],
+      "candidate_urls": [
+        "https://www.facebook.com/littlejunglecoffeehouse/"
+      ],
+      "notes": "Storefront node 7596625850 verified at 79 Jalan Rukun 4, but business has an irregular alternate-Thursday off day schedule."
+    },
+    {
+      "outlet_id": "scan-banna-thai-menu-d5f27e",
+      "status": "needs_review",
+      "reason_codes": [
+        "possibly_closed"
+      ],
+      "candidate_urls": [
+        "https://www.facebook.com/100063807392412/"
+      ],
+      "notes": "Banna Thai appears to have relocated from KLTS to Lucky Star / PV16 Setapak."
+    },
+    {
+      "outlet_id": "scan-chisha-restaurant-menu-7e565f",
+      "status": "needs_review",
+      "reason_codes": [
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://www.facebook.com/chishacrayfish/"
+      ],
+      "notes": "Address on Jalan Radin Bagus 7 currently occupied by other dining tenants; active weekly schedule unverified."
+    },
+    {
+      "outlet_id": "scan-choy-kee-hong-kong-roasted-menu-7632fd",
+      "status": "needs_review",
+      "reason_codes": [
+        "possibly_closed"
+      ],
+      "candidate_urls": [
+        "https://www.facebook.com/61554856480692/"
+      ],
+      "notes": "Historic roast duck eatery relocated from Taman Desa to Salak South Garden."
+    },
+    {
+      "outlet_id": "scan-dining-first-menu-6048b0",
+      "status": "needs_review",
+      "reason_codes": [
+        "hours_incomplete"
+      ],
+      "candidate_urls": [
+        "https://www.facebook.com/100057221209169/"
+      ],
+      "notes": "Building commercial block at Jalan Temenggung 13/9 verified, but official schedule lacks fixed weekly closed-day policy."
+    },
+    {
+      "outlet_id": "scan-farid-fiery-chicken-menu-5d3f5a",
+      "status": "needs_review",
+      "reason_codes": [
+        "possibly_closed"
+      ],
+      "candidate_urls": [
+        "https://www.instagram.com/faridfierychicken/"
+      ],
+      "notes": "KL Traders Square branch inactive; active operations consolidated at Desa Petaling and UIA Gombak."
+    },
+    {
+      "outlet_id": "scan-fika-fika-cafe-menu-d5dd95",
+      "status": "needs_review",
+      "reason_codes": [
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://www.facebook.com/fikafikacafeKL/"
+      ],
+      "notes": "Located at The Link 2 Bukit Jalil; lacks published regular weekly operating hours on profile."
+    },
+    {
+      "outlet_id": "scan-full-blessing-menu-b50a50",
+      "status": "needs_review",
+      "reason_codes": [
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/full-blessing-menu/"
+      ],
+      "notes": "Taman Kepong restaurant lacks official website or verified weekly schedule."
+    },
+    {
+      "outlet_id": "scan-golden-city-restaurant-menu-daa08e",
+      "status": "needs_review",
+      "reason_codes": [
+        "possibly_closed",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/golden-city-restaurant-menu/"
+      ],
+      "notes": "Sunway Nexis unit B-G-7 has no active tenant profile under Golden City Restaurant."
+    },
+    {
+      "outlet_id": "scan-goldhill-food-court-menu-8d1537",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/goldhill-food-court-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-gzl-sweet-hunter-menu-3ea943",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/gzl-sweet-hunter-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-hk-porky-noodle-house-pandan-indah-menu-e9e741",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/hk-porky-noodle-house-pandan-indah-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-hometown-claypot-curry-menu-e6c2f1",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/hometown-claypot-curry-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-j-m-bistro-menu-d998fd",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/j-m-bistro-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-janhom-thai-cuisine-restaurant-menu-9b7489",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/janhom-thai-cuisine-restaurant-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-just-mangos-menu-ea2fdd",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/just-mangos-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-kuching-noodle-house-menu-eb4b0e",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/kuching-noodle-house-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-lion-boba-menu-8c4d7b",
+      "status": "needs_review",
+      "reason_codes": [
+        "possibly_closed",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://www.instagram.com/lionbobamalaysia/"
+      ],
+      "notes": "61 Jalan SS21/1a Damansara Utama outlet has inactive social presence; weekly hours unverified."
+    },
+    {
+      "outlet_id": "scan-ox-steak-house-menu-c7022e",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/ox-steak-house-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-petai-king-e8-87-ad-e8-b1-86-e7-8e-8b-me-2aac65",
+      "status": "needs_review",
+      "reason_codes": [
+        "ambiguous_branch",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/petai-king-menu-1/"
+      ],
+      "notes": "Duplicate entry for Petai King at 21 Jalan Temenggung 27/9 (see also outlet 85)."
+    },
+    {
+      "outlet_id": "scan-restoran-al-bidayah-menu-gombak-5869a4",
+      "status": "needs_review",
+      "reason_codes": [
+        "ambiguous_branch",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/restoran-al-bidayah-menu/"
+      ],
+      "notes": "Chain operates multiple locations; KLTS branch lacks distinct verified storefront node and weekly schedule."
+    },
+    {
+      "outlet_id": "scan-restoran-al-bidayah-menu-masjid-india-baf8e6",
+      "status": "needs_review",
+      "reason_codes": [
+        "ambiguous_branch",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/restoran-al-bidayah-menu-1/"
+      ],
+      "notes": "Jalan Bunus branch lacks distinct verified storefront node and weekly schedule."
+    },
+    {
+      "outlet_id": "scan-restoran-bbq-thai-aroi-menu-ef470b",
+      "status": "needs_review",
+      "reason_codes": [
+        "hours_conflict"
+      ],
+      "candidate_urls": [
+        "https://www.facebook.com/tabbq163/"
+      ],
+      "notes": "Operating hours conflict between official Facebook (4:30pm-2am) and dining features (4pm-12am / 5pm-1am)."
+    },
+    {
+      "outlet_id": "scan-restoran-jihan-maju-menu-4d4cee",
+      "status": "needs_review",
+      "reason_codes": [
+        "address_mismatch",
+        "possibly_renamed",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/restoran-jihan-maju-menu/"
+      ],
+      "notes": "Shares identical unit with Restoran La Delima (outlet 18) at Aked Esplanad."
+    },
+    {
+      "outlet_id": "scan-restoran-mamak-abc-al-safa-menu-73c564",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/restoran-mamak-abc-al-safa-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-restoran-nasi-kandar-ariff-menu-2acf26",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/restoran-nasi-kandar-ariff-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-restoran-nasi-kandar-hameeds-maju-menu-41ef56",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/restoran-nasi-kandar-hameeds-maju-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-restoran-nasi-lemak-royale-kedah-menu-04aeb7",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/restoran-nasi-lemak-royale-kedah-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-soyoung-menu-95e036",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/soyoung-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-master-ng-7-star-menu-126e85",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/master-ng-7-star-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-tokyo-yakiniku-menu-b0f15f",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/tokyo-yakiniku-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-udon-ya-san-restaurant-menu-f9fe75",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/udon-ya-san-restaurant-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-vlite-cafe-menu-41e2a0",
+      "status": "needs_review",
+      "reason_codes": [
+        "hours_incomplete"
+      ],
+      "candidate_urls": [
+        "https://www.facebook.com/BTHKL/"
+      ],
+      "notes": "Bandar Puteri Puchong vegetarian cafe has irregular lunar-calendar off days."
+    },
+    {
+      "outlet_id": "scan-vwrap-cafe-menu-94b947",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/vwrap-cafe-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-ws-dim-sum-menu-b26296",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/ws-dim-sum-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-hometown-recipes-kitchen-menu-55a10d",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/hometown-recipes-kitchen-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-restoran-lim-mee-yoke-menu-80ca9d",
+      "status": "needs_review",
+      "reason_codes": [
+        "hours_incomplete"
+      ],
+      "candidate_urls": [
+        "https://www.facebook.com/RestoranLimMeeYoke/"
+      ],
+      "notes": "SS2 prawn noodle eatery operates daily breakfast/lunch but off-days are announced ad-hoc."
+    },
+    {
+      "outlet_id": "scan-shamelin-barbeque-restaurant-menu-146a0c",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/shamelin-barbeque-restaurant-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-s3-coffee-bar-cake-menu-b407be",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/s3-coffee-bar-cake-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-shokudo-japanese-curry-rice-menu-e0b51f",
+      "status": "needs_review",
+      "reason_codes": [
+        "possibly_closed",
+        "possibly_renamed"
+      ],
+      "candidate_urls": [
+        "https://rinjin.my/"
+      ],
+      "notes": "Permanently closed in late 2024 and replaced by Rinjin Shokudo at 9 Jalan 20/13 Taman Paramount."
+    },
+    {
+      "outlet_id": "scan-petai-king-menu-62f3a9",
+      "status": "needs_review",
+      "reason_codes": [
+        "ambiguous_branch",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/petai-king-menu/"
+      ],
+      "notes": "Duplicate entry for Petai King at 21-G Jalan Temenggung 27/9 (see also outlet 55)."
+    },
+    {
+      "outlet_id": "scan-gogo-steamboat-menu-faacec",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/gogo-steamboat-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-lim-jiu-menu-608d90",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/lim-jiu-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-kee-hiong-klang-bak-kut-teh-menu-2b0e47",
+      "status": "needs_review",
+      "reason_codes": [
+        "address_mismatch",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://www.facebook.com/keehiongss2/"
+      ],
+      "notes": "Catalog states No. 72 Jalan SS2/67; active official branch relocated to 61-9G Jalan SS2/75."
+    },
+    {
+      "outlet_id": "scan-chilli-village-restaurant-menu-e8-be-a3--e66d85",
+      "status": "needs_review",
+      "reason_codes": [
+        "hours_conflict"
+      ],
+      "candidate_urls": [
+        "https://www.facebook.com/ilovemsiafood/"
+      ],
+      "notes": "Kuchai Lama branch operating hours conflict between 6pm-5am and 11am-2am across posts."
+    },
+    {
+      "outlet_id": "scan-duddells-coffee-roastery-menu-1336f4",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/duddells-coffee-roastery-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-colobaba-menu-97c55b",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/colobaba-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-i-am-tomyum-noodle-menu-fe7bd7",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/i-am-tomyum-noodle-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-kor-b-menu-20f668",
+      "status": "needs_review",
+      "reason_codes": [
+        "possibly_renamed",
+        "hours_incomplete"
+      ],
+      "candidate_urls": [
+        "https://www.facebook.com/eatdrinkkl/"
+      ],
+      "notes": "Bandar Sunway branch has biweekly Sunday off-days and appears renamed to Redcup."
+    },
+    {
+      "outlet_id": "scan-little-bing-menu-9300d0",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/little-bing-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-opus-ktv-bangsar-menu-97e445",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/opus-ktv-bangsar-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-reiwa-akashi-japanese-bbq-menu-38d9c6",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/reiwa-akashi-japanese-bbq-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-sakura-sushi-japanese-restaurant-menu-faabd9",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/sakura-sushi-japanese-restaurant-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-sakura-sushi-setapak-menu-56fba4",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/sakura-sushi-setapak-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-sakura-sushi-taman-midah-menu-76d604",
+      "status": "needs_review",
+      "reason_codes": [
+        "hours_conflict"
+      ],
+      "candidate_urls": [
+        "https://www.facebook.com/sakurasushitamanmidah/"
+      ],
+      "notes": "Storefront node 6550552786 verified at 20 Jalan Midah 3; hours conflict across continuous vs split schedules."
+    },
+    {
+      "outlet_id": "scan-sea-park-dessert-menu-e5fa1f",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/sea-park-dessert-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-nine-dragon-boat-seafood-restaurant-menu-0cff86",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/nine-dragon-boat-seafood-restaurant-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-peel-road-hokkien-char-menu-10bc1a",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/peel-road-hokkien-char-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-song-lim-restaurant-menu-ff9012",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/song-lim-restaurant-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-linh-chi-hai-san-tuoi-song-menu-ffd070",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/linh-chi-hai-san-tuoi-song-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-b-m-famous-yam-rice-menu-431f0c",
+      "status": "needs_review",
+      "reason_codes": [
+        "hours_incomplete"
+      ],
+      "candidate_urls": [
+        "https://www.instagram.com/yamricecheras/"
+      ],
+      "notes": "Mahkota Cheras yam rice stall has biweekly Wednesday off-days."
+    },
+    {
+      "outlet_id": "scan-restoran-al-bidayah-menu-bandar-baru-sel-1ec27e",
+      "status": "needs_review",
+      "reason_codes": [
+        "ambiguous_branch",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/restoran-al-bidayah-menu-2/"
+      ],
+      "notes": "Selayang branch lacks distinct verified storefront node and weekly schedule."
+    },
+    {
+      "outlet_id": "scan-astana-restaurant-menu-d01681",
+      "status": "needs_review",
+      "reason_codes": [
+        "possibly_closed"
+      ],
+      "candidate_urls": [
+        "https://www.instagram.com/astana.restaurant/"
+      ],
+      "notes": "Endah Promenade branch closed and relocated to TTDI."
+    },
+    {
+      "outlet_id": "scan-e5-a4-a7-e5-94-90-e5-91-b3-e9-81-93-sri--d8fa1e",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/e5-a4-a7-e5-94-90-e5-91-b3-e9-81-93-sri-/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-restoran-selera-ampang-menu-fc5ec0",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/restoran-selera-ampang-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-wong-chao-seafood-restaurant-menu-c6fff5",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/wong-chao-seafood-restaurant-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-keong-kee-menu-775d34",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/keong-kee-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    },
+    {
+      "outlet_id": "scan-sv-hong-kee-restaurant-menu-d66ef3",
+      "status": "needs_review",
+      "reason_codes": [
+        "coordinates_approximate",
+        "hours_missing"
+      ],
+      "candidate_urls": [
+        "https://scanmenu.my/sv-hong-kee-restaurant-menu/"
+      ],
+      "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified."
+    }
+  ]
+}

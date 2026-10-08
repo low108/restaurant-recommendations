@@ -10,3 +10,17 @@ model_cache/
 chroma_multimodal/
 .pytest_cache/
 review_image_placeholder.jpg
+# Group dining runtime: private local records must not enter Git.
+var/
+*.sqlite3
+*.sqlite3-shm
+*.sqlite3-wal
+.venv/
+.pytest_cache/
+.ruff_cache/
+__pycache__/
+data/catalog.real.json
+# Disposable browser test dependencies and reports (fictional test accounts only).
+node_modules/
+playwright-report/
+test-results/

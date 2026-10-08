@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.63.0"
+  },
+  "name": "makan-together-browser-checks",
+  "private": true,
+  "scripts": {
+    "test:e2e": "playwright test",
+    "test:e2e:chromium": "playwright test --project=chromium-desktop"
+  }
+}
