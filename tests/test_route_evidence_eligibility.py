@@ -1,10 +1,10 @@
 from test_recommendation import ready_catalog, snapshot
 
-from dining.recommendation import Recommender
-from dining.routing import (
+from dining.location.routing import (
     FakeRoutingProvider,
     RouteCoordinate,
 )
+from dining.recommendation.engine import Recommender
 
 
 def test_impossible_arrival_blocks_candidate_for_affected_diner():

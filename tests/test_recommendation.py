@@ -4,8 +4,8 @@ from pathlib import Path
 
 import pytest
 
-from dining.catalog import Catalog, load_catalog
-from dining.recommendation import Recommender, _open_for
+from dining.catalog.models import Catalog, load_catalog
+from dining.recommendation.engine import Recommender, _open_for
 
 
 def ready_catalog():

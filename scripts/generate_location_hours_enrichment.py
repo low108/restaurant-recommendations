@@ -18,7 +18,7 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-from dining.catalog import OpeningInterval, Source
+from dining.catalog.models import OpeningInterval, Source
 
 CATALOG_PATH = Path("/Users/johnathanjohnathan/Documents/restaurant-menu-collection/catalog.real.json")
 ENRICHMENT_DIR = Path("data/enrichment")

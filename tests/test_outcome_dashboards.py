@@ -1,7 +1,7 @@
 from test_api import checkin, create_meal, make_client, setup_room
 from test_recommendation import ready_catalog, snapshot
 
-from dining.outcomes import compute_outcome_metrics
+from dining.meals.outcomes import compute_outcome_metrics
 from webapp import create_app
 
 

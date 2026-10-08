@@ -2,8 +2,8 @@ from datetime import datetime, timezone
 
 from test_recommendation import ready_catalog, snapshot
 
-from dining.catalog import Catalog
-from dining.retrieval import (
+from dining.catalog.models import Catalog
+from dining.retrieval.index import (
     CatalogEmbeddingIndex,
     RetrievalQuery,
     semantic_candidate_search,
@@ -186,7 +186,7 @@ def test_unavailable_index_falls_back_to_structured_retrieval():
 
 
 def test_multilingual_judgment_set_evaluation():
-    from dining.retrieval_eval import evaluate_retrieval
+    from dining.retrieval.evaluation import evaluate_retrieval
 
     catalog = ready_catalog()
     report = evaluate_retrieval(catalog)
@@ -201,7 +201,7 @@ def test_multilingual_judgment_set_evaluation():
 
 
 def test_recommender_integration_with_semantic_retrieval():
-    from dining.recommendation import Recommender
+    from dining.recommendation.engine import Recommender
 
     catalog = ready_catalog()
     index = CatalogEmbeddingIndex.build(catalog)

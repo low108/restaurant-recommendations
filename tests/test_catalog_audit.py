@@ -6,9 +6,9 @@ from pathlib import Path
 
 import pytest
 
-from dining.catalog import Catalog
-from dining.catalog_audit import audit_catalog, public_catalog_status, upgrade_catalog
-from dining.catalog_cli import main
+from dining.catalog.audit import audit_catalog, public_catalog_status, upgrade_catalog
+from dining.catalog.cli import main
+from dining.catalog.models import Catalog
 
 ROOT = Path(__file__).resolve().parents[1]
 NOW = datetime.fromisoformat("2026-10-06T12:00:00+08:00")

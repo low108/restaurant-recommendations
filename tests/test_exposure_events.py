@@ -1,7 +1,7 @@
 from test_api import checkin, create_meal, make_client, setup_room
 from test_recommendation import ready_catalog, snapshot
 
-from dining.exposure import (
+from dining.meals.exposure import (
     EVENT_CANDIDATE_ELIGIBLE,
     EVENT_CANDIDATE_SELECTED,
     EVENT_CANDIDATE_SHORTLISTED,

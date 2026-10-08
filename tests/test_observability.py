@@ -3,7 +3,7 @@ import json
 from fastapi.testclient import TestClient
 from test_recommendation import ready_catalog, snapshot
 
-from dining.agent import DiningAgent
+from dining.recommendation.agent import DiningAgent
 from webapp import create_app
 
 

@@ -4,8 +4,8 @@ from pathlib import Path
 
 import pytest
 
-from dining.catalog import load_catalog
-from dining.content_similarity import (
+from dining.catalog.models import load_catalog
+from dining.recommendation.content_similarity import (
     POLICY,
     FeatureSpace,
     cosine,
@@ -13,7 +13,7 @@ from dining.content_similarity import (
     score_item_content,
     today_vector,
 )
-from dining.recommendation import Recommender
+from dining.recommendation.engine import Recommender
 
 ROOT = Path(__file__).resolve().parents[1]
 

@@ -3,8 +3,8 @@ from fastapi import FastAPI
 from test_api import make_client, recommendation
 
 from dining.api import build_router
-from dining.push import create_push_payload, format_safe_notification
-from dining.store import DiningStore
+from dining.core.store import DiningStore
+from dining.notifications.push import create_push_payload, format_safe_notification
 
 
 @pytest.fixture

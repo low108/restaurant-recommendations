@@ -1,10 +1,10 @@
-from dining.inference import InferenceSettings
+from dining.llm.inference import InferenceSettings
 
 
 def test_json_code_fence_is_formatting_but_surrounding_prose_is_rejected(monkeypatch):
     from langchain_core.messages import AIMessage
 
-    from dining.inference import invoke_explanations
+    from dining.llm.inference import invoke_explanations
 
     responses = [
         '```json\n{"option-a":["budget","nearby"]}\n```',
@@ -57,7 +57,7 @@ def test_provider_receives_only_ids_and_labels_and_reports_real_usage(monkeypatc
 
     from langchain_core.messages import AIMessage
 
-    from dining.inference import invoke_explanations
+    from dining.llm.inference import invoke_explanations
 
     seen = []
 
@@ -117,7 +117,7 @@ def test_truncated_or_refused_output_keeps_fallback_even_when_json_looks_valid(
 ):
     from langchain_core.messages import AIMessage
 
-    from dining.inference import invoke_explanations
+    from dining.llm.inference import invoke_explanations
 
     responses = [
         AIMessage(
@@ -150,7 +150,7 @@ def test_truncated_or_refused_output_keeps_fallback_even_when_json_looks_valid(
 def test_untrusted_output_is_strict_bounded_and_never_exposed(monkeypatch):
     from langchain_core.messages import AIMessage
 
-    from dining.inference import invoke_explanations
+    from dining.llm.inference import invoke_explanations
 
     payloads = [
         '{"option-a":["budget","nearby"],"option-a":["budget","group_fit"]}',
@@ -212,7 +212,7 @@ def test_legacy_openai_credentials_are_used_only_for_an_explicit_provider():
 
 
 def test_invalid_configuration_and_empty_options_never_create_a_provider(monkeypatch):
-    from dining.inference import invoke_explanations
+    from dining.llm.inference import invoke_explanations
 
     def forbidden_provider(**kwargs):
         raise AssertionError("Provider must not be constructed")
@@ -289,7 +289,7 @@ def test_endpoint_rejects_credentials_queries_fragments_and_allows_local_http():
 
 
 def test_failed_provider_never_echoes_secrets_and_does_not_retry(monkeypatch):
-    from dining.inference import invoke_explanations
+    from dining.llm.inference import invoke_explanations
 
     calls = []
 
@@ -348,7 +348,7 @@ def test_standalone_probe_suppresses_ambient_tracing(monkeypatch):
     from langchain_core.messages import AIMessage
     from langsmith.run_helpers import get_tracing_context
 
-    from dining.inference import invoke_explanations
+    from dining.llm.inference import invoke_explanations
 
     monkeypatch.setenv("LANGSMITH_TRACING", "true")
 
@@ -370,7 +370,7 @@ def test_standalone_probe_suppresses_ambient_tracing(monkeypatch):
 def test_provider_model_metadata_cannot_echo_the_api_key(monkeypatch):
     from langchain_core.messages import AIMessage
 
-    from dining.inference import invoke_explanations
+    from dining.llm.inference import invoke_explanations
 
     class Provider:
         def __init__(self, **kwargs):

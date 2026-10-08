@@ -3,7 +3,8 @@ from fastapi import FastAPI
 from test_api import make_client, recommendation, setup_room
 
 from dining.api import build_router
-from dining.geocoding import (
+from dining.core.store import DiningStore
+from dining.location.geocoding import (
     DisabledGeocodingProvider,
     FakeGeocodingProvider,
     GeocodingStatus,
@@ -11,7 +12,6 @@ from dining.geocoding import (
     get_geocoding_provider,
     set_geocoding_provider,
 )
-from dining.store import DiningStore
 
 
 @pytest.fixture

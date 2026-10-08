@@ -6,8 +6,8 @@ from test_api import create_meal, make_client, setup_room
 from test_recommendation import ready_catalog, snapshot
 
 from dining.api import build_router
-from dining.recommendation import Recommender
-from dining.store import DiningStore
+from dining.core.store import DiningStore
+from dining.recommendation.engine import Recommender
 
 
 @pytest.fixture

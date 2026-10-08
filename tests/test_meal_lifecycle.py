@@ -4,8 +4,8 @@ from fastapi import FastAPI
 from test_api import approve, generate, make_client, ready_meal, recommendation, select
 
 from dining.api import build_router
-from dining.notifications import NotificationService
-from dining.store import DiningStore, decode
+from dining.core.store import DiningStore, decode
+from dining.notifications.reminders import NotificationService
 
 
 def selected_meal(tmp_path, *, notifications=False):

@@ -3,7 +3,7 @@ import json
 from langchain_core.messages import AIMessage
 from test_recommendation import ready_catalog, snapshot
 
-from dining.agent import DiningAgent
+from dining.recommendation.agent import DiningAgent
 
 
 def test_graph_runs_without_model_or_external_trace(monkeypatch):

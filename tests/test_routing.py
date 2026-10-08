@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta, timezone
 
-from dining.routing import (
+from dining.location.routing import (
     DisabledRoutingProvider,
     FakeRoutingProvider,
     RouteCoordinate,
@@ -152,7 +152,7 @@ def test_global_routing_provider_registry():
 def test_recommender_can_request_route_evidence():
     from test_recommendation import ready_catalog
 
-    from dining.recommendation import Recommender
+    from dining.recommendation.engine import Recommender
 
     fake = FakeRoutingProvider()
     origin = RouteCoordinate(latitude=3.1390, longitude=101.6869)

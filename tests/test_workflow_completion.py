@@ -22,7 +22,7 @@ def workflow(tmp_path):
         outlet["opening_exceptions_coverage"]["ends_on"] = (
             (datetime.now(timezone.utc) + timedelta(days=365)).date().isoformat()
         )
-    from dining.catalog import Catalog
+    from dining.catalog.models import Catalog
 
     path.write_text(Catalog.model_validate(catalog).model_dump_json())
     app = create_app(
@@ -356,7 +356,7 @@ def test_delegation_revocation_during_final_check_prevents_selection(tmp_path):
     from test_api import approve, ready_meal, recommendation
 
     from dining.api import build_router
-    from dining.store import DiningStore
+    from dining.core.store import DiningStore
 
     entered, release = threading.Event(), threading.Event()
 
@@ -640,7 +640,7 @@ def test_additive_migration_preserves_legacy_profiles_and_votes(tmp_path):
     from test_api import approve, generate, ready_meal, recommendation
 
     from dining.api import build_router
-    from dining.store import DiningStore
+    from dining.core.store import DiningStore
 
     path = tmp_path / "legacy.sqlite3"
     store = DiningStore(path)

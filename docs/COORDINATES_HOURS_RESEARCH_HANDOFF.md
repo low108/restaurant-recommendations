@@ -17,8 +17,8 @@ Read these files before doing any research:
 - docs/SCRAPING_HANDOFF.md
 - docs/CATALOG_V2.md
 - docs/VECTOR_IMPORT_E2E_HANDOFF.md
-- dining/catalog.py
-- dining/catalog_audit.py
+- dining/catalog/models.py
+- dining/catalog/audit.py
 
 Goal
 ----
@@ -268,16 +268,16 @@ patch applicator that:
 
 1. refuses a mismatched catalog ID, version, or checksum;
 2. refuses unknown outlet IDs and duplicate source IDs;
-3. validates all new sources and outlet records through `dining.catalog.Catalog`;
+3. validates all new sources and outlet records through `dining.catalog.models.Catalog`;
 4. writes a new catalog version atomically;
-5. runs `dining.catalog_cli` and saves its audit report; and
+5. runs `dining.catalog.cli` and saves its audit report; and
 6. leaves the previous catalog and vector collection unchanged until review
    succeeds.
 
 Expected validation command after an approved patch has been applied:
 
 ```bash
-.venv/bin/python -m dining.catalog_cli \
+.venv/bin/python -m dining.catalog.cli \
   var/catalog-import/kl-selangor-real-pilot-enriched/catalog.v2.json \
   --install var/catalog-import/kl-selangor-real-pilot-enriched/catalog.validated.json \
   --report var/catalog-import/kl-selangor-real-pilot-enriched/audit.json

@@ -9,7 +9,7 @@ from copy import deepcopy
 from datetime import date, datetime, time, timedelta, timezone
 from zoneinfo import ZoneInfo
 
-from dining.catalog import Catalog
+from dining.catalog.models import Catalog
 
 MYT = ZoneInfo("Asia/Kuala_Lumpur")
 SRC = "gc-src"

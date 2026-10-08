@@ -2,13 +2,13 @@ from unittest.mock import MagicMock
 
 from langchain_core.messages import AIMessage
 
-from dining.inference import InferenceSettings, invoke_explanations
-from dining.pricing import (
+from dining.llm.inference import InferenceSettings, invoke_explanations
+from dining.llm.pricing import (
     ModelPrice,
     PricingCatalog,
     calculate_cost,
 )
-from dining.tracing import RedactedTraceExporter, TracingSettings
+from dining.llm.tracing import RedactedTraceExporter, TracingSettings
 
 
 def test_pricing_catalog_calculates_cost_when_all_inputs_known():
@@ -283,7 +283,7 @@ def test_operations_summary_includes_token_and_cost_accounting(tmp_path, monkeyp
 
     # Insert a fake meal with a result containing agent cost accounting into SQLite
     with app.state.store.transaction() as db:
-        from dining.store import encode
+        from dining.core.store import encode
 
         result_payload = {
             "status": "shortlisted",

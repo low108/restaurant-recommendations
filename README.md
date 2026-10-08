@@ -82,8 +82,8 @@ The collecting session exports `catalog.real.json`; it must not change the app,
 write its database or build embeddings. Validate and install its delivery:
 
 ```bash
-python -m dining.catalog_cli /path/to/catalog.real.json
-python -m dining.catalog_cli /path/to/catalog.real.json --upgrade --install var/catalog.real.v2.json --report var/catalog.review.json
+python -m dining.catalog.cli /path/to/catalog.real.json
+python -m dining.catalog.cli /path/to/catalog.real.json --upgrade --install var/catalog.real.v2.json --report var/catalog.review.json
 python webapp.py --catalog var/catalog.real.v2.json
 ```
 
@@ -160,37 +160,37 @@ evidence remain blockers. Recheck dates are app policy, not publisher guarantees
   evidence checks prevent stale publication. Sanitized attempt history survives
   regeneration; private inputs are not copied into receipts. See [worker details](docs/OPERATIONS.md).
   External LangSmith tracing is disabled by default and supports only privacy-reviewed structural
-  metadata export (`dining/tracing.py`) with strict sentinel and PII redaction.
-- Versioned model pricing configuration (`dining/pricing.py`) records authoritative input,
+  metadata export (`dining/llm/tracing.py`) with strict sentinel and PII redaction.
+- Versioned model pricing configuration (`dining/llm/pricing.py`) records authoritative input,
   output, total, and cached tokens per provider call, calculating estimated monetary costs
   only when provider, model, price version, and token usage are fully known. Historical cost
   calculations persist without being overwritten by subsequent price updates, and diner-facing
   interfaces remain completely free of internal model billing data.
-- Immutable exposure and impression events (`exposure_events`, `dining/exposure.py`) record candidate
+- Immutable exposure and impression events (`exposure_events`, `dining/meals/exposure.py`) record candidate
   eligibility, shortlisting, deduplicated card views, votes (strictly omitting private veto reasons),
   selections, and hard requirement rejections. Denominator calculations provide valid acceptance rates,
   events persist across recommendation result invalidation, and user deletion anonymizes diner references
   while preserving historical statistical aggregates.
-- Explicit attribute feedback learning (`dining/attribute_learning.py`) captures distinct signals for taste,
+- Explicit attribute feedback learning (`dining/meals/learning.py`) captures distinct signals for taste,
   value, portion, atmosphere, quietness, service, queue, and travel. Service, queue, travel, and attendance
   signals never pollute cuisine or taste affinity, and allergies stay strictly outside learning. Consistent
   observations generate user-reviewable preference proposals (`preference_proposals`) that can be inspected
   or rejected, with dependent proposals automatically purged upon observation source deletion.
-- A synthetic ILMU quality evaluation suite and harness (`dining/eval_harness.py`) covers English, Bahasa
+- A synthetic ILMU quality evaluation suite and harness (`dining/llm/evaluation.py`) covers English, Bahasa
   Melayu, Manglish mixed-language, ambiguous queries, prohibited dietary texts, malformed JSON, invented
   tags, and provider failures. The harness scores schema validity, tag precision, ambiguity detection,
   fallback resilience, token usage, and latency, clearly separating contract compliance from recommendation quality.
-- Restricted outcome and fairness dashboards (`dining/outcomes.py`, `/api/operations/outcomes`) report time to
+- Restricted outcome and fairness dashboards (`dining/meals/outcomes.py`, `/api/operations/outcomes`) report time to
   decision, shortlist acceptance, veto frequency, unanimous agreement, manual-plan rate, repeat venue rate,
   cuisine diversity, participant floor distribution, price accuracy, route feasibility, and data-error frequency.
   Every rate explicitly declares numerator and denominator, small cohorts are suppressed (`< 5`), demo data
   exclusion is supported, and no private answer text is ever exposed.
-- Rights-aware semantic candidate retrieval (`dining/retrieval.py`) indexes only approved catalog sources where
+- Rights-aware semantic candidate retrieval (`dining/retrieval/index.py`) indexes only approved catalog sources where
   `rights.embed = "allowed"` and evidence is current. It performs bounded multi-query hybrid fusion across safe
   taste projections, group overlap, and keyword matches with duplicate menu invariance and per-outlet item caps.
   All retrieved candidates pass through the existing deterministic hard eligibility and scoring gates, with
   graceful structured fallback when the index is absent or unavailable.
-- Owner-scoped personal recommendations (`personal_recommendations`, `dining/personal_recommendations.py`) rank
+- Owner-scoped personal recommendations (`personal_recommendations`, `dining/recommendation/personal.py`) rank
   the group-eligible pool for each individual diner, presenting private "Best fit for you" alternatives with
   specific eligible menu items and reason codes. Diners can keep personal backups without altering group votes,
   or choose separately (pre-selection separate choices withdraw from group consensus and trigger fresh generation;
@@ -213,12 +213,12 @@ npx playwright install chromium webkit
 npm run test:e2e
 ```
 
-`web/` owns the responsive interface; `dining/api.py` and `dining/store.py` own
-authenticated application state; `dining/catalog.py` is the collector contract;
-`dining/routing.py` owns the provider-neutral routing contract;
-`dining/geocoding.py` owns the provider-neutral geocoding and neighbourhood lookup contract;
-`dining/recommendation.py` owns deterministic eligibility/ranking; `dining/agent.py`
-owns the bounded LangGraph flow; `dining/generation.py` owns persisted job attempts.
+`web/` owns the responsive interface; `dining/api/__init__.py` and `dining/core/store.py` own
+authenticated application state; `dining/catalog/models.py` is the collector contract;
+`dining/location/routing.py` owns the provider-neutral routing contract;
+`dining/location/geocoding.py` owns the provider-neutral geocoding and neighbourhood lookup contract;
+`dining/recommendation/engine.py` owns deterministic eligibility/ranking; `dining/recommendation/agent.py`
+owns the bounded LangGraph flow; `dining/meals/generation.py` owns persisted job attempts.
 Browser tests start a disposable fictional-data server and isolated diner contexts.
 They never use the running demo or real catalog. The GitHub Actions configuration
 is included but has not been run remotely in this task. [Implementation status](docs/WEBAPP_STATUS.md)

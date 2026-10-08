@@ -14,10 +14,15 @@ import golden_catalog as gc
 import pytest
 from golden_catalog import confirmations, diner, meal_at, route, snapshot, visit
 
-import dining.recommendation as rec_mod
-from dining.personal_recommendations import score_personal_options
-from dining.ranking import MINIMUM_INDIVIDUAL_FIT, base_score, group_fit, rank_diverse
-from dining.recommendation import Recommender
+import dining.recommendation.engine as rec_mod
+from dining.recommendation.engine import Recommender
+from dining.recommendation.personal import score_personal_options
+from dining.recommendation.ranking import (
+    MINIMUM_INDIVIDUAL_FIT,
+    base_score,
+    group_fit,
+    rank_diverse,
+)
 
 APPROX = 5e-4
 

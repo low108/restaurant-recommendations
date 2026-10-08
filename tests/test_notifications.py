@@ -13,8 +13,8 @@ from test_api import (
 )
 
 from dining.api import build_router
-from dining.notifications import NotificationService
-from dining.store import DiningStore
+from dining.core.store import DiningStore
+from dining.notifications.reminders import NotificationService
 
 
 def notification_app(tmp_path):

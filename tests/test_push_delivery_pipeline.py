@@ -2,9 +2,9 @@ import time
 
 import pytest
 
-from dining.push import PushSubscriptionManager
-from dining.push_worker import FakePushGateway, PushDeliveryWorker
-from dining.store import DiningStore
+from dining.core.store import DiningStore
+from dining.notifications.push import PushSubscriptionManager
+from dining.notifications.push_worker import FakePushGateway, PushDeliveryWorker
 
 
 @pytest.fixture

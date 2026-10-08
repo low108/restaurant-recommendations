@@ -37,7 +37,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from dining.catalog import Catalog
+from dining.catalog.models import Catalog
 
 PATCH_VERSION = "1"
 LANGUAGES = ("en", "ms", "zh")

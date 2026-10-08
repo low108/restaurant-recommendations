@@ -6,7 +6,7 @@ from fastapi.testclient import TestClient
 from test_api import checkin, create_meal, make_client, recommendation
 
 from dining.api import build_router
-from dining.store import DiningStore
+from dining.core.store import DiningStore
 
 
 @pytest.fixture

@@ -25,7 +25,7 @@ All pinned input sources were verified with SHA-256 prior to staging and indexin
 - **Schema Version**: `2`
 - **Synthetic**: `false`
 
-### Audit Summary (via `dining.catalog_cli` on `catalog.validated.json`)
+### Audit Summary (via `dining.catalog.cli` on `catalog.validated.json`)
 ```json
 {
   "valid": true,

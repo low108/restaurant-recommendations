@@ -9,7 +9,7 @@ from fastapi import FastAPI
 from fastapi.testclient import TestClient
 
 from dining.api import build_router
-from dining.store import DiningStore, decode
+from dining.core.store import DiningStore, decode
 
 
 def recommendation(snapshot):
@@ -465,7 +465,7 @@ def test_feedback_needs_real_visit_and_learning_optout(pilot):
         payload["meal_at"] = (
             datetime.now(timezone.utc) - timedelta(hours=2)
         ).isoformat()
-        from dining.store import encode
+        from dining.core.store import encode
 
         db.execute(
             "UPDATE meals SET payload=? WHERE id=?", (encode(payload), meal["id"])
@@ -745,7 +745,7 @@ def test_past_selected_meal_cannot_be_cancelled(pilot):
         approve(client, meal)
     assert select(clients[0], meal).status_code == 200
     with store.transaction() as db:
-        from dining.store import encode
+        from dining.core.store import encode
 
         payload = decode(
             db.execute(

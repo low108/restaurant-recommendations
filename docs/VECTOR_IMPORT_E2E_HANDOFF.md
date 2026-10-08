@@ -91,7 +91,7 @@ STAGING=var/catalog-import/kl-selangor-real-pilot-0.1.0-partial
 test "$(shasum -a 256 "$SOURCE" | awk '{print $1}')" = "$EXPECTED_SHA"
 mkdir -p "$STAGING"
 
-.venv/bin/python -m dining.catalog_cli "$SOURCE" \
+.venv/bin/python -m dining.catalog.cli "$SOURCE" \
   --upgrade \
   --install "$STAGING/catalog.v2.json" \
   --report "$STAGING/audit.json"
@@ -125,7 +125,7 @@ Add `scripts/build_catalog_vector_index.py` with an interface like:
 
 Requirements:
 
-- load through `dining.catalog.load_catalog`;
+- load through `dining.catalog.models.load_catalog`;
 - refuse a catalog with no embedding-eligible records;
 - index only reviewed menu items whose item and outlet evidence is currently
   allowed for embedding;

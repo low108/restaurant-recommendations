@@ -1,13 +1,13 @@
 from test_recommendation import ready_catalog, snapshot
 
-from dining.agent import DiningAgent
-from dining.catalog import Catalog
-from dining.inference import InferenceSettings
-from dining.tracing import (
+from dining.catalog.models import Catalog
+from dining.llm.inference import InferenceSettings
+from dining.llm.tracing import (
     RedactedTraceExporter,
     TracingSettings,
     set_trace_exporter,
 )
+from dining.recommendation.agent import DiningAgent
 
 
 class MockTraceClient:

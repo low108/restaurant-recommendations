@@ -43,10 +43,10 @@ Example for one dish:
 
 | What | Where |
 |---|---|
-| `DISH_WORDS`: 29 hand-written groups (`{"pho", "河粉"}`, `{"chicken", "雞", "鸡", "ayam"}` …) | `dining/ranking.py` |
-| `name_term_overlap(query, name)`: share of craving words found in a dish name. Latin words match whole words, CJK matches as substrings, negated phrases are dropped | `dining/ranking.py` |
-| Used by `craving_name_overlap` (dish tie-break in the group ranker and personal scorer), and as `name_match` in `semantic_candidate_search` (30% of the outlet `recall_score`) | `dining/recommendation.py`, `dining/personal_recommendations.py`, `dining/retrieval.py` |
-| Leave alone: `ALIASES` / `PHRASES` in `dining/ranking.py`. They map local dish names to the curated ontology (ramen/laksa/pho → `noodle_soup` …). That is ontology mapping, not translation. | `dining/ranking.py` |
+| `DISH_WORDS`: 29 hand-written groups (`{"pho", "河粉"}`, `{"chicken", "雞", "鸡", "ayam"}` …) | `dining/recommendation/ranking.py` |
+| `name_term_overlap(query, name)`: share of craving words found in a dish name. Latin words match whole words, CJK matches as substrings, negated phrases are dropped | `dining/recommendation/ranking.py` |
+| Used by `craving_name_overlap` (dish tie-break in the group ranker and personal scorer), and as `name_match` in `semantic_candidate_search` (30% of the outlet `recall_score`) | `dining/recommendation/engine.py`, `dining/recommendation/personal.py`, `dining/retrieval/index.py` |
+| Leave alone: `ALIASES` / `PHRASES` in `dining/recommendation/ranking.py`. They map local dish names to the curated ontology (ramen/laksa/pho → `noodle_soup` …). That is ontology mapping, not translation. | `dining/recommendation/ranking.py` |
 
 **Golden baseline to protect:** fixture 100/100, production 91/100 (`docs/GOLDEN_TEST_RESULTS.md`).
 Cases that rely on `DISH_WORDS` today: P-003 (拉面), P-016 (pho ↔ 河粉), P-020 (Hokkien mee ↔ 福建面),
@@ -78,9 +78,9 @@ P-028 (hot pot ↔ 鸳鸯/汤底), P-029 (chicken chop ↔ 雞扒), P-082/083 (C
 3. **Validate and stats** until there are 0 errors.
 4. **Review.** Show the product owner the `stats` output and the `low` / empty entries. Ask how they want to review before anything is set to `approved` or applied.
 5. **Schema and runtime** (code changes, after approval of the data):
-   - `dining/catalog.py`: add an optional field to `MenuItem`, e.g. `name_translations: dict[str, tuple[str, ...]] = {}`. The model uses `extra="forbid"`, so this is required. Add a contract test.
-   - `dining/ranking.py`: make `name_term_overlap` / `craving_name_overlap` compare the craving against the dish name **plus its approved translations**, then **delete `DISH_WORDS`**. Keep: whole-word matching for Latin, substring matching for CJK, negated phrases dropped, tie-break only.
-   - `dining/retrieval.py`: use the item's translations in the `name_match` signal. Append them in `build_embed_text`, so the embeddings see all three languages.
+   - `dining/catalog/models.py`: add an optional field to `MenuItem`, e.g. `name_translations: dict[str, tuple[str, ...]] = {}`. The model uses `extra="forbid"`, so this is required. Add a contract test.
+   - `dining/recommendation/ranking.py`: make `name_term_overlap` / `craving_name_overlap` compare the craving against the dish name **plus its approved translations**, then **delete `DISH_WORDS`**. Keep: whole-word matching for Latin, substring matching for CJK, negated phrases dropped, tie-break only.
+   - `dining/retrieval/index.py`: use the item's translations in the `name_match` signal. Append them in `build_embed_text`, so the embeddings see all three languages.
 6. **Apply and re-index.** Apply to the new catalog version, then run `scripts/build_catalog_vector_index.py --dry-run`. Running with `--rebuild` switches the **live** index; ask the product owner first.
 
 ## Guardrails

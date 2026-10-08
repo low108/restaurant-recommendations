@@ -145,7 +145,7 @@ the displayed price. Tests use fictional reviewed dishes and source evidence.
 ## Loading and reviewing future deliveries
 
 ```bash
-python -m dining.catalog_cli /path/to/catalog.real.json --upgrade \
+python -m dining.catalog.cli /path/to/catalog.real.json --upgrade \
   --install var/catalog.next.v2.json --report var/catalog.next.review.json
 python webapp.py --catalog var/catalog.next.v2.json --db var/dining.sqlite3
 ```

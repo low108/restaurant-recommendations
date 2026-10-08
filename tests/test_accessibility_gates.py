@@ -2,10 +2,10 @@ from datetime import datetime, timedelta, timezone
 
 from test_recommendation import ready_catalog, snapshot
 
-from dining.catalog import (
+from dining.catalog.models import (
     Catalog,
 )
-from dining.recommendation import Recommender
+from dining.recommendation.engine import Recommender
 
 
 def make_source(source_id, observed_at, expires_at):

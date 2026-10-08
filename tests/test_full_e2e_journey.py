@@ -15,8 +15,8 @@ from datetime import datetime, timedelta, timezone
 from fastapi.testclient import TestClient
 from test_recommendation import ready_catalog
 
-from dining.catalog import Catalog
-from dining.notifications import NotificationService
+from dining.catalog.models import Catalog
+from dining.notifications.reminders import NotificationService
 from webapp import create_app
 
 
@@ -344,7 +344,7 @@ def test_complete_end_to_end_group_dining_journey(tmp_path, monkeypatch):
     for i in (2, 3):
         extra_id = f"extra-meal-{i}"
         with store.transaction() as db:
-            from dining.store import encode
+            from dining.core.store import encode
 
             db.execute(
                 "INSERT INTO meals(id,room_id,organizer_id,payload,created_at,idempotency_key,original_answer_by,original_decision_by,original_invited_count,status,decision,result) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)",

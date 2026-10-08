@@ -5,7 +5,7 @@ from datetime import datetime, timedelta, timezone
 import pytest
 from test_recommendation import ready_catalog
 
-from dining.ranking import (
+from dining.recommendation.ranking import (
     Feature,
     base_score,
     group_fit,

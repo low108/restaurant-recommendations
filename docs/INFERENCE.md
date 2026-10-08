@@ -68,10 +68,10 @@ are fallbacks only when `ilmu` or `openai_compatible` is explicitly selected.
 
 ```bash
 # No network request. Reports whether configuration is complete.
-.venv/bin/python -m dining.inference_check --env-file var/inference.env
+.venv/bin/python -m dining.llm.check --env-file var/inference.env
 
 # Explicitly sends one small fictional request; provider usage may be charged.
-.venv/bin/python -m dining.inference_check --env-file var/inference.env --send
+.venv/bin/python -m dining.llm.check --env-file var/inference.env --send
 
 # Start the app using the same configuration.
 .venv/bin/python webapp.py --demo --env-file var/inference.env --port 7861

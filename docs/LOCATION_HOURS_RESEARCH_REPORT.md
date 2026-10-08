@@ -19,7 +19,7 @@ Following operator authorization, the research methodology incorporated two appr
 - **58 outlets (45.3%)** are fully resolved and proposed for activation in `data/enrichment/location-hours.patch.json` with verified building/storefront coordinates and complete weekly recurring schedules.
 - **70 outlets (54.7%)** are held for operator review in `data/enrichment/location-hours.review.json` due to missing operating schedules, unmapped locations, branch ambiguities, or verified closures/relocations.
 - **5 outlets** have explicit kitchen last-order cutoffs documented (Onsemiro, myBurgerLab, BigBowl Thai, Pormtip Thai, Super Ramen).
-- **99 new sources** are defined in `data/enrichment/location-hours.sources.json` conforming strictly to `dining.catalog.Source`.
+- **99 new sources** are defined in `data/enrichment/location-hours.sources.json` conforming strictly to `dining.catalog.models.Source`.
 - `catalog.real.json` remains completely unmodified (SHA-256 checksum intact).
 
 ---

@@ -1,8 +1,8 @@
 import pytest
 from pwdlib import PasswordHash
 
-from dining.account_email import AccountEmailService, EmailSettings
-from dining.store import DiningStore
+from dining.accounts.email import AccountEmailService, EmailSettings
+from dining.core.store import DiningStore
 
 
 class MockMailboxSender:

@@ -15,9 +15,7 @@ import pytest
 from fastapi.testclient import TestClient
 from test_api import create_meal, make_client, setup_room
 
-from dining.agent import DiningAgent
-from dining.catalog import Catalog, load_catalog
-from dining.manifest import (
+from dining.catalog.manifest import (
     EXPECTED_ORIGINAL_CATALOG_SHA,
     EXPECTED_PATCH_SHA,
     EXPECTED_RESOLVED_CATALOG_SHA,
@@ -25,9 +23,11 @@ from dining.manifest import (
     generate_activation_manifest,
     load_activation_manifest,
 )
-from dining.personal_recommendations import get_personal_recommendations
-from dining.recommendation import Recommender
-from dining.retrieval import (
+from dining.catalog.models import Catalog, load_catalog
+from dining.recommendation.agent import DiningAgent
+from dining.recommendation.engine import Recommender
+from dining.recommendation.personal import get_personal_recommendations
+from dining.retrieval.index import (
     DeterministicEmbedder,
     RetrievalQuery,
     build_persistent_catalog_index,
@@ -319,7 +319,7 @@ def test_vectors_and_disallowed_text_never_appear_in_status_or_logs():
 
 
 def test_live_agent_calls_semantic_retrieval_spy(monkeypatch):
-    import dining.recommendation as rec_module
+    import dining.recommendation.engine as rec_module
 
     catalog = load_catalog(CATALOG_PATH)
     index = load_persistent_index(VECTOR_DIR, catalog=catalog)
@@ -367,7 +367,7 @@ def test_semantic_results_bound_reviewed_candidate_set(monkeypatch):
     catalog = load_catalog(CATALOG_PATH)
     index = load_persistent_index(VECTOR_DIR, catalog=catalog)
 
-    import dining.recommendation as rec_module
+    import dining.recommendation.engine as rec_module
 
     # Mock semantic search to return only 1 specific outlet candidate
     def mock_search(*args, **kwargs):
@@ -422,7 +422,7 @@ def test_similarity_1_0_cannot_bypass_deterministic_blocker(monkeypatch):
     catalog = load_catalog(CATALOG_PATH)
     index = load_persistent_index(VECTOR_DIR, catalog=catalog)
 
-    import dining.recommendation as rec_module
+    import dining.recommendation.engine as rec_module
 
     # Mock semantic search returning outlet with 1.0 similarity
     def mock_search(*args, **kwargs):

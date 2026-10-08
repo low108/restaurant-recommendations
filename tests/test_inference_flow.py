@@ -7,9 +7,9 @@ from langchain_core.messages import AIMessage
 from test_api import checkin, create_meal, make_client, setup_room
 from test_recommendation import ready_catalog, snapshot
 
-from dining.agent import DiningAgent
-from dining.generation import result_metadata
-from dining.inference import InferenceSettings
+from dining.llm.inference import InferenceSettings
+from dining.meals.generation import result_metadata
+from dining.recommendation.agent import DiningAgent
 from webapp import create_app
 
 

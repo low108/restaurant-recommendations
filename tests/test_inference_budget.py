@@ -6,7 +6,7 @@ import pytest
 from langchain_core.messages import AIMessage
 from pydantic import BaseModel, ConfigDict
 
-from dining.inference import InferenceSettings, invoke_json
+from dining.llm.inference import InferenceSettings, invoke_json
 
 
 class Taste(BaseModel):

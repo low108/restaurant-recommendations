@@ -7,7 +7,7 @@ from pathlib import Path
 import pytest
 from pydantic import ValidationError
 
-from dining.catalog import Catalog, load_catalog
+from dining.catalog.models import Catalog, load_catalog
 
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURE = ROOT / "data" / "catalog.example.json"

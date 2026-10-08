@@ -3,7 +3,7 @@ import json
 from fastapi.testclient import TestClient
 from langchain_core.messages import AIMessage
 
-from dining.inference import InferenceSettings
+from dining.llm.inference import InferenceSettings
 from webapp import create_app
 
 
@@ -37,7 +37,7 @@ def test_public_configuration_is_not_a_claim_of_live_inference(tmp_path, monkeyp
 def test_env_file_preserves_exported_values_and_never_sends_on_dry_run(
     tmp_path, monkeypatch, capsys
 ):
-    from dining.inference_check import main
+    from dining.llm.check import main
 
     def forbidden(*args, **kwargs):
         raise AssertionError("Dry run must not construct a provider")
@@ -60,7 +60,7 @@ def test_env_file_preserves_exported_values_and_never_sends_on_dry_run(
 
 
 def test_probe_missing_key_does_not_call_provider(monkeypatch, capsys):
-    from dining.inference_check import main
+    from dining.llm.check import main
 
     monkeypatch.setenv("DINING_LLM_PROVIDER", "ilmu")
     monkeypatch.setenv("DINING_LLM_MODEL", "ilmu-mini-v3.3")
@@ -72,7 +72,7 @@ def test_probe_missing_key_does_not_call_provider(monkeypatch, capsys):
 
 
 def test_explicit_probe_uses_only_fictional_ids_and_reports_usage(monkeypatch, capsys):
-    from dining.inference_check import main
+    from dining.llm.check import main
 
     class Provider:
         def __init__(self, **kwargs):
@@ -114,7 +114,7 @@ def test_explicit_probe_uses_only_fictional_ids_and_reports_usage(monkeypatch, c
 
 
 def test_unreadable_env_file_reports_bounded_error(tmp_path, capsys):
-    from dining.inference_check import main
+    from dining.llm.check import main
 
     assert main(["--env-file", str(tmp_path / "missing.env")]) == 2
     report = json.loads(capsys.readouterr().out)

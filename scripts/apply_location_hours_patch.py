@@ -16,8 +16,8 @@ import hashlib
 import json
 from pathlib import Path
 
-from dining.catalog import Catalog, load_catalog
-from dining.catalog_audit import dietary_claim_conflicts
+from dining.catalog.audit import dietary_claim_conflicts
+from dining.catalog.models import Catalog, load_catalog
 
 
 def apply_patch(catalog_path: Path, patch_path: Path, sources_path: Path, out_path: Path, mark_items_reviewed: bool = False):

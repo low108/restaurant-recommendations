@@ -15,9 +15,9 @@ from zoneinfo import ZoneInfo
 
 import pytest
 
-from dining.catalog import load_catalog
-from dining.personal_recommendations import score_personal_options
-from dining.recommendation import Recommender
+from dining.catalog.models import load_catalog
+from dining.recommendation.engine import Recommender
+from dining.recommendation.personal import score_personal_options
 
 ROOT = Path(__file__).resolve().parents[2]
 CATALOG_DIR = ROOT / "var/catalog-import/kl-selangor-real-pilot-58-translated"
@@ -105,7 +105,7 @@ DAYS = {d: n for n, d in enumerate(["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "S
 
 @pytest.fixture(scope="module")
 def env():
-    from dining.retrieval import load_persistent_index
+    from dining.retrieval.index import load_persistent_index
 
     catalog = load_catalog(CATALOG_DIR / "catalog.validated.json")
     allowed = set(

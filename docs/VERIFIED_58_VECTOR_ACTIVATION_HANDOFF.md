@@ -16,11 +16,11 @@ Read first:
 - docs/VECTOR_IMPORT_E2E_HANDOFF.md
 - docs/SEMANTIC_RETRIEVAL_TICKETS.md
 - docs/CATALOG_V2.md
-- dining/catalog.py
-- dining/catalog_audit.py
-- dining/retrieval.py
-- dining/recommendation.py
-- dining/agent.py
+- dining/catalog/models.py
+- dining/catalog/audit.py
+- dining/retrieval/index.py
+- dining/recommendation/engine.py
+- dining/recommendation/agent.py
 - webapp.py
 
 Objective
@@ -264,7 +264,7 @@ Run from the repository root:
     data/enrichment/location-hours.sources.json \
     var/catalog-import/kl-selangor-real-pilot-0.2.0-reviewed/catalog.v2.json
 
-  .venv/bin/python -m dining.catalog_cli \
+  .venv/bin/python -m dining.catalog.cli \
     var/catalog-import/kl-selangor-real-pilot-58/catalog.v2.json \
     --install var/catalog-import/kl-selangor-real-pilot-58/catalog.validated.json \
     --report var/catalog-import/kl-selangor-real-pilot-58/audit.json

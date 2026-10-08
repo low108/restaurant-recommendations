@@ -2,14 +2,14 @@
 
 The web app is being implemented separately. The other session collects **data only** and returns a JSON file matching this contract. It must not implement the app, populate an application database, create embeddings, or alter recommendation code.
 
-Contract: [`schemas/restaurant-catalog.schema.json`](../schemas/restaurant-catalog.schema.json). Executable validation: [`dining/catalog.py`](../dining/catalog.py). Complete invented example: [`data/catalog.example.json`](../data/catalog.example.json), containing three fictional outlets and six dishes. Never change that example's `synthetic` flag to make it appear real.
+Contract: [`schemas/restaurant-catalog.schema.json`](../schemas/restaurant-catalog.schema.json). Executable validation: [`dining/catalog/models.py`](../dining/catalog/models.py). Complete invented example: [`data/catalog.example.json`](../data/catalog.example.json), containing three fictional outlets and six dishes. Never change that example's `synthetic` flag to make it appear real.
 
 ## Paste this prompt into the data-collection session
 
 ```text
 Collect structured restaurant and menu information for a group dining web app serving Kuala Lumpur and Selangor. Your deliverable is validated JSON plus a source/coverage report. Another session is implementing the web app. Do not implement or change application code, populate application databases, build vector indexes, or deploy anything.
 
-Application checkout: /Users/johnathanjohnathan/Documents/restaurant-recommendations. Read schemas/restaurant-catalog.schema.json, dining/catalog.py and data/catalog.example.json there. Save your deliverables in /Users/johnathanjohnathan/Documents/restaurant-menu-collection, outside the application checkout. If the checkout is unavailable, locate the project before asking the user. Use the current version-2 contract. Version-1 deliveries remain loadable, but missing review, category and portion data stay unknown. The example is entirely fictional and must not be included as real data.
+Application checkout: /Users/johnathanjohnathan/Documents/restaurant-recommendations. Read schemas/restaurant-catalog.schema.json, dining/catalog/models.py and data/catalog.example.json there. Save your deliverables in /Users/johnathanjohnathan/Documents/restaurant-menu-collection, outside the application checkout. If the checkout is unavailable, locate the project before asking the user. Use the current version-2 contract. Version-1 deliveries remain loadable, but missing review, category and portion data stay unknown. The example is entirely fictional and must not be included as real data.
 
 Target an initial 10–20 physical outlets across several independent operators, cuisines and KL/Selangor neighbourhoods. This is a collection goal, not permission to invent facts or bypass restrictions. Report partial coverage honestly. Prefer restaurant-controlled menu pages, branch directories, PDFs and permitted restaurant exports. Verify that each menu applies to the particular outlet and ordering channel. A brand-wide menu may only be copied to a branch when applicability is supported by evidence.
 
@@ -81,13 +81,13 @@ The loader validates structure and cross-record consistency. It does **not** aut
 Import and validate from the application checkout:
 
 ```bash
-python -c 'from dining.catalog import load_catalog; c = load_catalog("catalog.real.json"); print(len(c.outlets), "outlets", len(c.menu_items), "items")'
+python -c 'from dining.catalog.models import load_catalog; c = load_catalog("catalog.real.json"); print(len(c.outlets), "outlets", len(c.menu_items), "items")'
 ```
 
 For intentionally testing the provided fictional fixture, explicit opt-in is required:
 
 ```python
-from dining.catalog import load_catalog
+from dining.catalog.models import load_catalog
 
 catalog = load_catalog("data/catalog.example.json", allow_synthetic=True)
 normalized_json_data = catalog.model_dump(mode="json")

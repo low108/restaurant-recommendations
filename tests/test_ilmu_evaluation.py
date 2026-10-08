@@ -1,8 +1,8 @@
-from dining.eval_harness import (
+from dining.llm.evaluation import (
     EvaluationHarness,
     run_synthetic_evaluation,
 )
-from dining.inference import InferenceSettings
+from dining.llm.inference import InferenceSettings
 
 
 def test_synthetic_evaluation_runs_all_categories_without_real_data():

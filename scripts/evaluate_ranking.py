@@ -27,12 +27,12 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "tests" / "golden"))
 
-import dining.recommendation as rec_mod
-from dining.catalog import load_catalog
-from dining.content_similarity import POLICY as CONTENT
-from dining.eval_metrics import evaluate, summarise
-from dining.ranking import POLICY_VERSION
-from dining.retrieval import load_persistent_index
+import dining.recommendation.engine as rec_mod
+from dining.catalog.models import load_catalog
+from dining.recommendation.content_similarity import POLICY as CONTENT
+from dining.recommendation.metrics import evaluate, summarise
+from dining.recommendation.ranking import POLICY_VERSION
+from dining.retrieval.index import load_persistent_index
 
 # Ranking-quality cases only (hard-gate, privacy and lifecycle cases are pass/fail elsewhere).
 CASES = [f"{n:03d}" for n in [*range(1, 43), 71, 72, 73, 76, 80, *range(101, 107)]]

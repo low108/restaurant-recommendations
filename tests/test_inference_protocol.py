@@ -6,7 +6,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 import pytest
 
-from dining.inference import InferenceSettings, invoke_explanations
+from dining.llm.inference import InferenceSettings, invoke_explanations
 
 
 @pytest.fixture

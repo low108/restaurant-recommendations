@@ -1,11 +1,11 @@
 from test_recommendation import ready_catalog, snapshot
 
-from dining.agent import DiningAgent
-from dining.catalog import Catalog
-from dining.generation import result_metadata
-from dining.inference import InferenceSettings, invoke_explanations
-from dining.preferences import interpret_preferences
-from dining.recommendation import Recommender
+from dining.catalog.models import Catalog
+from dining.llm.inference import InferenceSettings, invoke_explanations
+from dining.llm.preferences import interpret_preferences
+from dining.meals.generation import result_metadata
+from dining.recommendation.agent import DiningAgent
+from dining.recommendation.engine import Recommender
 
 
 class InjectionMockModel:

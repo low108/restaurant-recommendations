@@ -6,8 +6,8 @@ a runner is written or any case is run.
 **Scope:** 100 deterministic cases that check whether the recommender returns the
 *right* restaurants and menu items. Two outputs are checked:
 
-1. **Group fit**: the shared shortlist (`result.options`) from `dining/recommendation.py` and `dining/ranking.py`.
-2. **Personal best fit**: the private "Best fit for you" list (`my_personal_recommendations`) from `dining/personal_recommendations.py`.
+1. **Group fit**: the shared shortlist (`result.options`) from `dining/recommendation/engine.py` and `dining/recommendation/ranking.py`.
+2. **Personal best fit**: the private "Best fit for you" list (`my_personal_recommendations`) from `dining/recommendation/personal.py`.
 
 ## 1. Sources of truth
 
@@ -21,7 +21,7 @@ code and the requirements disagree, the case should fail.
 | `docs/PRD_ACCEPTANCE.md` | Current acceptance claims (REQ-06, REQ-10, REQ-11) |
 
 The expected rankings were computed with a small, independent PRD §9 calculator. It
-was written from the PRD text and not copied from `dining/ranking.py`. The numbers can
+was written from the PRD text and not copied from `dining/recommendation/ranking.py`. The numbers can
 be checked by hand with the cheat sheet in §4.
 
 ## 2. Golden fixture
@@ -121,7 +121,7 @@ response: {requirements_confirmed: true, budget: 50}
 | `not in options` | The outlet ID is absent from `result.options`. It may appear in `verification`. |
 | `excluded` | Absent from **both** `options` and `verification` (a known conflict, PRD §8.2) |
 | `in verification` | Present in `result.verification` |
-| `score` | Group `base_score` within ±0.0005. Public results drop `_score`, so the runner reads it through a test hook or recomputes it with `dining.ranking.base_score` from the per-diner fits. |
+| `score` | Group `base_score` within ±0.0005. Public results drop `_score`, so the runner reads it through a test hook or recomputes it with `dining.recommendation.ranking.base_score` from the per-diner fits. |
 | `personal Pn` | `my_personal_recommendations` for that diner, in rank order: `(outlet, item)` pairs |
 | `personal Pn ∌ X` | Item X never appears in that diner's personal list |
 
@@ -410,7 +410,7 @@ Tie-breaks for equal scores, in order:
 - **Expect:** (a) the same order, items and scores as GT-030; (b) the same as GT-031, and no "Unrelated cake" item is chosen.
 
 ### GT-057 · PRD §9.4 worked example (formula unit check)
-- **Setup:** Call `dining.ranking.base_score` / `group_fit` directly with fits A (.95, .85, .20), B (.75, .75, .70), C (.80, .60, .65); Q = N = .5.
+- **Setup:** Call `dining.recommendation.ranking.base_score` / `group_fit` directly with fits A (.95, .85, .20), B (.75, .75, .70), C (.80, .60, .65); Q = N = .5.
 - **Expect:** A group fit = .4800 and min .20 < .35 (blocked). B base = .6870. C base = .6275. B ranks above C.
 
 ### GT-058 · Learned venue affinity, and memory turned off
@@ -466,7 +466,7 @@ Tie-breaks for equal scores, in order:
 
 ## E. Diversity and branch de-duplication (GT-069 – GT-074)
 
-GT-070 to GT-073 call `dining.ranking.rank_diverse` directly. Each candidate row has
+GT-070 to GT-073 call `dining.recommendation.ranking.rank_diverse` directly. Each candidate row has
 the fields `outlet_id`, `brand_id`, `cuisines`, `distance_km` and `_score`.
 
 ### GT-069 · A second branch of the same brand at a similar distance is de-duplicated

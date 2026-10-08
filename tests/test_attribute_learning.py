@@ -3,7 +3,7 @@ from datetime import datetime, timedelta, timezone
 from test_api import checkin, create_meal, make_client, setup_room
 from test_recommendation import ready_catalog, snapshot
 
-from dining.ranking import score_item
+from dining.recommendation.ranking import score_item
 from webapp import create_app
 
 

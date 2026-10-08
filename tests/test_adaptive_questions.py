@@ -4,8 +4,8 @@ from copy import deepcopy
 def test_m09_is_issued_only_when_a_choice_can_change_the_preliminary_order():
     from test_recommendation import ready_catalog, snapshot
 
-    from dining.adaptive import build_m09_question
-    from dining.recommendation import Recommender
+    from dining.recommendation.adaptive import build_m09_question
+    from dining.recommendation.engine import Recommender
 
     state = snapshot()
     for index, person in enumerate(state["participants"]):

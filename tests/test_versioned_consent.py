@@ -2,9 +2,9 @@ import pytest
 from fastapi import FastAPI
 from test_api import make_client, recommendation
 
+from dining.accounts.consent import CURRENT_NOTICES, ConsentPurpose
 from dining.api import build_router
-from dining.consent import CURRENT_NOTICES, ConsentPurpose
-from dining.store import DiningStore
+from dining.core.store import DiningStore
 
 
 @pytest.fixture

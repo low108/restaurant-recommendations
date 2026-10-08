@@ -2,7 +2,7 @@ import math
 
 import pytest
 
-from dining.eval_metrics import (
+from dining.recommendation.metrics import (
     evaluate,
     ndcg_at_k,
     precision_at_k,

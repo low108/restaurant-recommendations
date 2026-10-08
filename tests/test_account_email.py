@@ -9,8 +9,8 @@ from fastapi import FastAPI, HTTPException, Request
 from fastapi.testclient import TestClient
 from pwdlib import PasswordHash
 
-from dining.account_email import AccountEmailService, EmailSettings, SmtpSender
-from dining.store import DiningStore
+from dining.accounts.email import AccountEmailService, EmailSettings, SmtpSender
+from dining.core.store import DiningStore
 
 
 class FakeSender:
@@ -437,7 +437,7 @@ def test_smtp_sender_requires_tls_before_authentication_or_message(
             assert events[-1] == "auth"
             events.append("sent")
 
-    monkeypatch.setattr("dining.account_email.smtplib.SMTP", FakeSmtp)
+    monkeypatch.setattr("dining.accounts.email.smtplib.SMTP", FakeSmtp)
     sender = SmtpSender(
         replace(service.settings, username="test-user", password="test-password")
     )

@@ -7,8 +7,8 @@ import pytest
 from pydantic import ValidationError
 from test_recommendation import ready_catalog, snapshot
 
-from dining.catalog import Catalog
-from dining.recommendation import Recommender, _open_for
+from dining.catalog.models import Catalog
+from dining.recommendation.engine import Recommender, _open_for
 
 
 def dated_catalog():

@@ -21,8 +21,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from dining.catalog import load_catalog
-from dining.retrieval import (
+from dining.catalog.models import load_catalog
+from dining.retrieval.index import (
     DeterministicEmbedder,
     SentenceTransformerEmbedder,
     build_persistent_catalog_index,

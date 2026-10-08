@@ -2,13 +2,13 @@ import json
 
 from langchain_core.messages import AIMessage
 
-from dining.inference import InferenceSettings
+from dining.llm.inference import InferenceSettings
 
 
 def test_interpreted_malay_craving_is_an_editable_proposal_not_a_requirement(
     monkeypatch,
 ):
-    from dining.preferences import interpret_preferences
+    from dining.llm.preferences import interpret_preferences
 
     seen = []
 
@@ -46,7 +46,7 @@ def test_interpreted_malay_craving_is_an_editable_proposal_not_a_requirement(
 def test_requirements_and_secrets_stay_out_of_provider_and_invalid_fields_fall_back(
     monkeypatch,
 ):
-    from dining.preferences import interpret_preferences
+    from dining.llm.preferences import interpret_preferences
 
     settings = InferenceSettings.from_env({}, use_model=True)
     calls = []
@@ -125,7 +125,7 @@ def test_private_interpretation_requires_consent_scope_and_does_not_save_answers
 def test_confirmed_chips_override_original_prose_in_ranking():
     from test_recommendation import ready_catalog
 
-    from dining.ranking import score_item
+    from dining.recommendation.ranking import score_item
 
     item = (
         ready_catalog()

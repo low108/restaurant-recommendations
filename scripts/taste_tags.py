@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Reviewable taste-tag and meal-role enrichment for the 58 verified outlets.
 
-Tags come only from the existing ranking ontology (dining/ranking.py, ``dining-tags-v1``).
+Tags come only from the existing ranking ontology (dining/recommendation/ranking.py, ``dining-tags-v1``).
 Every proposed tag must cite where on the menu it came from. A tag only changes the
 catalog after a human approves it. The source catalog is never modified: ``apply``
 writes a new catalog version.
@@ -43,8 +43,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from dining.catalog import Catalog, MenuItem
-from dining.ranking import DIMENSIONS, ONTOLOGY_VERSION
+from dining.catalog.models import Catalog, MenuItem
+from dining.recommendation.ranking import DIMENSIONS, ONTOLOGY_VERSION
 
 PATCH_VERSION = "1"
 ALLOWED_TAGS = frozenset().union(*DIMENSIONS.values())

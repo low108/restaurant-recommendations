@@ -15,17 +15,17 @@ from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from starlette.middleware.trustedhost import TrustedHostMiddleware
 
-from dining.account_email import AccountEmailService
-from dining.agent import DiningAgent
+from dining.accounts.email import AccountEmailService
 from dining.api import build_router
-from dining.catalog import Catalog, load_catalog
-from dining.catalog_audit import public_catalog_status
-from dining.inference import InferenceSettings
-from dining.notifications import NotificationService
-from dining.observability import operations_router
-from dining.retrieval import load_persistent_index
-from dining.runtime_env import load_env_file
-from dining.store import DiningStore
+from dining.api.operations import operations_router
+from dining.catalog.audit import public_catalog_status
+from dining.catalog.models import Catalog, load_catalog
+from dining.core.runtime_env import load_env_file
+from dining.core.store import DiningStore
+from dining.llm.inference import InferenceSettings
+from dining.notifications.reminders import NotificationService
+from dining.recommendation.agent import DiningAgent
+from dining.retrieval.index import load_persistent_index
 
 ROOT = Path(__file__).resolve().parent
 

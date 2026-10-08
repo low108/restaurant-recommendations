@@ -1,7 +1,7 @@
 """Comprehensive enrichment data for coordinates, hours, and sources.
 
 Defines:
-- NEW_SOURCES: list of 55 validated sources conforming to dining.catalog.Source
+- NEW_SOURCES: list of 55 validated sources conforming to dining.catalog.models.Source
 - OUTLET_UPDATES: list of 58 validated outlet updates conforming to the patch schema
 - SPECIFIC_REVIEW_NOTES: specific review notes and reason codes for unresolved outlets
 """

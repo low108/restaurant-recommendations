@@ -6,9 +6,9 @@ from fastapi import FastAPI
 from test_api import checkin, create_meal, make_client, setup_room
 from test_recommendation import ready_catalog
 
-from dining.agent import DiningAgent
 from dining.api import build_router
-from dining.store import DiningStore
+from dining.core.store import DiningStore
+from dining.recommendation.agent import DiningAgent
 
 
 def queued_pilot(tmp_path, recommend=None, **worker_options):

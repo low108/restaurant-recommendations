@@ -32,7 +32,7 @@ this data. The production golden cases most affected are P-001–P-030, P-061, P
 | Activation manifest (58 outlet IDs) | `var/catalog-import/kl-selangor-real-pilot-58/activation-manifest.json` |
 | Patch to fill | `data/enrichment/taste-tags.patch.json` |
 | Output catalog (only after approval) | `var/catalog-import/kl-selangor-real-pilot-58-tagged/catalog.validated.json` |
-| Ontology source of truth | `dining/ranking.py` → `DIMENSIONS`, `ONTOLOGY_VERSION` |
+| Ontology source of truth | `dining/recommendation/ranking.py` → `DIMENSIONS`, `ONTOLOGY_VERSION` |
 
 ## Steps
 
@@ -137,7 +137,7 @@ Give the user:
 
 ## Follow-ups for the main session (not this one)
 
-- Recommender: exclude `add_on` as a meal as well. Today it skips `drink/beverage/dessert/side` only (`dining/recommendation.py`, `meal_role` check).
-- Personal recommendations: apply the same `meal_role` filter and the per-diner checks (`dining/personal_recommendations.py`).
-- Decide on ontology extensions from `proposed_new_tags` (needs `dining/ranking.py` DIMENSIONS/ALIASES, a version bump and contract tests).
+- Recommender: exclude `add_on` as a meal as well. Today it skips `drink/beverage/dessert/side` only (`dining/recommendation/engine.py`, `meal_role` check).
+- Personal recommendations: apply the same `meal_role` filter and the per-diner checks (`dining/recommendation/personal.py`).
+- Decide on ontology extensions from `proposed_new_tags` (needs `dining/recommendation/ranking.py` DIMENSIONS/ALIASES, a version bump and contract tests).
 - Re-run both golden suites after re-indexing.
