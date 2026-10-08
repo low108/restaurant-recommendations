@@ -1,3 +1,5 @@
+from datetime import datetime, timedelta, timezone
+
 import pytest
 from fastapi import FastAPI
 from test_api import make_client, recommendation, setup_room
@@ -12,6 +14,12 @@ from dining.location.geocoding import (
     get_geocoding_provider,
     set_geocoding_provider,
 )
+
+# Fixed calendar dates go stale and the API rejects meals in the past, so test meals are
+# scheduled two days ahead (12:00 and 19:00 Kuala Lumpur time).
+_MEAL_DAY = datetime.now(timezone.utc) + timedelta(days=2)
+LUNCH_AT = _MEAL_DAY.replace(hour=4, minute=0, second=0, microsecond=0).isoformat()
+DINNER_AT = _MEAL_DAY.replace(hour=11, minute=0, second=0, microsecond=0).isoformat()
 
 
 @pytest.fixture
@@ -80,7 +88,7 @@ def test_provider_failure_does_not_block_meal_creation(pilot):
             f"/api/rooms/{room_id}/meals",
             json={
                 "kind": "lunch",
-                "meal_at": "2026-10-07T12:00:00+08:00",
+                "meal_at": LUNCH_AT,
                 "location_label": "Manual SS2 Meeting Point",
                 "latitude": 3.118,
                 "longitude": 101.622,
@@ -114,7 +122,7 @@ def test_public_meal_location_stored_separately_from_private_origins(pilot):
         f"/api/rooms/{room_id}/meals",
         json={
             "kind": "dinner",
-            "meal_at": "2026-10-07T19:00:00+08:00",
+            "meal_at": DINNER_AT,
             "location_label": "Public Mall Meeting Point",
             "latitude": 3.1500,
             "longitude": 101.7100,

@@ -21,7 +21,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official website branch directory and IOI Mall Damansara operating schedule: Monday to Sunday 10:00 - 22:00",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "No reuse terms on official site; factual operating hours published for public information."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "No reuse terms on official site; factual operating hours published for public information.",
+        },
     },
     {
         "source_id": "src-osm-way-191166451",
@@ -31,7 +35,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM commercial street block way 191166451: Jalan 19/3, Seksyen 19, Petaling Jaya; lat=3.1196701; lon=101.6292207",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-osm-node-1635661887",
@@ -41,7 +49,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM tags: name=Le Méridien Kuala Lumpur; tourism=hotel; addr:street=Jalan Stesen Sentral; addr:housenumber=2; lat=3.1356280; lon=101.6864422",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-prime-website-hours",
@@ -51,7 +63,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Schema.org Restaurant openingHoursSpecification: Mon-Fri 12:00-15:00, 18:00-22:00; Sat-Sun 18:00-22:00",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "No reuse terms on official site; factual operating hours published for public information."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "No reuse terms on official site; factual operating hours published for public information.",
+        },
     },
     {
         "source_id": "src-osm-way-23034336",
@@ -61,7 +77,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM building way 23034336: Suria KLCC, Persiaran Petronas, Kuala Lumpur; lat=3.1573751; lon=101.7123797",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-osm-node-4987310121",
@@ -71,7 +91,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM tags: name=Onsemiro; amenity=restaurant; cuisine=korean; lat=3.1613579; lon=101.7202036",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-onsemiro-website",
@@ -81,7 +105,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Website visit section: Open Daily 10:00 - 22:00; Last orders 21:30 at Lot 2-3A, Level 2 Intermark Mall",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "No reuse terms on official site; factual operating hours and last order published for public information."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "No reuse terms on official site; factual operating hours and last order published for public information.",
+        },
     },
     {
         "source_id": "src-osm-way-1127809211",
@@ -91,7 +119,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM retail building way 1127809211: 62, Jalan SS 15/4C, Subang Jaya; lat=3.0774475; lon=101.5882697",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-osm-way-1127441795",
@@ -101,7 +133,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM building way 1127441795: 41, Jalan SS 15/5A, Subang Jaya; lat=3.0801438; lon=101.5925829",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-osm-way-463362698",
@@ -111,7 +147,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM building way 463362698: The Starling, 6, Jalan SS 21/37, Damansara Uptown; lat=3.1353398; lon=101.6227882",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-redkettle-announcement",
@@ -121,7 +161,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official social announcement: Open DAILY 11:00 AM – 11:00 PM at RED KETTLE The Starling Mall F130",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Official social media profile announcement."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Official social media profile announcement.",
+        },
     },
     {
         "source_id": "src-osm-node-4426355997",
@@ -131,7 +175,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM tags: name=myBurgerLab; addr:housenumber=14; addr:street=Jalan 21/22; lat=3.1108054; lon=101.6222152",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-mbl-store-locations",
@@ -141,7 +189,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official store location SeaPark: 14, Jalan 21/22, SeaPark, 46300 Petaling Jaya; Operation hour: Monday - Sunday 11:00 AM - 10:00 PM (9.30 PM last call)",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "No reuse terms on official site; factual operating hours and kitchen last call published for public information."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "No reuse terms on official site; factual operating hours and kitchen last call published for public information.",
+        },
     },
     {
         "source_id": "src-osm-way-660076333",
@@ -151,7 +203,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM building way 660076333: 10 Stonor, Persiaran Stonor, Kuala Lumpur; lat=3.1532649; lon=101.7208314",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-hakka-website-hours",
@@ -161,7 +217,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official website contact section: 90 Jalan Raja Chulan; Mon - Sun Lunch 11:30am - 2:30pm, Dinner 5:30pm - 10:30pm",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "No reuse terms on official site; factual operating hours published for public information."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "No reuse terms on official site; factual operating hours published for public information.",
+        },
     },
     {
         "source_id": "src-osm-way-576931293",
@@ -171,7 +231,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM commercial complex way 576931293: Plaza Arkadia, Desa ParkCity, Kuala Lumpur; lat=3.1862886; lon=101.6352359",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-osm-node-11250441219",
@@ -181,7 +245,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM tags: name=Hide; amenity=restaurant; lat=3.1567108; lon=101.7060822 at The Ritz-Carlton Residences, 105 Jalan Ampang",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-osm-way-1495896576",
@@ -191,7 +259,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM building way 1495896576: 5, Jalan Snuker 13/28, Tadisma Business Park, Seksyen 13, Shah Alam; lat=3.0878785; lon=101.5455660",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-osm-node-11607772095",
@@ -201,7 +273,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM storefront node 11607772095: Mamak Cafe at Menara Sentral Vista, Brickfields; lat=3.1324810; lon=101.6902046",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-osm-node-11601601012",
@@ -211,7 +287,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM tags: name=Nasi Kandar Mamak Cafe; amenity=restaurant; opening_hours=24/7; lat=3.1992732; lon=101.6783863 at Taman Impian, Jalan Ipoh",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-mamak-cafe-announcement",
@@ -221,7 +301,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official chain announcement: Nasi Kandar Mamak Cafe across KL branches open 24 hours - 7 days a week.",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Official chain social media announcement."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Official chain social media announcement.",
+        },
     },
     {
         "source_id": "src-osm-way-205232207",
@@ -231,7 +315,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM street commercial block way 205232207: Jalan Sibu, Lake City, Taman Wahyu; lat=3.2110882; lon=101.6697022",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-osm-way-233973555",
@@ -241,7 +329,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM commercial complex way 233973555: Dataran C180, Cheras; lat=3.0364302; lon=101.7660214",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-barber-announcement",
@@ -251,7 +343,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official Facebook announcement: BAR.BER KL at Dataran C180 Cheras operating daily 5pm - 3am.",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Official social media profile announcement."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Official social media profile announcement.",
+        },
     },
     # Checkpoint 2 sources
     {
@@ -262,7 +358,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM commercial street block way 1160080961: Jalan Rimbunan Raya 1, Laman Rimbunan, Kepong; lat=3.2111970; lon=101.6494978",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-bean-jr-announcement",
@@ -272,7 +372,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official Facebook post: Bean Jr Kepong at 117 Jalan Rimbunan Raya 1 open Sun-Thu 12pm-11pm, Fri-Sat 12pm-12am.",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Official brand Facebook announcement."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Official brand Facebook announcement.",
+        },
     },
     {
         "source_id": "src-osm-way-539075379",
@@ -282,7 +386,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM commercial street block way 539075379: Jalan Radin Bagus, Sri Petaling; lat=3.0692952; lon=101.6943470",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-guilin-announcement",
@@ -292,7 +400,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official Facebook profile: 桂林人粥城 at 1 Jalan Radin Bagus 1 Sri Petaling open daily 10:30am - 10:30pm.",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Official Facebook profile schedule."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Official Facebook profile schedule.",
+        },
     },
     {
         "source_id": "src-osm-node-11968724693",
@@ -302,7 +414,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM storefront node 11968724693: Yakitori Haki at 34G Jalan 5/101C Cheras; lat=3.1010312; lon=101.7400064",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-yakitori-haki-hours",
@@ -312,7 +428,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official Instagram reel: Yakitori Haki Cheras Business Centre open Monday-Sunday 12PM-11PM.",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Official Instagram video announcement."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Official Instagram video announcement.",
+        },
     },
     {
         "source_id": "src-osm-way-944352527",
@@ -322,7 +442,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM building way 944352527: The Link 2, Bukit Jalil; lat=3.0522167; lon=101.6796454",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-zakuro-announcement",
@@ -332,7 +456,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official Facebook post: Zakuro Japanese Restaurant at The Link 2 Bukit Jalil open daily 11:30 AM - 10:00 PM.",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Official Facebook branch schedule."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Official Facebook branch schedule.",
+        },
     },
     {
         "source_id": "src-osm-way-168965925",
@@ -342,7 +470,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM building complex way 168965925: Endah Promenade, Sri Petaling; lat=3.0635002; lon=101.6969504",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-al-haramain-website",
@@ -352,7 +484,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official website: AL-HARAMAIN RESTAURANT at Endah Promenade open Monday - Sunday: 9:30am - 1am.",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Official website published operating schedule."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Official website published operating schedule.",
+        },
     },
     {
         "source_id": "src-osm-way-670478935",
@@ -362,7 +498,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM building way 670478935: Nu Sentral, 201 Jalan Tun Sambanthan; lat=3.1332821; lon=101.6869945",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-nu-sentral-hughlow-hours",
@@ -372,7 +512,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official mall announcement: 151 Hugh Low Kopitiam at LG.26 NU Sentral open Monday to Sunday 9am - 9pm.",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Official mall tenant operating schedule announcement."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Official mall tenant operating schedule announcement.",
+        },
     },
     {
         "source_id": "src-osm-way-39911214",
@@ -382,7 +526,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM commercial street block way 39911214: Jalan Pandan Indah 4/6B, Pandan Indah; lat=3.1315132; lon=101.7547621",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-bigbowl-fb-hours",
@@ -392,7 +540,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official Facebook post: BigBowl Pandan Indah open every day 11:30 AM - 10:00 PM (Last Order 9:30 PM).",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Official merchant Facebook page post."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Official merchant Facebook page post.",
+        },
     },
     {
         "source_id": "src-osm-way-39910504",
@@ -402,7 +554,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM commercial street block way 39910504: Jalan Jintan, Taman Supreme, Cheras; lat=3.0985612; lon=101.7441833",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-cheras-homey-fb",
@@ -412,7 +568,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official Facebook profile: Cheras Homey Yong Tau Foo at 21 Jalan Jintan open 11am-8pm, Closed on Tuesday.",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Official social media business profile announcement."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Official social media business profile announcement.",
+        },
     },
     {
         "source_id": "src-osm-way-201611975",
@@ -422,7 +582,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM commercial street block way 201611975: Jalan Puteri 1/4, Bandar Puteri Puchong; lat=3.0265670; lon=101.6166491",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-deforest-cafe-fb",
@@ -432,7 +596,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official Facebook post: DE FOREST CAFE at 46G Jalan Puteri 1/4 Bandar Puteri Puchong open MON - SAT 10am - 9pm (Sun closed).",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Official Facebook business schedule announcement."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Official Facebook business schedule announcement.",
+        },
     },
     {
         "source_id": "src-osm-way-39924500",
@@ -442,7 +610,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM commercial block way 39924500: Jalan Cengkeh, Taman Cheras; lat=3.1003075; lon=101.7424107",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-depine-cafe-fb",
@@ -452,7 +624,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official Facebook profile: De Pine Cafe Taman Cheras open Wednesday to Monday 10am - 6pm (Tuesday closed).",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Official cafe social media profile information."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Official cafe social media profile information.",
+        },
     },
     {
         "source_id": "src-osm-way-125302977",
@@ -462,7 +638,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM commercial block way 125302977: Jalan Temenggung 11/9, Bandar Mahkota Cheras; lat=3.0522509; lon=101.7890196",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-feipo-fb-hours",
@@ -472,7 +652,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official Facebook profile: 肥婆板面 Fei Po Ban Mee at 25 Jalan Temenggung 11/9 open daily 8am - 9pm.",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Official Facebook business profile announcement."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Official Facebook business profile announcement.",
+        },
     },
     {
         "source_id": "src-osm-way-1231033826",
@@ -482,7 +666,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM commercial block way 1231033826: Jalan Radin Anum 1, Sri Petaling; lat=3.0672594; lon=101.6929851",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-gaga-western-website",
@@ -492,7 +680,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official website: GaGa Western Corner No. 108 Jalan Radin Anum 1 Sri Petaling open Monday - Sunday: 11:00am - 10:30pm (closed on Tuesdays).",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Official website published operating schedule."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Official website published operating schedule.",
+        },
     },
     # Checkpoint 3 sources
     {
@@ -503,7 +695,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM commercial mall block way 1157688990: Da Men Mall, Persiaran Kewajipan, USJ 1, Subang Jaya; lat=3.0613096; lon=101.5928853",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-jomlaksa-fb-hours",
@@ -513,7 +709,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official Facebook post: JOM LAKSA DA MEN MALL LG-23 open Mon - Sun (10:00am - 10:00pm).",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Official brand Facebook schedule announcement."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Official brand Facebook schedule announcement.",
+        },
     },
     {
         "source_id": "src-osm-way-179935302",
@@ -523,7 +723,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM commercial street block way 179935302: Jalan 3/62A, Bandar Menjalara, Kepong; lat=3.1951778; lon=101.6300246",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-menya-yamato-fb",
@@ -533,7 +737,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official Facebook profile: Menya Yamato 15 Jalan 3/62A Bandar Menjalara open Mon-Fri 11.30am-3pm, 5pm-10pm; Sat-Sun 11am-10pm.",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Official brand Facebook page operating hours."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Official brand Facebook page operating hours.",
+        },
     },
     {
         "source_id": "src-osm-way-149515407",
@@ -543,7 +751,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM commercial block way 149515407: Jalan SL 1/2, Bandar Sungai Long, Kajang; lat=3.0398344; lon=101.7937589",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-mi-house-announcement",
@@ -553,7 +765,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Verified business profile: 米芝家茶餐厅 Mi House at 20 Jalan SL 1/2 Bandar Sungai Long open Tue-Sun 9.00am - 8.30pm (Monday closed).",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Business directory and merchant announcement."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Business directory and merchant announcement.",
+        },
     },
     {
         "source_id": "src-osm-way-182374669",
@@ -563,7 +779,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM commercial block way 182374669: Jalan Tanjung SD 13, Bandar Sri Damansara, Petaling Jaya; lat=3.1864574; lon=101.6058952",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-mygei-fb-hours",
@@ -573,7 +793,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official Facebook post: MY記腸粉 at 17 Jalan Tanjung SD 13/2 open Tue-Fri 11.30am-10pm, Sat-Sun 10am-10pm (Monday closed).",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Official merchant Facebook page post."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Official merchant Facebook page post.",
+        },
     },
     {
         "source_id": "src-osm-way-169794250",
@@ -583,7 +807,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM commercial complex way 169794250: Jalan Dwitasik 1, Dataran Dwitasik, Bandar Sri Permaisuri; lat=3.1020615; lon=101.7128079",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-pormtip-fb-hours",
@@ -593,7 +821,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official Facebook post: Pormtip Thai Bandar Sri Permaisuri at 83 Jalan Dwitasik 1 open daily 12.15pm until 11.30pm for last order.",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Official restaurant Facebook page announcement."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Official restaurant Facebook page announcement.",
+        },
     },
     # Checkpoint 4 sources
     {
@@ -604,7 +836,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM commercial street block way 507747467: Jalan Radin Bagus 5, Sri Petaling; lat=3.0704908; lon=101.6936012",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-shibuya-fb-hours",
@@ -614,7 +850,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Verified business feature: Shibuya Dessert at No.17 Jalan Radin Bagus 5 Sri Petaling open Tue-Sun 12pm-10pm (Monday closed).",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Verified business directory and announcement."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Verified business directory and announcement.",
+        },
     },
     {
         "source_id": "src-osm-node-10701993366",
@@ -624,7 +864,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM mall node 10701993366: KL Eco City Mall, No.3 Jalan Bangsar; lat=3.1191391; lon=101.6741869",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-soulja-store-hours",
@@ -634,7 +878,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Published operating hours: Soulja Premium Soya at KL Eco City Mall open Monday – Sunday 10:00 AM – 22:00 PM.",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Published merchant schedule header."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Published merchant schedule header.",
+        },
     },
     {
         "source_id": "src-sushizensai-fb-hours",
@@ -644,7 +892,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official Facebook post: Sushi Zensai at L4-02 KL Eco City Mall open Monday to Saturday 12pm-10pm (Sunday closed).",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Official merchant social media page."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Official merchant social media page.",
+        },
     },
     {
         "source_id": "src-osm-way-765279144",
@@ -654,7 +906,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM commercial street block way 765279144: Jalan Radin Tengah, Sri Petaling; lat=3.0686960; lon=101.6910332",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-thaichala-fb-hours",
@@ -664,7 +920,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official Facebook post: Thai Chala at 15 Jalan Radin Tengah Sri Petaling open daily from 11.30am - 10.30pm.",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Official restaurant Facebook post."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Official restaurant Facebook post.",
+        },
     },
     {
         "source_id": "src-osm-way-497750800",
@@ -674,7 +934,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM commercial complex way 497750800: Seri Gembira Avenue, Jalan Senang Ria, Happy Garden; lat=3.0794631; lon=101.6866761",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-theres-hotpot-hours",
@@ -684,7 +948,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Verified restaurant directory: There's A Hot Pot Restaurant at CG-1 Seri Gembira Avenue open Mon-Sun 11:30 AM - 2:30 PM, 5:30 PM - 11:30PM.",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Verified culinary directory listing."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Verified culinary directory listing.",
+        },
     },
     {
         "source_id": "src-osm-way-185409250",
@@ -694,7 +962,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM commercial street block way 185409250: Jalan Radin Bagus 9, Sri Petaling; lat=3.0686136; lon=101.6916322",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-warung-makcik-kiah-store",
@@ -704,7 +976,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official online store: Warung Makcik Kiah No. 15 Jalan Radin Bagus 9 Sri Petaling open Mon - Sun 10:00 AM - 10:00 PM.",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Official online ordering platform store profile."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Official online ordering platform store profile.",
+        },
     },
     {
         "source_id": "src-osm-way-201611936",
@@ -714,7 +990,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM commercial street block way 201611936: Jalan Puteri 2/4, Bandar Puteri Puchong; lat=3.0215881; lon=101.6166298",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-xinhaotat-fb-hours",
@@ -724,7 +1004,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official Facebook page: 新好逹海鲜饭店 at 54 Jalan Puteri 2/4 Bandar Puteri Puchong open daily 11.30AM - 10.00PM.",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Official merchant social media page."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Official merchant social media page.",
+        },
     },
     # Checkpoint 5 sources
     {
@@ -735,7 +1019,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM commercial street block way 228926644: Jalan Metro Perdana 1, Taman Usahawan Kepong; lat=3.2173283; lon=101.6441220",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-mankee-fb-hours",
@@ -745,7 +1033,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official Facebook post: 文記冰室 Man Kee Cafe at B-G-5 Jalan Metro Perdana 1 Kepong Business Hour: 9.00am- 7.00pm daily.",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Official restaurant social media announcement."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Official restaurant social media announcement.",
+        },
     },
     {
         "source_id": "src-blacktower-ig-hours",
@@ -755,7 +1047,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official Instagram profile: THE BLACK TOWER COFFEE Lot 3140 Dataran C180 Cheras open Monday to Sunday 11am - 11pm.",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Official social media profile schedule."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Official social media profile schedule.",
+        },
     },
     {
         "source_id": "src-osm-way-545866596",
@@ -765,7 +1061,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM commercial block way 545866596: Jalan 7/108C, Taman Sungai Besi, Salak Selatan; lat=3.0934715; lon=101.7009861",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-chokkarchong-hours",
@@ -775,7 +1075,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Storefront menu header: 粥家庄 Chok Kar Chong at No:26G Jalan 7/108c Taman Sungai Besi open daily 7AM – 10PM.",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Published merchant schedule notice."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Published merchant schedule notice.",
+        },
     },
     {
         "source_id": "src-osm-way-773869289",
@@ -785,7 +1089,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM commercial block way 773869289: Jalan Pandan 2/2, Pandan Jaya, Ampang; lat=3.1348508; lon=101.7409010",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-jialimian-hours",
@@ -795,7 +1103,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Published review: Jia Li Mian Noodle House at 19 Jalan Pandan 2/2 Pandan Jaya Business hours: 7.30am till 4pm daily.",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Verified food directory listing."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Verified food directory listing.",
+        },
     },
     {
         "source_id": "src-osm-node-10239474812",
@@ -805,7 +1117,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM tags: name=Jemi; amenity=cafe; level=1; addr:housenumber=17; addr:street=Jalan 2/109F; lat=3.0993630; lon=101.6864845; opening_hours=11:00-22:00; Tu off",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-jemi-cafe-hours",
@@ -815,7 +1131,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official business announcement: Wednesday - Monday 11.00 AM - 10.00 PM, Closed on Tuesday at 17-1 Jalan 2/109F, Taman Danau Desa",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Public social post announcement; no commercial reproduction licence."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Public social post announcement; no commercial reproduction licence.",
+        },
     },
     {
         "source_id": "src-osm-way-28352529",
@@ -825,7 +1145,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM building way 28352529: Sunway Pyramid Shopping Centre, Bandar Sunway; lat=3.0732800; lon=101.6074900",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-moominbubbles-mall-hours",
@@ -835,7 +1159,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official mall announcement: Moomin Bubbles at Lot 075A LG2 Sunway Pyramid open daily 10:00 AM - 10:00 PM.",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Official shopping mall tenant announcement."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Official shopping mall tenant announcement.",
+        },
     },
     # Checkpoint 6 sources
     {
@@ -846,7 +1174,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Verified restaurant directory: Super Ramen 65G Jalan Radin Bagus Sri Petaling open Thu-Tue 12pm-3pm, 6pm-11pm (11pm last order, closed Wed).",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Verified dining publication review and schedule."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Verified dining publication review and schedule.",
+        },
     },
     {
         "source_id": "src-osm-way-307296591",
@@ -856,7 +1188,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM building way 307296591: The Sphere, Jalan Kerinchi, Bangsar South; lat=3.1104931; lon=101.6675914",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-nakamurabashi-sphere-hours",
@@ -866,7 +1202,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official Instagram post: Nakamura Bashi The Sphere Bangsar South open daily 11:00am - 9:30pm.",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Official merchant social media post."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Official merchant social media post.",
+        },
     },
     {
         "source_id": "src-osm-way-32512351",
@@ -876,7 +1216,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM commercial street block way 32512351: Jalan USJ 10/1C, Taipan Business Centre, Subang Jaya; lat=3.0484735; lon=101.5849685",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-dy-corner-fb",
@@ -886,7 +1230,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official Facebook profile: D&Y Corner 鴻宜食坊 at 25G Jalan Usj 10/1C Taipan open daily 7:00am - 5:00pm.",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Official merchant social media schedule announcement."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Official merchant social media schedule announcement.",
+        },
     },
     {
         "source_id": "src-103coffee-website",
@@ -896,7 +1244,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official website: 103 Coffee Sri Petaling at 103, Jalan Radin Bagus open Mon - Sun 7:30 AM - 09:00 PM.",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Official website store locator and schedule."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Official website store locator and schedule.",
+        },
     },
     {
         "source_id": "src-osm-way-129508046",
@@ -906,7 +1258,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM commercial block way 129508046: Jalan Danau Niaga 1, Taman Danau Kota, Setapak; lat=3.2026265; lon=101.7176163",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-osm-way-117594004",
@@ -916,7 +1272,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM commercial complex way 117594004: Kompleks IOI Prima, Jalan Kenari 3, Bandar Puchong Jaya; lat=3.0448896; lon=101.6209345",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-nakamurabashi-puchong-fb",
@@ -926,7 +1286,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official Facebook post: Nakamura Bashi IOI Prima Jalan Kenari 3 Puchong Jaya open daily 10:00am - 10:00pm.",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Official merchant social media announcement."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Official merchant social media announcement.",
+        },
     },
     # Checkpoint 7 sources
     {
@@ -937,7 +1301,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM commercial block way 155292002: Jalan CJ 1/6, Kawasan Perindustrian Cheras Jaya; lat=3.0202680; lon=101.7671240",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-khunthai-fb-hours",
@@ -947,7 +1315,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official Facebook page: Khunthai Village Restaurant Cheras Jaya open daily 11:00 AM - 12:00 AM (midnight).",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Official restaurant social media profile schedule."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Official restaurant social media profile schedule.",
+        },
     },
     {
         "source_id": "src-osm-way-760237156",
@@ -957,7 +1329,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM commercial block way 760237156: Jalan 17/45, Seksyen 17, Petaling Jaya; lat=3.1195916; lon=101.6297602",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-aroimakmak-website",
@@ -967,7 +1343,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official website: AROI Mak Mak PJ No.1 Jalan 17/45 Seksyen 17 open Tue-Thu 11am-2:30pm & 5:30pm-9pm; Fri-Sun 11am-2:30pm & 5:30pm-9:30pm (Monday closed).",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Official restaurant website schedule section."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Official restaurant website schedule section.",
+        },
     },
     {
         "source_id": "src-osm-way-117594003",
@@ -977,7 +1357,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM commercial street block way 117594003: Jalan Kenari 1, Bandar Puchong Jaya; lat=3.0450856; lon=101.6201653",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-heelaiton-fb-hours",
@@ -987,7 +1371,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Official Facebook post: 喜来登鱼翅酒家 Hee Lai Ton Puchong at Jalan Kenari 1 open daily 11:30am-2:30pm, 5:30pm-10pm.",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Official restaurant Facebook page post."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Official restaurant Facebook page post.",
+        },
     },
     {
         "source_id": "src-osm-way-1207976193",
@@ -997,7 +1385,11 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "OSM commercial block way 1207976193: Jalan Kasturi 1, Balakong, Cheras; lat=3.0385945; lon=101.7691286",
-        "rights": {"display": "allowed", "embed": "unknown", "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed."},
+        "rights": {
+            "display": "allowed",
+            "embed": "unknown",
+            "basis": "OpenStreetMap data (c) OpenStreetMap contributors, ODbL 1.0; attribution required; embed/share-alike not reviewed.",
+        },
     },
     {
         "source_id": "src-vietpho-announcement",
@@ -1007,12 +1399,23 @@ NEW_SOURCES = [
         "expires_at": None,
         "publisher_updated_at": None,
         "evidence_text": "Verified business feature: Viet Pho Cafe at 21-G Plaza Kasturi Jalan Kasturi 1 Balakong open Mon-Fri & Sun 10:30am-10:30pm, Sat 11am-11pm.",
-        "rights": {"display": "unknown", "embed": "unknown", "basis": "Verified culinary feature and merchant announcement."},
+        "rights": {
+            "display": "unknown",
+            "embed": "unknown",
+            "basis": "Verified culinary feature and merchant announcement.",
+        },
     },
 ]
 
+
 # Helper to build standard daily intervals
-def make_daily(opens: str, closes: str, closes_next_day: bool = False, last_order: str | None = None, lo_sids: list[str] = []) -> list[dict]:
+def make_daily(
+    opens: str,
+    closes: str,
+    closes_next_day: bool = False,
+    last_order: str | None = None,
+    lo_sids: list[str] | None = None,
+) -> list[dict]:
     return [
         {
             "weekday": d,
@@ -1021,21 +1424,47 @@ def make_daily(opens: str, closes: str, closes_next_day: bool = False, last_orde
             "closes_next_day": closes_next_day,
             "last_order": last_order,
             "last_order_next_day": False,
-            "last_order_source_ids": lo_sids,
+            "last_order_source_ids": list(lo_sids or []),
         }
         for d in range(7)
     ]
 
+
 # Helper for split service
-def make_daily_split(l_o: str, l_c: str, d_o: str, d_c: str, closes_next_day: bool = False) -> list[dict]:
+def make_daily_split(
+    l_o: str, l_c: str, d_o: str, d_c: str, closes_next_day: bool = False
+) -> list[dict]:
     out = []
     for d in range(7):
-        out.append({"weekday": d, "opens": l_o, "closes": l_c, "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []})
-        out.append({"weekday": d, "opens": d_o, "closes": d_c, "closes_next_day": closes_next_day, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []})
+        out.append(
+            {
+                "weekday": d,
+                "opens": l_o,
+                "closes": l_c,
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            }
+        )
+        out.append(
+            {
+                "weekday": d,
+                "opens": d_o,
+                "closes": d_c,
+                "closes_next_day": closes_next_day,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            }
+        )
     return out
 
+
 # Helper for closed day
-def make_weekdays_except(closed_day: int, opens: str, closes: str, closes_next_day: bool = False) -> list[dict]:
+def make_weekdays_except(
+    closed_day: int, opens: str, closes: str, closes_next_day: bool = False
+) -> list[dict]:
     return [
         {
             "weekday": d,
@@ -1044,9 +1473,10 @@ def make_weekdays_except(closed_day: int, opens: str, closes: str, closes_next_d
             "closes_next_day": closes_next_day,
             "last_order": None,
             "last_order_next_day": False,
-            "last_order_source_ids": []
+            "last_order_source_ids": [],
         }
-        for d in range(7) if d != closed_day
+        for d in range(7)
+        if d != closed_day
     ]
 
 
@@ -1064,8 +1494,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-ditaliane-mall-hours"],
-        "field_evidence": {"coordinates": ["src-ditaliane-home"], "opening_hours": ["src-ditaliane-mall-hours"], "last_order": []},
-        "review_notes": ["Building coordinates retained for Tropicana Gardens Mall / IOI Mall Damansara.", "Hours 10:00-22:00 daily verified from mall tenant schedule."],
+        "field_evidence": {
+            "coordinates": ["src-ditaliane-home"],
+            "opening_hours": ["src-ditaliane-mall-hours"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building coordinates retained for Tropicana Gardens Mall / IOI Mall Damansara.",
+            "Hours 10:00-22:00 daily verified from mall tenant schedule.",
+        ],
     },
     {
         "outlet_id": "green-view-pj",
@@ -1078,8 +1515,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-191166451"],
-        "field_evidence": {"coordinates": ["src-osm-way-191166451"], "opening_hours": ["src-greenview-contact"], "last_order": []},
-        "review_notes": ["Building street block coordinates at Jalan 19/3 verified.", "Hours daily 11:00-15:00 & 17:30-22:00 verified from official website."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-191166451"],
+            "opening_hours": ["src-greenview-contact"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building street block coordinates at Jalan 19/3 verified.",
+            "Hours daily 11:00-15:00 & 17:30-22:00 verified from official website.",
+        ],
     },
     {
         "outlet_id": "prime-kuala-lumpur",
@@ -1089,24 +1533,127 @@ OUTLET_UPDATES = [
         "coordinate_precision": "building",
         "hours_status": "published",
         "opening_hours": [
-            {"weekday": 0, "opens": "12:00", "closes": "15:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 0, "opens": "18:00", "closes": "22:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 1, "opens": "12:00", "closes": "15:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 1, "opens": "18:00", "closes": "22:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 2, "opens": "12:00", "closes": "15:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 2, "opens": "18:00", "closes": "22:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 3, "opens": "12:00", "closes": "15:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 3, "opens": "18:00", "closes": "22:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 4, "opens": "12:00", "closes": "15:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 4, "opens": "18:00", "closes": "22:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 5, "opens": "18:00", "closes": "22:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 6, "opens": "18:00", "closes": "22:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
+            {
+                "weekday": 0,
+                "opens": "12:00",
+                "closes": "15:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 0,
+                "opens": "18:00",
+                "closes": "22:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 1,
+                "opens": "12:00",
+                "closes": "15:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 1,
+                "opens": "18:00",
+                "closes": "22:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 2,
+                "opens": "12:00",
+                "closes": "15:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 2,
+                "opens": "18:00",
+                "closes": "22:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 3,
+                "opens": "12:00",
+                "closes": "15:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 3,
+                "opens": "18:00",
+                "closes": "22:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 4,
+                "opens": "12:00",
+                "closes": "15:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 4,
+                "opens": "18:00",
+                "closes": "22:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 5,
+                "opens": "18:00",
+                "closes": "22:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 6,
+                "opens": "18:00",
+                "closes": "22:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
         ],
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-node-1635661887", "src-prime-website-hours"],
-        "field_evidence": {"coordinates": ["src-osm-node-1635661887"], "opening_hours": ["src-prime-website-hours"], "last_order": []},
-        "review_notes": ["Coordinates verified for Le Méridien hotel building (Level 5).", "Hours verified from Schema.org JSON-LD."],
+        "field_evidence": {
+            "coordinates": ["src-osm-node-1635661887"],
+            "opening_hours": ["src-prime-website-hours"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Coordinates verified for Le Méridien hotel building (Level 5).",
+            "Hours verified from Schema.org JSON-LD.",
+        ],
     },
     {
         "outlet_id": "cili-kampung-suria-klcc",
@@ -1119,8 +1666,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-23034336"],
-        "field_evidence": {"coordinates": ["src-osm-way-23034336"], "opening_hours": ["src-cili-home"], "last_order": []},
-        "review_notes": ["Building coordinates verified for Suria KLCC mall.", "Hours Mon-Sun 10:00-22:00 verified from official website."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-23034336"],
+            "opening_hours": ["src-cili-home"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building coordinates verified for Suria KLCC mall.",
+            "Hours Mon-Sun 10:00-22:00 verified from official website.",
+        ],
     },
     {
         "outlet_id": "onsemiro-intermark",
@@ -1129,12 +1683,21 @@ OUTLET_UPDATES = [
         "longitude": 101.7202036,
         "coordinate_precision": "storefront",
         "hours_status": "published",
-        "opening_hours": make_daily("10:00", "22:00", last_order="21:30", lo_sids=["src-onsemiro-website"]),
+        "opening_hours": make_daily(
+            "10:00", "22:00", last_order="21:30", lo_sids=["src-onsemiro-website"]
+        ),
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-node-4987310121", "src-onsemiro-website"],
-        "field_evidence": {"coordinates": ["src-osm-node-4987310121"], "opening_hours": ["src-onsemiro-website"], "last_order": ["src-onsemiro-website"]},
-        "review_notes": ["Storefront node verified inside Intermark Mall.", "Official website confirms daily hours and last order 21:30."],
+        "field_evidence": {
+            "coordinates": ["src-osm-node-4987310121"],
+            "opening_hours": ["src-onsemiro-website"],
+            "last_order": ["src-onsemiro-website"],
+        },
+        "review_notes": [
+            "Storefront node verified inside Intermark Mall.",
+            "Official website confirms daily hours and last order 21:30.",
+        ],
     },
     {
         "outlet_id": "soi55-ss15-subang-jaya",
@@ -1147,8 +1710,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-1127809211"],
-        "field_evidence": {"coordinates": ["src-osm-way-1127809211"], "opening_hours": ["src-soi55-outlets"], "last_order": []},
-        "review_notes": ["Storefront retail building way 1127809211 at 62 Jalan SS 15/4c verified.", "Operating hours 12pm-10pm daily confirmed across official site and merchant listing."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-1127809211"],
+            "opening_hours": ["src-soi55-outlets"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Storefront retail building way 1127809211 at 62 Jalan SS 15/4c verified.",
+            "Operating hours 12pm-10pm daily confirmed across official site and merchant listing.",
+        ],
     },
     {
         "outlet_id": "big-singh-chapati-ss15",
@@ -1161,8 +1731,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-1127441795"],
-        "field_evidence": {"coordinates": ["src-osm-way-1127441795"], "opening_hours": ["src-bigsingh-contact"], "last_order": []},
-        "review_notes": ["Storefront retail building way 1127441795 at 41 Jalan SS 15/5a verified.", "Hours 11:00-23:00 verified from contact page."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-1127441795"],
+            "opening_hours": ["src-bigsingh-contact"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Storefront retail building way 1127441795 at 41 Jalan SS 15/5a verified.",
+            "Hours 11:00-23:00 verified from contact page.",
+        ],
     },
     {
         "outlet_id": "red-kettle-starling",
@@ -1175,8 +1752,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-463362698", "src-redkettle-announcement"],
-        "field_evidence": {"coordinates": ["src-osm-way-463362698"], "opening_hours": ["src-redkettle-announcement"], "last_order": []},
-        "review_notes": ["Building coordinates verified for The Starling mall.", "Hours Open DAILY 11:00 AM – 11:00 PM verified from official social profile."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-463362698"],
+            "opening_hours": ["src-redkettle-announcement"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building coordinates verified for The Starling mall.",
+            "Hours Open DAILY 11:00 AM – 11:00 PM verified from official social profile.",
+        ],
     },
     {
         "outlet_id": "myburgerlab-seapark",
@@ -1185,12 +1769,21 @@ OUTLET_UPDATES = [
         "longitude": 101.6222152,
         "coordinate_precision": "storefront",
         "hours_status": "published",
-        "opening_hours": make_daily("11:00", "22:00", last_order="21:30", lo_sids=["src-mbl-store-locations"]),
+        "opening_hours": make_daily(
+            "11:00", "22:00", last_order="21:30", lo_sids=["src-mbl-store-locations"]
+        ),
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-node-4426355997", "src-mbl-store-locations"],
-        "field_evidence": {"coordinates": ["src-osm-node-4426355997"], "opening_hours": ["src-mbl-store-locations"], "last_order": ["src-mbl-store-locations"]},
-        "review_notes": ["Storefront node verified at 14 Jalan 21/22 SeaPark.", "Hours 11:00-22:00 and last call 21:30 verified from store locations page."],
+        "field_evidence": {
+            "coordinates": ["src-osm-node-4426355997"],
+            "opening_hours": ["src-mbl-store-locations"],
+            "last_order": ["src-mbl-store-locations"],
+        },
+        "review_notes": [
+            "Storefront node verified at 14 Jalan 21/22 SeaPark.",
+            "Hours 11:00-22:00 and last call 21:30 verified from store locations page.",
+        ],
     },
     {
         "outlet_id": "grand-hisar-stonor",
@@ -1203,8 +1796,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-660076333"],
-        "field_evidence": {"coordinates": ["src-osm-way-660076333"], "opening_hours": ["src-hisar-contact"], "last_order": []},
-        "review_notes": ["Building way 660076333 (10 Stonor) verified.", "Hours 11:00-23:00 verified from official contact page."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-660076333"],
+            "opening_hours": ["src-hisar-contact"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building way 660076333 (10 Stonor) verified.",
+            "Hours 11:00-23:00 verified from official contact page.",
+        ],
     },
     {
         "outlet_id": "hakka-raja-chulan",
@@ -1217,8 +1817,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-hakka-website-hours"],
-        "field_evidence": {"coordinates": ["src-osm-node-3788466249"], "opening_hours": ["src-hakka-website-hours"], "last_order": []},
-        "review_notes": ["Storefront node 3788466249 coordinates retained from catalog.", "Split hours Mon-Sun 11:30-14:30 and 17:30-22:30 verified from website."],
+        "field_evidence": {
+            "coordinates": ["src-osm-node-3788466249"],
+            "opening_hours": ["src-hakka-website-hours"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Storefront node 3788466249 coordinates retained from catalog.",
+            "Split hours Mon-Sun 11:30-14:30 and 17:30-22:30 verified from website.",
+        ],
     },
     {
         "outlet_id": "tsukiji-sushi-arkadia",
@@ -1228,23 +1835,118 @@ OUTLET_UPDATES = [
         "coordinate_precision": "building",
         "hours_status": "published",
         "opening_hours": [
-            {"weekday": 0, "opens": "11:00", "closes": "15:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 0, "opens": "18:00", "closes": "22:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 1, "opens": "11:00", "closes": "15:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 1, "opens": "18:00", "closes": "22:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 2, "opens": "11:00", "closes": "15:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 2, "opens": "18:00", "closes": "22:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 3, "opens": "11:00", "closes": "15:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 3, "opens": "18:00", "closes": "22:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 4, "opens": "11:00", "closes": "22:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 5, "opens": "11:00", "closes": "22:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 6, "opens": "11:00", "closes": "22:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
+            {
+                "weekday": 0,
+                "opens": "11:00",
+                "closes": "15:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 0,
+                "opens": "18:00",
+                "closes": "22:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 1,
+                "opens": "11:00",
+                "closes": "15:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 1,
+                "opens": "18:00",
+                "closes": "22:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 2,
+                "opens": "11:00",
+                "closes": "15:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 2,
+                "opens": "18:00",
+                "closes": "22:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 3,
+                "opens": "11:00",
+                "closes": "15:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 3,
+                "opens": "18:00",
+                "closes": "22:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 4,
+                "opens": "11:00",
+                "closes": "22:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 5,
+                "opens": "11:00",
+                "closes": "22:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 6,
+                "opens": "11:00",
+                "closes": "22:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
         ],
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-576931293"],
-        "field_evidence": {"coordinates": ["src-osm-way-576931293"], "opening_hours": ["src-tsukiji-home"], "last_order": []},
-        "review_notes": ["Building coordinates verified for Plaza Arkadia complex.", "Weekly recurring schedule verified from official website."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-576931293"],
+            "opening_hours": ["src-tsukiji-home"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building coordinates verified for Plaza Arkadia complex.",
+            "Weekly recurring schedule verified from official website.",
+        ],
     },
     {
         "outlet_id": "hide-kl-ampang",
@@ -1254,19 +1956,82 @@ OUTLET_UPDATES = [
         "coordinate_precision": "storefront",
         "hours_status": "published",
         "opening_hours": [
-            {"weekday": 1, "opens": "17:30", "closes": "22:30", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 2, "opens": "17:30", "closes": "22:30", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 3, "opens": "17:30", "closes": "22:30", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 4, "opens": "12:00", "closes": "14:30", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 4, "opens": "17:30", "closes": "22:30", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 5, "opens": "12:00", "closes": "14:30", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 5, "opens": "17:30", "closes": "22:30", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
+            {
+                "weekday": 1,
+                "opens": "17:30",
+                "closes": "22:30",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 2,
+                "opens": "17:30",
+                "closes": "22:30",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 3,
+                "opens": "17:30",
+                "closes": "22:30",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 4,
+                "opens": "12:00",
+                "closes": "14:30",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 4,
+                "opens": "17:30",
+                "closes": "22:30",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 5,
+                "opens": "12:00",
+                "closes": "14:30",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 5,
+                "opens": "17:30",
+                "closes": "22:30",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
         ],
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-node-11250441219"],
-        "field_evidence": {"coordinates": ["src-osm-node-11250441219"], "opening_hours": ["src-hide-menu"], "last_order": []},
-        "review_notes": ["Storefront node 11250441219 verified at The Ritz-Carlton Residences.", "Catalog recurring schedule retained."],
+        "field_evidence": {
+            "coordinates": ["src-osm-node-11250441219"],
+            "opening_hours": ["src-hide-menu"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Storefront node 11250441219 verified at The Ritz-Carlton Residences.",
+            "Catalog recurring schedule retained.",
+        ],
     },
     {
         "outlet_id": "lambogrill-shah-alam",
@@ -1276,19 +2041,82 @@ OUTLET_UPDATES = [
         "coordinate_precision": "building",
         "hours_status": "published",
         "opening_hours": [
-            {"weekday": 0, "opens": "10:00", "closes": "23:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 1, "opens": "10:00", "closes": "23:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 2, "opens": "10:00", "closes": "23:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 3, "opens": "10:00", "closes": "23:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 4, "opens": "10:00", "closes": "23:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 5, "opens": "08:00", "closes": "23:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 6, "opens": "08:00", "closes": "23:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
+            {
+                "weekday": 0,
+                "opens": "10:00",
+                "closes": "23:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 1,
+                "opens": "10:00",
+                "closes": "23:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 2,
+                "opens": "10:00",
+                "closes": "23:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 3,
+                "opens": "10:00",
+                "closes": "23:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 4,
+                "opens": "10:00",
+                "closes": "23:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 5,
+                "opens": "08:00",
+                "closes": "23:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 6,
+                "opens": "08:00",
+                "closes": "23:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
         ],
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-1495896576"],
-        "field_evidence": {"coordinates": ["src-osm-way-1495896576"], "opening_hours": ["src-lambo-home"], "last_order": []},
-        "review_notes": ["Building way 1495896576 (5 Jalan Snuker 13/28) verified.", "Catalog recurring weekly schedule retained."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-1495896576"],
+            "opening_hours": ["src-lambo-home"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building way 1495896576 (5 Jalan Snuker 13/28) verified.",
+            "Catalog recurring weekly schedule retained.",
+        ],
     },
     {
         "outlet_id": "mamak-cafe-brickfields",
@@ -1300,9 +2128,19 @@ OUTLET_UPDATES = [
         "opening_hours": make_daily("00:00", "00:00", closes_next_day=True),
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
-        "source_ids_to_add": ["src-osm-node-11607772095", "src-mamak-cafe-announcement"],
-        "field_evidence": {"coordinates": ["src-osm-node-11607772095"], "opening_hours": ["src-mamak-cafe-announcement"], "last_order": []},
-        "review_notes": ["Storefront node 11607772095 at Menara Sentral Vista verified.", "Continuous 24-hour service confirmed by official brand announcement."],
+        "source_ids_to_add": [
+            "src-osm-node-11607772095",
+            "src-mamak-cafe-announcement",
+        ],
+        "field_evidence": {
+            "coordinates": ["src-osm-node-11607772095"],
+            "opening_hours": ["src-mamak-cafe-announcement"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Storefront node 11607772095 at Menara Sentral Vista verified.",
+            "Continuous 24-hour service confirmed by official brand announcement.",
+        ],
     },
     {
         "outlet_id": "mamak-cafe-taman-impian",
@@ -1315,8 +2153,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-node-11601601012"],
-        "field_evidence": {"coordinates": ["src-osm-node-11601601012"], "opening_hours": ["src-osm-node-11601601012"], "last_order": []},
-        "review_notes": ["Storefront node 11601601012 verified at Taman Impian on Jalan Ipoh.", "24/7 continuous operation confirmed."],
+        "field_evidence": {
+            "coordinates": ["src-osm-node-11601601012"],
+            "opening_hours": ["src-osm-node-11601601012"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Storefront node 11601601012 verified at Taman Impian on Jalan Ipoh.",
+            "24/7 continuous operation confirmed.",
+        ],
     },
     {
         "outlet_id": "mamak-cafe-lake-city",
@@ -1329,8 +2174,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-205232207", "src-mamak-cafe-announcement"],
-        "field_evidence": {"coordinates": ["src-osm-way-205232207"], "opening_hours": ["src-mamak-cafe-announcement"], "last_order": []},
-        "review_notes": ["Building block coordinates at Jalan Sibu Lake City verified.", "Continuous 24-hour service confirmed by chain announcement."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-205232207"],
+            "opening_hours": ["src-mamak-cafe-announcement"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building block coordinates at Jalan Sibu Lake City verified.",
+            "Continuous 24-hour service confirmed by chain announcement.",
+        ],
     },
     {
         "outlet_id": "bar-ber-cheras",
@@ -1343,10 +2195,16 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-233973555", "src-barber-announcement"],
-        "field_evidence": {"coordinates": ["src-osm-way-233973555"], "opening_hours": ["src-barber-announcement"], "last_order": []},
-        "review_notes": ["Building complex way 233973555 at Dataran C180 verified.", "Hours 5pm-3am daily (overnight service) verified from official announcement."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-233973555"],
+            "opening_hours": ["src-barber-announcement"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building complex way 233973555 at Dataran C180 verified.",
+            "Hours 5pm-3am daily (overnight service) verified from official announcement.",
+        ],
     },
-
     # --- Checkpoint 2 (12 outlets) ---
     {
         "outlet_id": "scan-bean-jr-menu-68e934",
@@ -1356,19 +2214,82 @@ OUTLET_UPDATES = [
         "coordinate_precision": "building",
         "hours_status": "published",
         "opening_hours": [
-            {"weekday": 0, "opens": "12:00", "closes": "23:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 1, "opens": "12:00", "closes": "23:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 2, "opens": "12:00", "closes": "23:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 3, "opens": "12:00", "closes": "23:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 4, "opens": "12:00", "closes": "00:00", "closes_next_day": True, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 5, "opens": "12:00", "closes": "00:00", "closes_next_day": True, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 6, "opens": "12:00", "closes": "23:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
+            {
+                "weekday": 0,
+                "opens": "12:00",
+                "closes": "23:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 1,
+                "opens": "12:00",
+                "closes": "23:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 2,
+                "opens": "12:00",
+                "closes": "23:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 3,
+                "opens": "12:00",
+                "closes": "23:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 4,
+                "opens": "12:00",
+                "closes": "00:00",
+                "closes_next_day": True,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 5,
+                "opens": "12:00",
+                "closes": "00:00",
+                "closes_next_day": True,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 6,
+                "opens": "12:00",
+                "closes": "23:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
         ],
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-1160080961", "src-bean-jr-announcement"],
-        "field_evidence": {"coordinates": ["src-osm-way-1160080961"], "opening_hours": ["src-bean-jr-announcement"], "last_order": []},
-        "review_notes": ["Building block coordinates at Jalan Rimbunan Raya 1 Kepong verified.", "Weekly hours verified from official Facebook page."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-1160080961"],
+            "opening_hours": ["src-bean-jr-announcement"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building block coordinates at Jalan Rimbunan Raya 1 Kepong verified.",
+            "Weekly hours verified from official Facebook page.",
+        ],
     },
     {
         "outlet_id": "scan-restoran-gui-lin-sri-petaling-menu-a90c9d",
@@ -1381,8 +2302,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-539075379", "src-guilin-announcement"],
-        "field_evidence": {"coordinates": ["src-osm-way-539075379"], "opening_hours": ["src-guilin-announcement"], "last_order": []},
-        "review_notes": ["Building commercial block coordinates at Jalan Radin Bagus 1 verified.", "Hours 10:30am - 10:30pm daily verified from official profile."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-539075379"],
+            "opening_hours": ["src-guilin-announcement"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building commercial block coordinates at Jalan Radin Bagus 1 verified.",
+            "Hours 10:30am - 10:30pm daily verified from official profile.",
+        ],
     },
     {
         "outlet_id": "scan-yakitori-haki-menu-e067c1",
@@ -1395,8 +2323,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-node-11968724693", "src-yakitori-haki-hours"],
-        "field_evidence": {"coordinates": ["src-osm-node-11968724693"], "opening_hours": ["src-yakitori-haki-hours"], "last_order": []},
-        "review_notes": ["Storefront node 11968724693 verified at 34G Jalan 5/101C Cheras.", "Daily hours 12:00-23:00 verified from official social profile."],
+        "field_evidence": {
+            "coordinates": ["src-osm-node-11968724693"],
+            "opening_hours": ["src-yakitori-haki-hours"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Storefront node 11968724693 verified at 34G Jalan 5/101C Cheras.",
+            "Daily hours 12:00-23:00 verified from official social profile.",
+        ],
     },
     {
         "outlet_id": "scan-zakuro-japanese-restaurant-menu-dbd35b",
@@ -1409,8 +2344,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-944352527", "src-zakuro-announcement"],
-        "field_evidence": {"coordinates": ["src-osm-way-944352527"], "opening_hours": ["src-zakuro-announcement"], "last_order": []},
-        "review_notes": ["Building way 944352527 at The Link 2 Bukit Jalil verified.", "Daily hours 11:30 AM - 10:00 PM verified from official Facebook page."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-944352527"],
+            "opening_hours": ["src-zakuro-announcement"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building way 944352527 at The Link 2 Bukit Jalil verified.",
+            "Daily hours 11:30 AM - 10:00 PM verified from official Facebook page.",
+        ],
     },
     {
         "outlet_id": "scan-al-haramain-restaurant-menu-b385ba",
@@ -1423,8 +2365,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-168965925", "src-al-haramain-website"],
-        "field_evidence": {"coordinates": ["src-osm-way-168965925"], "opening_hours": ["src-al-haramain-website"], "last_order": []},
-        "review_notes": ["Building complex way 168965925 at Endah Promenade verified.", "Daily hours 9:30am - 1am verified from official website."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-168965925"],
+            "opening_hours": ["src-al-haramain-website"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building complex way 168965925 at Endah Promenade verified.",
+            "Daily hours 9:30am - 1am verified from official website.",
+        ],
     },
     {
         "outlet_id": "scan-151-hugh-low-kopitiam-nu-sentral-menu-c7e400",
@@ -1437,8 +2386,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-670478935", "src-nu-sentral-hughlow-hours"],
-        "field_evidence": {"coordinates": ["src-osm-way-670478935"], "opening_hours": ["src-nu-sentral-hughlow-hours"], "last_order": []},
-        "review_notes": ["Building way 670478935 at NU Sentral mall verified.", "Daily hours 9am - 9pm verified from official mall announcement."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-670478935"],
+            "opening_hours": ["src-nu-sentral-hughlow-hours"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building way 670478935 at NU Sentral mall verified.",
+            "Daily hours 9am - 9pm verified from official mall announcement.",
+        ],
     },
     {
         "outlet_id": "scan-bigbowl-thai-food-bbq-menu-4cc9f0",
@@ -1447,12 +2403,21 @@ OUTLET_UPDATES = [
         "longitude": 101.7547621,
         "coordinate_precision": "building",
         "hours_status": "published",
-        "opening_hours": make_daily("11:30", "22:00", last_order="21:30", lo_sids=["src-bigbowl-fb-hours"]),
+        "opening_hours": make_daily(
+            "11:30", "22:00", last_order="21:30", lo_sids=["src-bigbowl-fb-hours"]
+        ),
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-39911214", "src-bigbowl-fb-hours"],
-        "field_evidence": {"coordinates": ["src-osm-way-39911214"], "opening_hours": ["src-bigbowl-fb-hours"], "last_order": ["src-bigbowl-fb-hours"]},
-        "review_notes": ["Building street block coordinates at Jalan Pandan Indah 4/6B verified.", "Hours 11:30 AM - 10:00 PM and Last Order 9:30 PM verified from official Facebook page."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-39911214"],
+            "opening_hours": ["src-bigbowl-fb-hours"],
+            "last_order": ["src-bigbowl-fb-hours"],
+        },
+        "review_notes": [
+            "Building street block coordinates at Jalan Pandan Indah 4/6B verified.",
+            "Hours 11:30 AM - 10:00 PM and Last Order 9:30 PM verified from official Facebook page.",
+        ],
     },
     {
         "outlet_id": "scan-cheras-homey-yong-tau-foo-menu-100d39",
@@ -1465,8 +2430,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-39910504", "src-cheras-homey-fb"],
-        "field_evidence": {"coordinates": ["src-osm-way-39910504"], "opening_hours": ["src-cheras-homey-fb"], "last_order": []},
-        "review_notes": ["Building street block coordinates at Jalan Jintan Cheras verified.", "Hours Wed-Mon 11am-8pm (Tuesday closed) verified from official Facebook profile."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-39910504"],
+            "opening_hours": ["src-cheras-homey-fb"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building street block coordinates at Jalan Jintan Cheras verified.",
+            "Hours Wed-Mon 11am-8pm (Tuesday closed) verified from official Facebook profile.",
+        ],
     },
     {
         "outlet_id": "scan-de-forest-cafe-menu-f5b778",
@@ -1479,8 +2451,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-201611975", "src-deforest-cafe-fb"],
-        "field_evidence": {"coordinates": ["src-osm-way-201611975"], "opening_hours": ["src-deforest-cafe-fb"], "last_order": []},
-        "review_notes": ["Building street block coordinates at Jalan Puteri 1/4 Puchong verified.", "Hours Mon-Sat 10am-9pm (Sunday closed) verified from official Facebook post."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-201611975"],
+            "opening_hours": ["src-deforest-cafe-fb"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building street block coordinates at Jalan Puteri 1/4 Puchong verified.",
+            "Hours Mon-Sat 10am-9pm (Sunday closed) verified from official Facebook post.",
+        ],
     },
     {
         "outlet_id": "scan-de-pine-cafe-menu-e0e601",
@@ -1493,8 +2472,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-39924500", "src-depine-cafe-fb"],
-        "field_evidence": {"coordinates": ["src-osm-way-39924500"], "opening_hours": ["src-depine-cafe-fb"], "last_order": []},
-        "review_notes": ["Building street block coordinates at Jalan Cengkeh Taman Cheras verified.", "Hours Wed-Mon 10am-6pm (Tuesday closed) verified from official profile."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-39924500"],
+            "opening_hours": ["src-depine-cafe-fb"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building street block coordinates at Jalan Cengkeh Taman Cheras verified.",
+            "Hours Wed-Mon 10am-6pm (Tuesday closed) verified from official profile.",
+        ],
     },
     {
         "outlet_id": "scan-fei-po-ban-mee-menu-e8b249",
@@ -1507,8 +2493,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-125302977", "src-feipo-fb-hours"],
-        "field_evidence": {"coordinates": ["src-osm-way-125302977"], "opening_hours": ["src-feipo-fb-hours"], "last_order": []},
-        "review_notes": ["Building street block coordinates at Jalan Temenggung 11/9 Cheras verified.", "Hours daily 8am-9pm verified from official Facebook page."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-125302977"],
+            "opening_hours": ["src-feipo-fb-hours"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building street block coordinates at Jalan Temenggung 11/9 Cheras verified.",
+            "Hours daily 8am-9pm verified from official Facebook page.",
+        ],
     },
     {
         "outlet_id": "scan-gaga-western-corner-menu-54b37b",
@@ -1521,10 +2514,16 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-1231033826", "src-gaga-western-website"],
-        "field_evidence": {"coordinates": ["src-osm-way-1231033826"], "opening_hours": ["src-gaga-western-website"], "last_order": []},
-        "review_notes": ["Building street block coordinates at Jalan Radin Anum 1 Sri Petaling verified.", "Hours Wed-Mon 11:00am-10:30pm (Tuesday closed) verified from official website."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-1231033826"],
+            "opening_hours": ["src-gaga-western-website"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building street block coordinates at Jalan Radin Anum 1 Sri Petaling verified.",
+            "Hours Wed-Mon 11:00am-10:30pm (Tuesday closed) verified from official website.",
+        ],
     },
-
     # --- Checkpoint 3 (5 outlets) ---
     {
         "outlet_id": "scan-jom-laksa-menu-57b2d4",
@@ -1537,8 +2536,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-1157688990", "src-jomlaksa-fb-hours"],
-        "field_evidence": {"coordinates": ["src-osm-way-1157688990"], "opening_hours": ["src-jomlaksa-fb-hours"], "last_order": []},
-        "review_notes": ["Building mall block coordinates at Da Men Mall USJ 1 verified.", "Hours daily 10:00am - 10:00pm verified from official announcement."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-1157688990"],
+            "opening_hours": ["src-jomlaksa-fb-hours"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building mall block coordinates at Da Men Mall USJ 1 verified.",
+            "Hours daily 10:00am - 10:00pm verified from official announcement.",
+        ],
     },
     {
         "outlet_id": "scan-menya-yamato-e9-ba-b5-e5-b1-8b-e5-a4-a7--d7cfa9",
@@ -1548,24 +2554,127 @@ OUTLET_UPDATES = [
         "coordinate_precision": "building",
         "hours_status": "published",
         "opening_hours": [
-            {"weekday": 0, "opens": "11:30", "closes": "15:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 0, "opens": "17:00", "closes": "22:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 1, "opens": "11:30", "closes": "15:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 1, "opens": "17:00", "closes": "22:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 2, "opens": "11:30", "closes": "15:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 2, "opens": "17:00", "closes": "22:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 3, "opens": "11:30", "closes": "15:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 3, "opens": "17:00", "closes": "22:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 4, "opens": "11:30", "closes": "15:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 4, "opens": "17:00", "closes": "22:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 5, "opens": "11:00", "closes": "22:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 6, "opens": "11:00", "closes": "22:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
+            {
+                "weekday": 0,
+                "opens": "11:30",
+                "closes": "15:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 0,
+                "opens": "17:00",
+                "closes": "22:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 1,
+                "opens": "11:30",
+                "closes": "15:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 1,
+                "opens": "17:00",
+                "closes": "22:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 2,
+                "opens": "11:30",
+                "closes": "15:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 2,
+                "opens": "17:00",
+                "closes": "22:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 3,
+                "opens": "11:30",
+                "closes": "15:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 3,
+                "opens": "17:00",
+                "closes": "22:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 4,
+                "opens": "11:30",
+                "closes": "15:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 4,
+                "opens": "17:00",
+                "closes": "22:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 5,
+                "opens": "11:00",
+                "closes": "22:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 6,
+                "opens": "11:00",
+                "closes": "22:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
         ],
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-179935302", "src-menya-yamato-fb"],
-        "field_evidence": {"coordinates": ["src-osm-way-179935302"], "opening_hours": ["src-menya-yamato-fb"], "last_order": []},
-        "review_notes": ["Building commercial block coordinates at Jalan 3/62A Bandar Menjalara verified.", "Hours Mon-Fri 11:30-15:00 & 17:00-22:00; Sat-Sun 11:00-22:00 verified from official Facebook page."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-179935302"],
+            "opening_hours": ["src-menya-yamato-fb"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building commercial block coordinates at Jalan 3/62A Bandar Menjalara verified.",
+            "Hours Mon-Fri 11:30-15:00 & 17:00-22:00; Sat-Sun 11:00-22:00 verified from official Facebook page.",
+        ],
     },
     {
         "outlet_id": "scan-mi-house-menu-9d5721",
@@ -1578,8 +2687,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-149515407", "src-mi-house-announcement"],
-        "field_evidence": {"coordinates": ["src-osm-way-149515407"], "opening_hours": ["src-mi-house-announcement"], "last_order": []},
-        "review_notes": ["Building block coordinates at Jalan SL 1/2 Bandar Sungai Long verified.", "Hours Tue-Sun 9.00am - 8.30pm (Monday closed) verified from business announcement."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-149515407"],
+            "opening_hours": ["src-mi-house-announcement"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building block coordinates at Jalan SL 1/2 Bandar Sungai Long verified.",
+            "Hours Tue-Sun 9.00am - 8.30pm (Monday closed) verified from business announcement.",
+        ],
     },
     {
         "outlet_id": "scan-mygei-cheong-fun-menu-9463e4",
@@ -1589,18 +2705,73 @@ OUTLET_UPDATES = [
         "coordinate_precision": "building",
         "hours_status": "published",
         "opening_hours": [
-            {"weekday": 1, "opens": "11:30", "closes": "22:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 2, "opens": "11:30", "closes": "22:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 3, "opens": "11:30", "closes": "22:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 4, "opens": "11:30", "closes": "22:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 5, "opens": "10:00", "closes": "22:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 6, "opens": "10:00", "closes": "22:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
+            {
+                "weekday": 1,
+                "opens": "11:30",
+                "closes": "22:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 2,
+                "opens": "11:30",
+                "closes": "22:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 3,
+                "opens": "11:30",
+                "closes": "22:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 4,
+                "opens": "11:30",
+                "closes": "22:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 5,
+                "opens": "10:00",
+                "closes": "22:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 6,
+                "opens": "10:00",
+                "closes": "22:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
         ],
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-182374669", "src-mygei-fb-hours"],
-        "field_evidence": {"coordinates": ["src-osm-way-182374669"], "opening_hours": ["src-mygei-fb-hours"], "last_order": []},
-        "review_notes": ["Building block coordinates at Jalan Tanjung SD 13 Bandar Sri Damansara verified.", "Hours Tue-Fri 11:30am-10pm, Sat-Sun 10am-10pm (Monday closed) verified from official Facebook page."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-182374669"],
+            "opening_hours": ["src-mygei-fb-hours"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building block coordinates at Jalan Tanjung SD 13 Bandar Sri Damansara verified.",
+            "Hours Tue-Fri 11:30am-10pm, Sat-Sun 10am-10pm (Monday closed) verified from official Facebook page.",
+        ],
     },
     {
         "outlet_id": "scan-pormtip-thai-restaurant-menu-14a1f6",
@@ -1609,14 +2780,22 @@ OUTLET_UPDATES = [
         "longitude": 101.7128079,
         "coordinate_precision": "building",
         "hours_status": "published",
-        "opening_hours": make_daily("12:15", "23:30", last_order="23:30", lo_sids=["src-pormtip-fb-hours"]),
+        "opening_hours": make_daily(
+            "12:15", "23:30", last_order="23:30", lo_sids=["src-pormtip-fb-hours"]
+        ),
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-169794250", "src-pormtip-fb-hours"],
-        "field_evidence": {"coordinates": ["src-osm-way-169794250"], "opening_hours": ["src-pormtip-fb-hours"], "last_order": ["src-pormtip-fb-hours"]},
-        "review_notes": ["Building block coordinates at Dataran Dwitasik Bandar Sri Permaisuri verified.", "Hours daily 12:15pm to 11:30pm (last order 11:30pm) verified from official Facebook page."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-169794250"],
+            "opening_hours": ["src-pormtip-fb-hours"],
+            "last_order": ["src-pormtip-fb-hours"],
+        },
+        "review_notes": [
+            "Building block coordinates at Dataran Dwitasik Bandar Sri Permaisuri verified.",
+            "Hours daily 12:15pm to 11:30pm (last order 11:30pm) verified from official Facebook page.",
+        ],
     },
-
     # --- Checkpoint 4 (7 outlets) ---
     {
         "outlet_id": "scan-shibuya-dessert-menu-b30866",
@@ -1629,8 +2808,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-507747467", "src-shibuya-fb-hours"],
-        "field_evidence": {"coordinates": ["src-osm-way-507747467"], "opening_hours": ["src-shibuya-fb-hours"], "last_order": []},
-        "review_notes": ["Building street block coordinates at Jalan Radin Bagus 5 Sri Petaling verified.", "Hours Tue-Sun 12pm-10pm (Monday closed) verified from published business feature."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-507747467"],
+            "opening_hours": ["src-shibuya-fb-hours"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building street block coordinates at Jalan Radin Bagus 5 Sri Petaling verified.",
+            "Hours Tue-Sun 12pm-10pm (Monday closed) verified from published business feature.",
+        ],
     },
     {
         "outlet_id": "scan-soulja-premium-soya-menu-90722a",
@@ -1643,8 +2829,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-node-10701993366", "src-soulja-store-hours"],
-        "field_evidence": {"coordinates": ["src-osm-node-10701993366"], "opening_hours": ["src-soulja-store-hours"], "last_order": []},
-        "review_notes": ["Building coordinates verified for KL Eco City Mall.", "Hours Monday - Sunday 10:00 AM - 22:00 PM verified from published store schedule."],
+        "field_evidence": {
+            "coordinates": ["src-osm-node-10701993366"],
+            "opening_hours": ["src-soulja-store-hours"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building coordinates verified for KL Eco City Mall.",
+            "Hours Monday - Sunday 10:00 AM - 22:00 PM verified from published store schedule.",
+        ],
     },
     {
         "outlet_id": "scan-sushi-zensai-sake-bar-menu-4a407b",
@@ -1657,8 +2850,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-node-10701993366", "src-sushizensai-fb-hours"],
-        "field_evidence": {"coordinates": ["src-osm-node-10701993366"], "opening_hours": ["src-sushizensai-fb-hours"], "last_order": []},
-        "review_notes": ["Building coordinates verified for KL Eco City Mall.", "Hours Monday to Saturday 12pm-10pm (Sunday closed) verified from official merchant Facebook page."],
+        "field_evidence": {
+            "coordinates": ["src-osm-node-10701993366"],
+            "opening_hours": ["src-sushizensai-fb-hours"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building coordinates verified for KL Eco City Mall.",
+            "Hours Monday to Saturday 12pm-10pm (Sunday closed) verified from official merchant Facebook page.",
+        ],
     },
     {
         "outlet_id": "scan-thai-chala-menu-24fda2",
@@ -1671,8 +2871,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-765279144", "src-thaichala-fb-hours"],
-        "field_evidence": {"coordinates": ["src-osm-way-765279144"], "opening_hours": ["src-thaichala-fb-hours"], "last_order": []},
-        "review_notes": ["Building commercial block coordinates at Jalan Radin Tengah Sri Petaling verified.", "Hours daily 11.30am - 10.30pm verified from official Facebook page."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-765279144"],
+            "opening_hours": ["src-thaichala-fb-hours"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building commercial block coordinates at Jalan Radin Tengah Sri Petaling verified.",
+            "Hours daily 11.30am - 10.30pm verified from official Facebook page.",
+        ],
     },
     {
         "outlet_id": "scan-theres-a-hot-pot-restaurant-menu-557005",
@@ -1685,8 +2892,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-497750800", "src-theres-hotpot-hours"],
-        "field_evidence": {"coordinates": ["src-osm-way-497750800"], "opening_hours": ["src-theres-hotpot-hours"], "last_order": []},
-        "review_notes": ["Building complex way 497750800 at Seri Gembira Avenue verified.", "Split hours daily 11:30-14:30 and 17:30-23:30 verified from culinary directory."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-497750800"],
+            "opening_hours": ["src-theres-hotpot-hours"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building complex way 497750800 at Seri Gembira Avenue verified.",
+            "Split hours daily 11:30-14:30 and 17:30-23:30 verified from culinary directory.",
+        ],
     },
     {
         "outlet_id": "scan-warung-makcik-kiah-menu-f13d31",
@@ -1699,8 +2913,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-185409250", "src-warung-makcik-kiah-store"],
-        "field_evidence": {"coordinates": ["src-osm-way-185409250"], "opening_hours": ["src-warung-makcik-kiah-store"], "last_order": []},
-        "review_notes": ["Building commercial block coordinates at Jalan Radin Bagus 9 Sri Petaling verified.", "Hours Mon - Sun 10:00 AM - 10:00 PM verified from official online store profile."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-185409250"],
+            "opening_hours": ["src-warung-makcik-kiah-store"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building commercial block coordinates at Jalan Radin Bagus 9 Sri Petaling verified.",
+            "Hours Mon - Sun 10:00 AM - 10:00 PM verified from official online store profile.",
+        ],
     },
     {
         "outlet_id": "scan-xin-hao-tat-restaurant-menu-c65b3b",
@@ -1713,10 +2934,16 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-201611936", "src-xinhaotat-fb-hours"],
-        "field_evidence": {"coordinates": ["src-osm-way-201611936"], "opening_hours": ["src-xinhaotat-fb-hours"], "last_order": []},
-        "review_notes": ["Building commercial block coordinates at Jalan Puteri 2/4 Bandar Puteri Puchong verified.", "Hours daily 11:30AM - 10:00PM verified from official Facebook page."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-201611936"],
+            "opening_hours": ["src-xinhaotat-fb-hours"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building commercial block coordinates at Jalan Puteri 2/4 Bandar Puteri Puchong verified.",
+            "Hours daily 11:30AM - 10:00PM verified from official Facebook page.",
+        ],
     },
-
     # --- Checkpoint 5 (6 outlets) ---
     {
         "outlet_id": "scan-man-kee-cafe-menu-0adc1b",
@@ -1729,8 +2956,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-228926644", "src-mankee-fb-hours"],
-        "field_evidence": {"coordinates": ["src-osm-way-228926644"], "opening_hours": ["src-mankee-fb-hours"], "last_order": []},
-        "review_notes": ["Building street block coordinates at Jalan Metro Perdana 1 Kepong verified.", "Hours daily 9.00am - 7.00pm verified from official Facebook post."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-228926644"],
+            "opening_hours": ["src-mankee-fb-hours"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building street block coordinates at Jalan Metro Perdana 1 Kepong verified.",
+            "Hours daily 9.00am - 7.00pm verified from official Facebook post.",
+        ],
     },
     {
         "outlet_id": "scan-black-tower-coffee-menu-e23e6d",
@@ -1743,8 +2977,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-233973555", "src-blacktower-ig-hours"],
-        "field_evidence": {"coordinates": ["src-osm-way-233973555"], "opening_hours": ["src-blacktower-ig-hours"], "last_order": []},
-        "review_notes": ["Building commercial complex coordinates at Dataran C180 Cheras verified.", "Hours Monday to Sunday 11am - 11pm verified from official Instagram profile."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-233973555"],
+            "opening_hours": ["src-blacktower-ig-hours"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building commercial complex coordinates at Dataran C180 Cheras verified.",
+            "Hours Monday to Sunday 11am - 11pm verified from official Instagram profile.",
+        ],
     },
     {
         "outlet_id": "scan-chok-kar-chong-menu-5f1467",
@@ -1757,8 +2998,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-545866596", "src-chokkarchong-hours"],
-        "field_evidence": {"coordinates": ["src-osm-way-545866596"], "opening_hours": ["src-chokkarchong-hours"], "last_order": []},
-        "review_notes": ["Building commercial block coordinates at Jalan 7/108C Taman Sungai Besi verified.", "Hours daily 7AM – 10PM verified from published merchant notice."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-545866596"],
+            "opening_hours": ["src-chokkarchong-hours"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building commercial block coordinates at Jalan 7/108C Taman Sungai Besi verified.",
+            "Hours daily 7AM – 10PM verified from published merchant notice.",
+        ],
     },
     {
         "outlet_id": "scan-jia-li-mian-noodle-house-menu-4e3e36",
@@ -1771,8 +3019,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-773869289", "src-jialimian-hours"],
-        "field_evidence": {"coordinates": ["src-osm-way-773869289"], "opening_hours": ["src-jialimian-hours"], "last_order": []},
-        "review_notes": ["Building commercial block coordinates at Jalan Pandan 2/2 Pandan Jaya verified.", "Hours daily 7.30am till 4pm verified from published dining review."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-773869289"],
+            "opening_hours": ["src-jialimian-hours"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building commercial block coordinates at Jalan Pandan 2/2 Pandan Jaya verified.",
+            "Hours daily 7.30am till 4pm verified from published dining review.",
+        ],
     },
     {
         "outlet_id": "scan-jemi-cafe-menu-df9027",
@@ -1785,8 +3040,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-node-10239474812", "src-jemi-cafe-hours"],
-        "field_evidence": {"coordinates": ["src-osm-node-10239474812"], "opening_hours": ["src-jemi-cafe-hours"], "last_order": []},
-        "review_notes": ["Storefront node 10239474812 at unit 17-1 Jalan 2/109F Danau Desa verified.", "Hours Wednesday-Monday 11.00 AM - 10.00 PM (Tuesday closed) verified from official announcement."],
+        "field_evidence": {
+            "coordinates": ["src-osm-node-10239474812"],
+            "opening_hours": ["src-jemi-cafe-hours"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Storefront node 10239474812 at unit 17-1 Jalan 2/109F Danau Desa verified.",
+            "Hours Wednesday-Monday 11.00 AM - 10.00 PM (Tuesday closed) verified from official announcement.",
+        ],
     },
     {
         "outlet_id": "scan-moomin-bubbles-menu-ea04ac",
@@ -1799,10 +3061,16 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-28352529", "src-moominbubbles-mall-hours"],
-        "field_evidence": {"coordinates": ["src-osm-way-28352529"], "opening_hours": ["src-moominbubbles-mall-hours"], "last_order": []},
-        "review_notes": ["Building coordinates verified for Sunway Pyramid Shopping Centre.", "Hours daily 10:00 AM - 10:00 PM verified from mall tenant announcement."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-28352529"],
+            "opening_hours": ["src-moominbubbles-mall-hours"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building coordinates verified for Sunway Pyramid Shopping Centre.",
+            "Hours daily 10:00 AM - 10:00 PM verified from mall tenant announcement.",
+        ],
     },
-
     # --- Checkpoint 6 (6 outlets) ---
     {
         "outlet_id": "scan-super-ramen-menu-9c56df",
@@ -1812,24 +3080,127 @@ OUTLET_UPDATES = [
         "coordinate_precision": "building",
         "hours_status": "published",
         "opening_hours": [
-            {"weekday": 0, "opens": "12:00", "closes": "15:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 0, "opens": "18:00", "closes": "23:00", "closes_next_day": False, "last_order": "23:00", "last_order_next_day": False, "last_order_source_ids": ["src-super-ramen-hours"]},
-            {"weekday": 1, "opens": "12:00", "closes": "15:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 1, "opens": "18:00", "closes": "23:00", "closes_next_day": False, "last_order": "23:00", "last_order_next_day": False, "last_order_source_ids": ["src-super-ramen-hours"]},
-            {"weekday": 3, "opens": "12:00", "closes": "15:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 3, "opens": "18:00", "closes": "23:00", "closes_next_day": False, "last_order": "23:00", "last_order_next_day": False, "last_order_source_ids": ["src-super-ramen-hours"]},
-            {"weekday": 4, "opens": "12:00", "closes": "15:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 4, "opens": "18:00", "closes": "23:00", "closes_next_day": False, "last_order": "23:00", "last_order_next_day": False, "last_order_source_ids": ["src-super-ramen-hours"]},
-            {"weekday": 5, "opens": "12:00", "closes": "15:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 5, "opens": "18:00", "closes": "23:00", "closes_next_day": False, "last_order": "23:00", "last_order_next_day": False, "last_order_source_ids": ["src-super-ramen-hours"]},
-            {"weekday": 6, "opens": "12:00", "closes": "15:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 6, "opens": "18:00", "closes": "23:00", "closes_next_day": False, "last_order": "23:00", "last_order_next_day": False, "last_order_source_ids": ["src-super-ramen-hours"]},
+            {
+                "weekday": 0,
+                "opens": "12:00",
+                "closes": "15:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 0,
+                "opens": "18:00",
+                "closes": "23:00",
+                "closes_next_day": False,
+                "last_order": "23:00",
+                "last_order_next_day": False,
+                "last_order_source_ids": ["src-super-ramen-hours"],
+            },
+            {
+                "weekday": 1,
+                "opens": "12:00",
+                "closes": "15:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 1,
+                "opens": "18:00",
+                "closes": "23:00",
+                "closes_next_day": False,
+                "last_order": "23:00",
+                "last_order_next_day": False,
+                "last_order_source_ids": ["src-super-ramen-hours"],
+            },
+            {
+                "weekday": 3,
+                "opens": "12:00",
+                "closes": "15:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 3,
+                "opens": "18:00",
+                "closes": "23:00",
+                "closes_next_day": False,
+                "last_order": "23:00",
+                "last_order_next_day": False,
+                "last_order_source_ids": ["src-super-ramen-hours"],
+            },
+            {
+                "weekday": 4,
+                "opens": "12:00",
+                "closes": "15:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 4,
+                "opens": "18:00",
+                "closes": "23:00",
+                "closes_next_day": False,
+                "last_order": "23:00",
+                "last_order_next_day": False,
+                "last_order_source_ids": ["src-super-ramen-hours"],
+            },
+            {
+                "weekday": 5,
+                "opens": "12:00",
+                "closes": "15:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 5,
+                "opens": "18:00",
+                "closes": "23:00",
+                "closes_next_day": False,
+                "last_order": "23:00",
+                "last_order_next_day": False,
+                "last_order_source_ids": ["src-super-ramen-hours"],
+            },
+            {
+                "weekday": 6,
+                "opens": "12:00",
+                "closes": "15:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 6,
+                "opens": "18:00",
+                "closes": "23:00",
+                "closes_next_day": False,
+                "last_order": "23:00",
+                "last_order_next_day": False,
+                "last_order_source_ids": ["src-super-ramen-hours"],
+            },
         ],
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-539075379", "src-super-ramen-hours"],
-        "field_evidence": {"coordinates": ["src-osm-way-539075379"], "opening_hours": ["src-super-ramen-hours"], "last_order": ["src-super-ramen-hours"]},
-        "review_notes": ["Building commercial block coordinates at Jalan Radin Bagus Sri Petaling verified.", "Hours Thu-Tue 12pm-3pm & 6pm-11pm (Wednesday closed, 11pm last order) verified."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-539075379"],
+            "opening_hours": ["src-super-ramen-hours"],
+            "last_order": ["src-super-ramen-hours"],
+        },
+        "review_notes": [
+            "Building commercial block coordinates at Jalan Radin Bagus Sri Petaling verified.",
+            "Hours Thu-Tue 12pm-3pm & 6pm-11pm (Wednesday closed, 11pm last order) verified.",
+        ],
     },
     {
         "outlet_id": "scan-nakamura-bashi-the-sphere-bangar-south-m-83c180",
@@ -1841,9 +3212,19 @@ OUTLET_UPDATES = [
         "opening_hours": make_daily("11:00", "21:30"),
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
-        "source_ids_to_add": ["src-osm-way-307296591", "src-nakamurabashi-sphere-hours"],
-        "field_evidence": {"coordinates": ["src-osm-way-307296591"], "opening_hours": ["src-nakamurabashi-sphere-hours"], "last_order": []},
-        "review_notes": ["Building coordinates verified for The Sphere Bangsar South.", "Hours daily 11am-9:30pm verified from official Instagram announcement."],
+        "source_ids_to_add": [
+            "src-osm-way-307296591",
+            "src-nakamurabashi-sphere-hours",
+        ],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-307296591"],
+            "opening_hours": ["src-nakamurabashi-sphere-hours"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building coordinates verified for The Sphere Bangsar South.",
+            "Hours daily 11am-9:30pm verified from official Instagram announcement.",
+        ],
     },
     {
         "outlet_id": "scan-dy-corner-menu-e9-b4-bb-e5-ae-9c-e9-a3-9-e02d03",
@@ -1856,8 +3237,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-32512351", "src-dy-corner-fb"],
-        "field_evidence": {"coordinates": ["src-osm-way-32512351"], "opening_hours": ["src-dy-corner-fb"], "last_order": []},
-        "review_notes": ["Building commercial block coordinates at Jalan USJ 10/1C Taipan verified.", "Hours daily 7:00am - 5:00pm verified from official Facebook announcement."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-32512351"],
+            "opening_hours": ["src-dy-corner-fb"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building commercial block coordinates at Jalan USJ 10/1C Taipan verified.",
+            "Hours daily 7:00am - 5:00pm verified from official Facebook announcement.",
+        ],
     },
     {
         "outlet_id": "scan-103-coffee-workshop-menu-6d4e54",
@@ -1870,8 +3258,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-539075379", "src-103coffee-website"],
-        "field_evidence": {"coordinates": ["src-osm-way-539075379"], "opening_hours": ["src-103coffee-website"], "last_order": []},
-        "review_notes": ["Building commercial block coordinates at Jalan Radin Bagus Sri Petaling verified.", "Hours Mon - Sun 7:30 AM - 09:00 PM verified from official website."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-539075379"],
+            "opening_hours": ["src-103coffee-website"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building commercial block coordinates at Jalan Radin Bagus Sri Petaling verified.",
+            "Hours Mon - Sun 7:30 AM - 09:00 PM verified from official website.",
+        ],
     },
     {
         "outlet_id": "scan-nasi-kandar-mamak-cafe-menu-danau-kota-160d92",
@@ -1884,8 +3279,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-129508046", "src-mamak-cafe-announcement"],
-        "field_evidence": {"coordinates": ["src-osm-way-129508046"], "opening_hours": ["src-mamak-cafe-announcement"], "last_order": []},
-        "review_notes": ["Building commercial block coordinates at Jalan Danau Niaga 1 Setapak verified.", "24/7 continuous operation verified from chain announcement."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-129508046"],
+            "opening_hours": ["src-mamak-cafe-announcement"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building commercial block coordinates at Jalan Danau Niaga 1 Setapak verified.",
+            "24/7 continuous operation verified from chain announcement.",
+        ],
     },
     {
         "outlet_id": "scan-nakamura-bashi-menu-ab95e6",
@@ -1898,10 +3300,16 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-117594004", "src-nakamurabashi-puchong-fb"],
-        "field_evidence": {"coordinates": ["src-osm-way-117594004"], "opening_hours": ["src-nakamurabashi-puchong-fb"], "last_order": []},
-        "review_notes": ["Building commercial complex coordinates at Kompleks IOI Prima Puchong Jaya verified.", "Hours daily 10:00am - 10:00pm verified from official Facebook post."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-117594004"],
+            "opening_hours": ["src-nakamurabashi-puchong-fb"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building commercial complex coordinates at Kompleks IOI Prima Puchong Jaya verified.",
+            "Hours daily 10:00am - 10:00pm verified from official Facebook post.",
+        ],
     },
-
     # --- Checkpoint 7 (4 outlets) ---
     {
         "outlet_id": "scan-khunthai-village-restaurant-menu-4aa842",
@@ -1914,8 +3322,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-155292002", "src-khunthai-fb-hours"],
-        "field_evidence": {"coordinates": ["src-osm-way-155292002"], "opening_hours": ["src-khunthai-fb-hours"], "last_order": []},
-        "review_notes": ["Building commercial block coordinates at Kawasan Perindustrian Cheras Jaya verified.", "Hours daily 11am - 12am (midnight) verified from official Facebook page."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-155292002"],
+            "opening_hours": ["src-khunthai-fb-hours"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building commercial block coordinates at Kawasan Perindustrian Cheras Jaya verified.",
+            "Hours daily 11am - 12am (midnight) verified from official Facebook page.",
+        ],
     },
     {
         "outlet_id": "scan-aroi-mak-mak-pj-menu-b9c07f",
@@ -1925,24 +3340,127 @@ OUTLET_UPDATES = [
         "coordinate_precision": "building",
         "hours_status": "published",
         "opening_hours": [
-            {"weekday": 1, "opens": "11:00", "closes": "14:30", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 1, "opens": "17:30", "closes": "21:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 2, "opens": "11:00", "closes": "14:30", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 2, "opens": "17:30", "closes": "21:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 3, "opens": "11:00", "closes": "14:30", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 3, "opens": "17:30", "closes": "21:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 4, "opens": "11:00", "closes": "14:30", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 4, "opens": "17:30", "closes": "21:30", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 5, "opens": "11:00", "closes": "14:30", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 5, "opens": "17:30", "closes": "21:30", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 6, "opens": "11:00", "closes": "14:30", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 6, "opens": "17:30", "closes": "21:30", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
+            {
+                "weekday": 1,
+                "opens": "11:00",
+                "closes": "14:30",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 1,
+                "opens": "17:30",
+                "closes": "21:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 2,
+                "opens": "11:00",
+                "closes": "14:30",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 2,
+                "opens": "17:30",
+                "closes": "21:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 3,
+                "opens": "11:00",
+                "closes": "14:30",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 3,
+                "opens": "17:30",
+                "closes": "21:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 4,
+                "opens": "11:00",
+                "closes": "14:30",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 4,
+                "opens": "17:30",
+                "closes": "21:30",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 5,
+                "opens": "11:00",
+                "closes": "14:30",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 5,
+                "opens": "17:30",
+                "closes": "21:30",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 6,
+                "opens": "11:00",
+                "closes": "14:30",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 6,
+                "opens": "17:30",
+                "closes": "21:30",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
         ],
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-760237156", "src-aroimakmak-website"],
-        "field_evidence": {"coordinates": ["src-osm-way-760237156"], "opening_hours": ["src-aroimakmak-website"], "last_order": []},
-        "review_notes": ["Building commercial block coordinates at Jalan 17/45 Seksyen 17 PJ verified.", "Hours Tue-Thu 11am-2:30pm & 5:30pm-9pm; Fri-Sun 11am-2:30pm & 5:30pm-9:30pm (Monday closed) verified."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-760237156"],
+            "opening_hours": ["src-aroimakmak-website"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building commercial block coordinates at Jalan 17/45 Seksyen 17 PJ verified.",
+            "Hours Tue-Thu 11am-2:30pm & 5:30pm-9pm; Fri-Sun 11am-2:30pm & 5:30pm-9:30pm (Monday closed) verified.",
+        ],
     },
     {
         "outlet_id": "scan-hee-lai-ton-menu-puchong-9fee96",
@@ -1955,8 +3473,15 @@ OUTLET_UPDATES = [
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-117594003", "src-heelaiton-fb-hours"],
-        "field_evidence": {"coordinates": ["src-osm-way-117594003"], "opening_hours": ["src-heelaiton-fb-hours"], "last_order": []},
-        "review_notes": ["Building commercial block coordinates at Jalan Kenari 1 Puchong Jaya verified.", "Split hours Mon-Sun 11:30am-2:30pm and 5:30pm-10pm verified from official Facebook page."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-117594003"],
+            "opening_hours": ["src-heelaiton-fb-hours"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building commercial block coordinates at Jalan Kenari 1 Puchong Jaya verified.",
+            "Split hours Mon-Sun 11:30am-2:30pm and 5:30pm-10pm verified from official Facebook page.",
+        ],
     },
     {
         "outlet_id": "scan-viet-pho-cafe-menu-ec6e18",
@@ -1966,19 +3491,82 @@ OUTLET_UPDATES = [
         "coordinate_precision": "building",
         "hours_status": "published",
         "opening_hours": [
-            {"weekday": 0, "opens": "10:30", "closes": "22:30", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 1, "opens": "10:30", "closes": "22:30", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 2, "opens": "10:30", "closes": "22:30", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 3, "opens": "10:30", "closes": "22:30", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 4, "opens": "10:30", "closes": "22:30", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 5, "opens": "11:00", "closes": "23:00", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
-            {"weekday": 6, "opens": "10:30", "closes": "22:30", "closes_next_day": False, "last_order": None, "last_order_next_day": False, "last_order_source_ids": []},
+            {
+                "weekday": 0,
+                "opens": "10:30",
+                "closes": "22:30",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 1,
+                "opens": "10:30",
+                "closes": "22:30",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 2,
+                "opens": "10:30",
+                "closes": "22:30",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 3,
+                "opens": "10:30",
+                "closes": "22:30",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 4,
+                "opens": "10:30",
+                "closes": "22:30",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 5,
+                "opens": "11:00",
+                "closes": "23:00",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
+            {
+                "weekday": 6,
+                "opens": "10:30",
+                "closes": "22:30",
+                "closes_next_day": False,
+                "last_order": None,
+                "last_order_next_day": False,
+                "last_order_source_ids": [],
+            },
         ],
         "opening_exceptions": [],
         "opening_exceptions_coverage": None,
         "source_ids_to_add": ["src-osm-way-1207976193", "src-vietpho-announcement"],
-        "field_evidence": {"coordinates": ["src-osm-way-1207976193"], "opening_hours": ["src-vietpho-announcement"], "last_order": []},
-        "review_notes": ["Building commercial block coordinates at Jalan Kasturi 1 Balakong verified.", "Hours Mon-Fri & Sun 10:30am-10:30pm, Sat 11am-11pm verified from published merchant announcement."],
+        "field_evidence": {
+            "coordinates": ["src-osm-way-1207976193"],
+            "opening_hours": ["src-vietpho-announcement"],
+            "last_order": [],
+        },
+        "review_notes": [
+            "Building commercial block coordinates at Jalan Kasturi 1 Balakong verified.",
+            "Hours Mon-Fri & Sun 10:30am-10:30pm, Sat 11am-11pm verified from published merchant announcement.",
+        ],
     },
 ]
 

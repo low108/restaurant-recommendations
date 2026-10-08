@@ -134,9 +134,13 @@ def check_term(term, where: str, language: str) -> list[str]:
     if term != term.strip():
         problems.append(f"{where}: {language} term {term!r} has surrounding whitespace")
     if len(term) > MAX_TERM_CHARS:
-        problems.append(f"{where}: {language} term longer than {MAX_TERM_CHARS} characters")
+        problems.append(
+            f"{where}: {language} term longer than {MAX_TERM_CHARS} characters"
+        )
     if URL_LIKE.search(term):
-        problems.append(f"{where}: {language} term {term!r} looks like a URL or address")
+        problems.append(
+            f"{where}: {language} term {term!r} looks like a URL or address"
+        )
     if PROSE_PUNCTUATION.search(term):
         problems.append(f"{where}: {language} term {term!r} looks like prose")
     if FORBIDDEN_WORDS.search(term):
@@ -179,7 +183,9 @@ def validate_patch(patch: dict, raw: dict, allowed: set[str], catalog_sha: str):
         translations = entry.get("translations", {})
         unknown = set(translations) - set(LANGUAGES)
         if unknown:
-            errors.append(f"{where}: languages {sorted(unknown)} not allowed; use {list(LANGUAGES)}")
+            errors.append(
+                f"{where}: languages {sorted(unknown)} not allowed; use {list(LANGUAGES)}"
+            )
         total = 0
         for language in LANGUAGES:
             terms = translations.get(language, [])
@@ -240,7 +246,8 @@ def stats(args) -> int:
     status = Counter(e["review"]["status"] for e in entries)
     confidence = Counter(e["confidence"] for e in entries)
     per_language = {
-        lang: sum(1 for e in entries if e["translations"].get(lang)) for lang in LANGUAGES
+        lang: sum(1 for e in entries if e["translations"].get(lang))
+        for lang in LANGUAGES
     }
     empty = [e for e in entries if not any(e["translations"].get(l) for l in LANGUAGES)]
     by_outlet: dict[str, Counter] = {}
@@ -249,7 +256,9 @@ def stats(args) -> int:
         counter["items"] += 1
         counter["empty"] += not any(e["translations"].get(l) for l in LANGUAGES)
         counter["low"] += e["confidence"] == "low"
-    print(f"Entries: {len(entries)}  review: {dict(status)}  confidence: {dict(confidence)}")
+    print(
+        f"Entries: {len(entries)}  review: {dict(status)}  confidence: {dict(confidence)}"
+    )
     print(f"Items with >=1 term per language: {per_language}")
     print(f"Items left empty: {len(empty)}")
     for outlet, counter in sorted(by_outlet.items()):
@@ -351,7 +360,9 @@ def main() -> int:
         if patch:
             p.add_argument("--patch", type=Path, default=DEFAULT_PATCH)
 
-    p = sub.add_parser("export", help="Write a draft patch for every in-scope reviewed item")
+    p = sub.add_parser(
+        "export", help="Write a draft patch for every in-scope reviewed item"
+    )
     common(p, patch=False)
     p.add_argument("--out", type=Path, default=DEFAULT_PATCH)
     p.add_argument("--force", action="store_true", help="Overwrite an existing draft")
@@ -366,7 +377,9 @@ def main() -> int:
     common(p, catalog=False)
     p.set_defaults(func=stats)
 
-    p = sub.add_parser("apply", help="Write a new catalog version with approved entries")
+    p = sub.add_parser(
+        "apply", help="Write a new catalog version with approved entries"
+    )
     common(p)
     p.add_argument("--version", required=True, help="e.g. 0.4.0-translated")
     p.add_argument("--out", type=Path, required=True)

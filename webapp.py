@@ -64,7 +64,7 @@ def create_app(
         if idx_dir.exists() and (idx_dir / "active_index.json").exists():
             try:
                 embedding_index = load_persistent_index(idx_dir, catalog=catalog)
-            except Exception:
+            except Exception:  # noqa: BLE001 - a broken index falls back to structured search
                 embedding_index = None
 
     store = DiningStore(db_path or ROOT / "var/dining.sqlite3")
@@ -266,7 +266,11 @@ if __name__ == "__main__":
     parser.add_argument("--port", type=int, default=7860)
     args = parser.parse_args()
     try:
-        env_file = args.env_file or (ROOT / "var/inference.env" if (ROOT / "var/inference.env").exists() else None)
+        env_file = args.env_file or (
+            ROOT / "var/inference.env"
+            if (ROOT / "var/inference.env").exists()
+            else None
+        )
         load_env_file(env_file)
     except ValueError as error:
         parser.error(str(error))

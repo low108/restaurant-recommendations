@@ -21,6 +21,7 @@ import httpx
 
 BASE_URL = "http://127.0.0.1:7860"
 
+
 def run_e2e():
     print(f"Connecting to live server at {BASE_URL}...")
     client = httpx.Client(base_url=BASE_URL, timeout=30.0)
@@ -51,7 +52,10 @@ def run_e2e():
     u1_client = httpx.Client(base_url=BASE_URL, timeout=30.0)
     u1_login = u1_client.post(
         "/api/auth/login",
-        json={"email": "lowchening108@gmail.com", "password": "lowchening108@gmail.com"},
+        json={
+            "email": "lowchening108@gmail.com",
+            "password": "lowchening108@gmail.com",
+        },
     )
     if u1_login.status_code != 200:
         # Register if needed
@@ -70,7 +74,9 @@ def run_e2e():
     u1_csrf = u1_data["csrf_token"]
     u1_client.headers["X-CSRF-Token"] = u1_csrf
     u1_id = u1_data["user"]["id"]
-    print(f"User 1 authenticated: {u1_data['user']['name']} ({u1_data['user']['email']}), ID: {u1_id}")
+    print(
+        f"User 1 authenticated: {u1_data['user']['name']} ({u1_data['user']['email']}), ID: {u1_id}"
+    )
 
     # Set profile for User 1
     u1_client.patch(
@@ -91,7 +97,10 @@ def run_e2e():
     u2_client = httpx.Client(base_url=BASE_URL, timeout=30.0)
     u2_login = u2_client.post(
         "/api/auth/login",
-        json={"email": "cheninglow108@gmail.com", "password": "cheninglow108@gmail.com"},
+        json={
+            "email": "cheninglow108@gmail.com",
+            "password": "cheninglow108@gmail.com",
+        },
     )
     if u2_login.status_code != 200:
         u2_login = u2_client.post(
@@ -109,7 +118,9 @@ def run_e2e():
     u2_csrf = u2_data["csrf_token"]
     u2_client.headers["X-CSRF-Token"] = u2_csrf
     u2_id = u2_data["user"]["id"]
-    print(f"User 2 authenticated: {u2_data['user']['name']} ({u2_data['user']['email']}), ID: {u2_id}")
+    print(
+        f"User 2 authenticated: {u2_data['user']['name']} ({u2_data['user']['email']}), ID: {u2_id}"
+    )
 
     # Set profile for User 2
     u2_client.patch(
@@ -131,7 +142,9 @@ def run_e2e():
     assert room_resp.status_code == 201, room_resp.text
     room = room_resp.json()["room"]
     invite_token = room_resp.json()["invite_token"]
-    print(f"Room created: '{room['name']}' (ID: {room['id']}), Invite Token: {invite_token}")
+    print(
+        f"Room created: '{room['name']}' (ID: {room['id']}), Invite Token: {invite_token}"
+    )
 
     # User 2 joins room
     join_resp = u2_client.post("/api/rooms/join", json={"token": invite_token})
@@ -140,9 +153,11 @@ def run_e2e():
 
     # 5. User 1 schedules meal slot
     print("\n--- [Scheduling Meal Slot] ---")
-    tomorrow_lunch = (datetime.now(timezone.utc) + timedelta(days=1)).replace(
-        hour=4, minute=30, second=0, microsecond=0
-    ).isoformat()
+    tomorrow_lunch = (
+        (datetime.now(timezone.utc) + timedelta(days=1))
+        .replace(hour=4, minute=30, second=0, microsecond=0)
+        .isoformat()
+    )
     # Coordinates in Petaling Jaya Seksyen 19 / SS2
     meal_resp = u1_client.post(
         f"/api/rooms/{room['id']}/meals",
@@ -153,13 +168,15 @@ def run_e2e():
             "latitude": 3.119,
             "longitude": 101.629,
             "radius_km": 10,
-            "idempotency_key": f"meal-{datetime.now().timestamp()}",
+            "idempotency_key": f"meal-{datetime.now(timezone.utc).timestamp()}",
         },
     )
     assert meal_resp.status_code == 201, meal_resp.text
     meal = meal_resp.json()
     print(f"Meal slot created: ID {meal['id']} at {meal['meal_at']}")
-    print(f"Meeting Location: ({meal['latitude']}, {meal['longitude']}), Radius: {meal['radius_km']} km")
+    print(
+        f"Meeting Location: ({meal['latitude']}, {meal['longitude']}), Radius: {meal['radius_km']} km"
+    )
 
     # 6. Both users complete private check-ins
     print("\n--- [Submitting Check-ins] ---")
@@ -176,7 +193,9 @@ def run_e2e():
     )
     assert u1_ans.status_code == 200, u1_ans.text
     meal = u1_ans.json()
-    print(f"User 1 ({u1_data['user']['email']}) checked in: craving='fragrant chicken and rice', budget=RM50")
+    print(
+        f"User 1 ({u1_data['user']['email']}) checked in: craving='fragrant chicken and rice', budget=RM50"
+    )
 
     u2_ans = u2_client.put(
         f"/api/meals/{meal['id']}/response",
@@ -191,7 +210,9 @@ def run_e2e():
     )
     assert u2_ans.status_code == 200, u2_ans.text
     meal = u2_ans.json()
-    print(f"User 2 ({u2_data['user']['email']}) checked in: craving='warm noodles and soup', budget=RM50")
+    print(
+        f"User 2 ({u2_data['user']['email']}) checked in: craving='warm noodles and soup', budget=RM50"
+    )
 
     # 7. Generate recommendations
     print("\n--- [Generating Live Recommendations via Vector DB + ILMU] ---")
@@ -203,6 +224,7 @@ def run_e2e():
     gen_data = gen_resp.json()
 
     import time
+
     for _ in range(40):
         if gen_data.get("status") != "generating":
             break
@@ -228,7 +250,9 @@ def run_e2e():
     print(f"Input Tokens: {agent_meta.get('input_tokens')}")
     print(f"Output Tokens: {agent_meta.get('output_tokens')}")
     print(f"Total Tokens: {agent_meta.get('total_tokens')}")
-    print(f"Estimated Cost: ${agent_meta.get('estimated_cost')} {agent_meta.get('currency')}")
+    print(
+        f"Estimated Cost: ${agent_meta.get('estimated_cost')} {agent_meta.get('currency')}"
+    )
 
     # Inspect Shared Shortlist Options
     options = result.get("options", [])
@@ -248,13 +272,17 @@ def run_e2e():
     u1_pers = u1_meal_view.get("my_personal_recommendations", [])
     print(f"\nPersonal Alternatives for {u1_data['user']['name']}:")
     for p in u1_pers:
-        print(f"  - Rank #{p['rank']}: Outlet {p['outlet_id']} (Item: {p['item_id']}, Score: {p['score']}, Reasons: {p['reason_codes']})")
+        print(
+            f"  - Rank #{p['rank']}: Outlet {p['outlet_id']} (Item: {p['item_id']}, Score: {p['score']}, Reasons: {p['reason_codes']})"
+        )
 
     u2_meal_view = u2_client.get(f"/api/meals/{meal['id']}").json()
     u2_pers = u2_meal_view.get("my_personal_recommendations", [])
     print(f"\nPersonal Alternatives for {u2_data['user']['name']}:")
     for p in u2_pers:
-        print(f"  - Rank #{p['rank']}: Outlet {p['outlet_id']} (Item: {p['item_id']}, Score: {p['score']}, Reasons: {p['reason_codes']})")
+        print(
+            f"  - Rank #{p['rank']}: Outlet {p['outlet_id']} (Item: {p['item_id']}, Score: {p['score']}, Reasons: {p['reason_codes']})"
+        )
 
     # 8. Voting and Decision
     print("\n--- [Voting and Group Selection] ---")
@@ -264,17 +292,25 @@ def run_e2e():
 
     v1 = u1_client.post(
         f"/api/meals/{meal['id']}/votes",
-        json={"expected_revision": gen_data["revision"], "option_id": chosen_option, "choice": "works"},
+        json={
+            "expected_revision": gen_data["revision"],
+            "option_id": chosen_option,
+            "choice": "works",
+        },
     )
     assert v1.status_code == 200, v1.text
-    print(f"User 1 voted: 'works'")
+    print("User 1 voted: 'works'")
 
     v2 = u2_client.post(
         f"/api/meals/{meal['id']}/votes",
-        json={"expected_revision": gen_data["revision"], "option_id": chosen_option, "choice": "works"},
+        json={
+            "expected_revision": gen_data["revision"],
+            "option_id": chosen_option,
+            "choice": "works",
+        },
     )
     assert v2.status_code == 200, v2.text
-    print(f"User 2 voted: 'works'")
+    print("User 2 voted: 'works'")
 
     sel_resp = u1_client.post(
         f"/api/meals/{meal['id']}/select",
@@ -282,10 +318,13 @@ def run_e2e():
     )
     assert sel_resp.status_code == 200, sel_resp.text
     final_decision = sel_resp.json()["decision"]
-    print(f"\nUnanimous Selection Confirmed!")
+    print("\nUnanimous Selection Confirmed!")
     print(f"Selected Restaurant: '{chosen_name}'")
     print(f"Decision Record: {json.dumps(final_decision, indent=2)}")
-    print("\nSUCCESS: E2E Recommendation Flow Completed with Live Vector DB and ILMU Inference!")
+    print(
+        "\nSUCCESS: E2E Recommendation Flow Completed with Live Vector DB and ILMU Inference!"
+    )
+
 
 if __name__ == "__main__":
     run_e2e()

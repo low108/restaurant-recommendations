@@ -15,12 +15,13 @@ Produces:
 from __future__ import annotations
 
 import json
-from datetime import datetime, timezone
 from pathlib import Path
 
 from dining.catalog.models import OpeningInterval, Source
 
-CATALOG_PATH = Path("/Users/johnathanjohnathan/Documents/restaurant-menu-collection/catalog.real.json")
+CATALOG_PATH = Path(
+    "/Users/johnathanjohnathan/Documents/restaurant-menu-collection/catalog.real.json"
+)
 ENRICHMENT_DIR = Path("data/enrichment")
 
 EXPECTED_SHA256 = "767e25e39957aba4ccb46e49ee136551ebbbc89afe0272282908ce307cf27e77"
@@ -44,13 +45,17 @@ def build_review_entry(outlet: dict) -> dict:
             "candidate_urls": details["candidate_urls"],
             "notes": details["notes"],
         }
-    
+
     # Generic scan outlet: scan-derived placeholder identity, approximate/missing coordinates, missing hours
     return {
         "outlet_id": oid,
         "status": "needs_review",
         "reason_codes": ["coordinates_approximate", "hours_missing"],
-        "candidate_urls": [f"https://scanmenu.my/{oid[5:-7]}/" if oid.startswith("scan-") and oid.endswith(tuple("0123456789abcdef")) else "https://scanmenu.my/"],
+        "candidate_urls": [
+            f"https://scanmenu.my/{oid[5:-7]}/"
+            if oid.startswith("scan-") and oid.endswith(tuple("0123456789abcdef"))
+            else "https://scanmenu.my/"
+        ],
         "notes": "ScanMenu-derived placeholder record; physical building unmapped and full weekly operating schedule unverified.",
     }
 
@@ -63,36 +68,57 @@ def main():
     catalog_outlet_ids = {o["outlet_id"] for o in catalog_outlets}
     existing_source_ids = {s["source_id"] for s in catalog_data["sources"]}
 
-    print(f"Loaded catalog with {len(catalog_outlets)} outlets and {len(existing_source_ids)} sources.")
+    print(
+        f"Loaded catalog with {len(catalog_outlets)} outlets and {len(existing_source_ids)} sources."
+    )
 
     # 1. Validate all new sources
     for s in NEW_SOURCES:
         Source.model_validate(s)
     new_sids = {s["source_id"] for s in NEW_SOURCES}
     assert len(new_sids) == len(NEW_SOURCES), "Duplicate source_ids in NEW_SOURCES"
-    assert not (new_sids & existing_source_ids), "Collision between NEW_SOURCES and existing catalog sources"
+    assert not (new_sids & existing_source_ids), (
+        "Collision between NEW_SOURCES and existing catalog sources"
+    )
 
     # 2. Validate patch updates
     patched_outlet_ids = {u["outlet_id"] for u in OUTLET_UPDATES}
-    assert len(patched_outlet_ids) == len(OUTLET_UPDATES), "Duplicate outlet_id in OUTLET_UPDATES"
+    assert len(patched_outlet_ids) == len(OUTLET_UPDATES), (
+        "Duplicate outlet_id in OUTLET_UPDATES"
+    )
     for u in OUTLET_UPDATES:
-        assert u["outlet_id"] in catalog_outlet_ids, f"Outlet {u['outlet_id']} not in input catalog"
-        assert u["coordinate_precision"] in ("storefront", "building"), f"Invalid precision {u['coordinate_precision']}"
+        assert u["outlet_id"] in catalog_outlet_ids, (
+            f"Outlet {u['outlet_id']} not in input catalog"
+        )
+        assert u["coordinate_precision"] in ("storefront", "building"), (
+            f"Invalid precision {u['coordinate_precision']}"
+        )
         assert -90 <= u["latitude"] <= 90
         assert -180 <= u["longitude"] <= 180
-        assert 2.5 <= u["latitude"] <= 3.8, f"Implausible latitude {u['latitude']} for KL/Selangor"
-        assert 101.0 <= u["longitude"] <= 102.2, f"Implausible longitude {u['longitude']} for KL/Selangor"
-        
+        assert 2.5 <= u["latitude"] <= 3.8, (
+            f"Implausible latitude {u['latitude']} for KL/Selangor"
+        )
+        assert 101.0 <= u["longitude"] <= 102.2, (
+            f"Implausible longitude {u['longitude']} for KL/Selangor"
+        )
+
         # Validate all opening hours intervals
         for interval in u["opening_hours"]:
             OpeningInterval.model_validate(interval)
-            
+
         # Check source references
-        all_referenced_sids = set(u["source_ids_to_add"]) | set(u["field_evidence"]["coordinates"]) | set(u["field_evidence"]["opening_hours"]) | set(u["field_evidence"]["last_order"])
+        all_referenced_sids = (
+            set(u["source_ids_to_add"])
+            | set(u["field_evidence"]["coordinates"])
+            | set(u["field_evidence"]["opening_hours"])
+            | set(u["field_evidence"]["last_order"])
+        )
         for interval in u["opening_hours"]:
             all_referenced_sids |= set(interval.get("last_order_source_ids", []))
         for sid in all_referenced_sids:
-            assert sid in new_sids or sid in existing_source_ids, f"Referenced source {sid} does not exist"
+            assert sid in new_sids or sid in existing_source_ids, (
+                f"Referenced source {sid} does not exist"
+            )
 
     # 3. Build review entries for all remaining outlets
     review_entries = []
@@ -104,13 +130,21 @@ def main():
         review_entries.append(entry)
 
     reviewed_outlet_ids = {r["outlet_id"] for r in review_entries}
-    assert len(reviewed_outlet_ids) == len(review_entries), "Duplicate outlet_id in review_entries"
-    assert not (patched_outlet_ids & reviewed_outlet_ids), "Overlap between patched and reviewed outlets"
-    assert len(patched_outlet_ids) + len(reviewed_outlet_ids) == len(catalog_outlets), "Total outlets must equal input catalog outlets"
+    assert len(reviewed_outlet_ids) == len(review_entries), (
+        "Duplicate outlet_id in review_entries"
+    )
+    assert not (patched_outlet_ids & reviewed_outlet_ids), (
+        "Overlap between patched and reviewed outlets"
+    )
+    assert len(patched_outlet_ids) + len(reviewed_outlet_ids) == len(catalog_outlets), (
+        "Total outlets must equal input catalog outlets"
+    )
 
     print(f"Patched outlets: {len(OUTLET_UPDATES)}")
     print(f"Reviewed outlets: {len(review_entries)}")
-    print(f"Total outlets processed: {len(OUTLET_UPDATES) + len(review_entries)} / {len(catalog_outlets)}")
+    print(
+        f"Total outlets processed: {len(OUTLET_UPDATES) + len(review_entries)} / {len(catalog_outlets)}"
+    )
 
     # 4. Checkpoints validation (max 20 outlets per checkpoint)
     checkpoints = [
@@ -128,8 +162,12 @@ def main():
         cp_oids = {o["outlet_id"] for o in cp_outlets}
         cp_patched = [u for u in OUTLET_UPDATES if u["outlet_id"] in cp_oids]
         cp_reviewed = [r for r in review_entries if r["outlet_id"] in cp_oids]
-        assert len(cp_patched) + len(cp_reviewed) == len(cp_outlets), f"Discrepancy in checkpoint {cp_name}"
-        print(f"Checkpoint {cp_name}: {len(cp_outlets)} outlets ({len(cp_patched)} patched, {len(cp_reviewed)} reviewed)")
+        assert len(cp_patched) + len(cp_reviewed) == len(cp_outlets), (
+            f"Discrepancy in checkpoint {cp_name}"
+        )
+        print(
+            f"Checkpoint {cp_name}: {len(cp_outlets)} outlets ({len(cp_patched)} patched, {len(cp_reviewed)} reviewed)"
+        )
 
     # 5. Write deliverables
     patch_doc = {
@@ -168,9 +206,13 @@ def main():
     ENRICHMENT_DIR.mkdir(parents=True, exist_ok=True)
     with open(ENRICHMENT_DIR / "location-hours.patch.json", "w", encoding="utf-8") as f:
         json.dump(patch_doc, f, indent=2, ensure_ascii=False)
-    with open(ENRICHMENT_DIR / "location-hours.review.json", "w", encoding="utf-8") as f:
+    with open(
+        ENRICHMENT_DIR / "location-hours.review.json", "w", encoding="utf-8"
+    ) as f:
         json.dump(review_doc, f, indent=2, ensure_ascii=False)
-    with open(ENRICHMENT_DIR / "location-hours.sources.json", "w", encoding="utf-8") as f:
+    with open(
+        ENRICHMENT_DIR / "location-hours.sources.json", "w", encoding="utf-8"
+    ) as f:
         json.dump(sources_doc, f, indent=2, ensure_ascii=False)
 
     print("Successfully generated and validated all 3 enrichment JSON deliverables!")

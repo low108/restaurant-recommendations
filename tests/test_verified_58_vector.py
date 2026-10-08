@@ -5,28 +5,21 @@ and live agent semantic retrieval integration.
 
 from __future__ import annotations
 
-import copy
 import json
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from unittest.mock import MagicMock
 
 import pytest
 from fastapi.testclient import TestClient
 from test_api import create_meal, make_client, setup_room
 
 from dining.catalog.manifest import (
-    EXPECTED_ORIGINAL_CATALOG_SHA,
-    EXPECTED_PATCH_SHA,
-    EXPECTED_RESOLVED_CATALOG_SHA,
-    EXPECTED_SOURCES_SHA,
     generate_activation_manifest,
     load_activation_manifest,
 )
-from dining.catalog.models import Catalog, load_catalog
+from dining.catalog.models import load_catalog
 from dining.recommendation.agent import DiningAgent
 from dining.recommendation.engine import Recommender
-from dining.recommendation.personal import get_personal_recommendations
 from dining.retrieval.index import (
     DeterministicEmbedder,
     RetrievalQuery,
@@ -40,7 +33,17 @@ ROOT = Path(__file__).resolve().parents[1]
 STAGED_DIR = ROOT / "var/catalog-import/kl-selangor-real-pilot-58"
 CATALOG_PATH = STAGED_DIR / "catalog.validated.json"
 MANIFEST_PATH = STAGED_DIR / "activation-manifest.json"
+# The live index is built from the production catalog (0.4.0-translated, 7 Oct 2026).
+LIVE_DIR = ROOT / "var/catalog-import/kl-selangor-real-pilot-58-translated"
+LIVE_CATALOG_PATH = LIVE_DIR / "catalog.validated.json"
+LIVE_MANIFEST_PATH = LIVE_DIR / "activation-manifest.json"
 VECTOR_DIR = ROOT / "var/vector/catalog"
+
+# Local verification only: needs the private var/ catalog imports and the vector extras
+# (requirements-vector.txt), which CI does not install.
+pytest.importorskip("chromadb", reason="vector extras are not installed")
+if not (CATALOG_PATH.exists() and LIVE_CATALOG_PATH.exists()):
+    pytest.skip("private var/ catalog imports are not present", allow_module_level=True)
 
 
 # ==============================================================================
@@ -63,7 +66,10 @@ def test_mark_items_reviewed_activates_58_outlets_and_quarantines_conflict():
 
     quarantined_items = [i for i in scope_items if i.review_status == "quarantined"]
     assert len(quarantined_items) == 1
-    assert quarantined_items[0].item_id == "ditaliane-ioi-alfredo-funghi-fettuccine-3-pcs-beef-meatballs"
+    assert (
+        quarantined_items[0].item_id
+        == "ditaliane-ioi-alfredo-funghi-fettuccine-3-pcs-beef-meatballs"
+    )
     assert "dietary_claim_conflicts_with_variant" in quarantined_items[0].review_reasons
 
 
@@ -83,13 +89,16 @@ def test_allowlist_rejects_unknown_outlet_and_changed_checksum(tmp_path):
             catalog_path=CATALOG_PATH,
             patch_path=ROOT / "data/enrichment/location-hours.patch.json",
             sources_path=ROOT / "data/enrichment/location-hours.sources.json",
-            original_catalog_path=ROOT / "data/enrichment/location-hours.sources.json",  # wrong file
+            original_catalog_path=ROOT
+            / "data/enrichment/location-hours.sources.json",  # wrong file
             output_manifest_path=tmp_path / "bad-manifest.json",
             verify_checksums=True,
         )
 
     # Missing/unknown outlet rejection
-    bad_patch = json.loads((ROOT / "data/enrichment/location-hours.patch.json").read_text())
+    bad_patch = json.loads(
+        (ROOT / "data/enrichment/location-hours.patch.json").read_text()
+    )
     bad_patch["outlet_updates"][0]["outlet_id"] = "unknown-nonexistent-outlet"
     bad_patch_path = tmp_path / "bad_patch.json"
     bad_patch_path.write_text(json.dumps(bad_patch))
@@ -99,7 +108,8 @@ def test_allowlist_rejects_unknown_outlet_and_changed_checksum(tmp_path):
             catalog_path=CATALOG_PATH,
             patch_path=bad_patch_path,
             sources_path=ROOT / "data/enrichment/location-hours.sources.json",
-            original_catalog_path=ROOT / "var/catalog-import/kl-selangor-real-pilot-0.2.0-reviewed/catalog.v2.json",
+            original_catalog_path=ROOT
+            / "var/catalog-import/kl-selangor-real-pilot-0.2.0-reviewed/catalog.v2.json",
             output_manifest_path=tmp_path / "bad-manifest2.json",
             verify_checksums=False,
         )
@@ -124,7 +134,7 @@ def test_unresolved_70_outlets_never_enter_58_outlet_scope():
 
 
 def test_persistent_index_contains_exactly_1073_vectors():
-    catalog = load_catalog(CATALOG_PATH)
+    catalog = load_catalog(LIVE_CATALOG_PATH)
     index = load_persistent_index(VECTOR_DIR, catalog=catalog)
     assert index is not None
     assert index.is_usable_for_catalog(catalog)
@@ -132,13 +142,13 @@ def test_persistent_index_contains_exactly_1073_vectors():
     assert index.indexed_outlet_count == 58
 
     # Ensure all indexed outlet IDs belong exclusively to the 58 allowed outlets
-    manifest = load_activation_manifest(MANIFEST_PATH)
+    manifest = load_activation_manifest(LIVE_MANIFEST_PATH)
     indexed_oids = index.indexed_outlet_ids()
     assert indexed_oids.issubset(set(manifest["allowed_outlet_ids"]))
 
 
 def test_unreviewed_and_quarantined_records_excluded_from_vector_store():
-    catalog = load_catalog(CATALOG_PATH)
+    catalog = load_catalog(LIVE_CATALOG_PATH)
     index = load_persistent_index(VECTOR_DIR, catalog=catalog)
     assert index is not None
 
@@ -146,13 +156,18 @@ def test_unreviewed_and_quarantined_records_excluded_from_vector_store():
     indexed_item_ids = {m["item_id"] for m in metas}
 
     # Quarantined record excluded
-    assert "ditaliane-ioi-alfredo-funghi-fettuccine-3-pcs-beef-meatballs" not in indexed_item_ids
+    assert (
+        "ditaliane-ioi-alfredo-funghi-fettuccine-3-pcs-beef-meatballs"
+        not in indexed_item_ids
+    )
 
     # Unreviewed items from the 70 outlets excluded
-    manifest = load_activation_manifest(MANIFEST_PATH)
+    manifest = load_activation_manifest(LIVE_MANIFEST_PATH)
     allowed_oids = set(manifest["allowed_outlet_ids"])
     unreviewed_item_ids = {
-        item.item_id for item in catalog.menu_items if item.outlet_id not in allowed_oids
+        item.item_id
+        for item in catalog.menu_items
+        if item.outlet_id not in allowed_oids
     }
     assert len(unreviewed_item_ids) == 1364
     assert indexed_item_ids.isdisjoint(unreviewed_item_ids)
@@ -242,8 +257,6 @@ def test_interrupted_build_preserves_prior_active_collection(tmp_path, monkeypat
     # Now attempt a failing rebuild by simulating an insertion failure
     import chromadb
 
-    orig_add = chromadb.api.models.Collection.Collection.add
-
     def failing_add(*args, **kwargs):
         raise RuntimeError("Simulated mid-build network/disk crash")
 
@@ -263,7 +276,9 @@ def test_interrupted_build_preserves_prior_active_collection(tmp_path, monkeypat
     active_meta = json.loads((tmp_path / "interrupt/active_index.json").read_text())
     assert active_meta["collection_name"] == col1_name
 
-    idx = load_persistent_index(tmp_path / "interrupt", catalog=catalog, embedder=embedder)
+    idx = load_persistent_index(
+        tmp_path / "interrupt", catalog=catalog, embedder=embedder
+    )
     assert idx is not None
     assert idx.collection_name == col1_name
     assert idx.indexed_item_count == 1073
@@ -291,7 +306,7 @@ def test_catalog_and_policy_mismatch_refuses_index(tmp_path):
 
 
 def test_vectors_and_disallowed_text_never_appear_in_status_or_logs():
-    app = create_app(catalog_path=CATALOG_PATH, index_path=VECTOR_DIR)
+    app = create_app(catalog_path=LIVE_CATALOG_PATH, index_path=VECTOR_DIR)
     client = TestClient(app)
 
     res = client.get("/api/catalog/status")
@@ -321,7 +336,7 @@ def test_vectors_and_disallowed_text_never_appear_in_status_or_logs():
 def test_live_agent_calls_semantic_retrieval_spy(monkeypatch):
     import dining.recommendation.engine as rec_module
 
-    catalog = load_catalog(CATALOG_PATH)
+    catalog = load_catalog(LIVE_CATALOG_PATH)
     index = load_persistent_index(VECTOR_DIR, catalog=catalog)
 
     called = False
@@ -339,7 +354,9 @@ def test_live_agent_calls_semantic_retrieval_spy(monkeypatch):
         "revision": 1,
         "meal": {
             "id": "test-spy",
-            "meal_at": (datetime.now(timezone.utc) + timedelta(days=1)).replace(hour=4, minute=0, second=0).isoformat(),
+            "meal_at": (datetime.now(timezone.utc) + timedelta(days=1))
+            .replace(hour=4, minute=0, second=0)
+            .isoformat(),
             "latitude": 3.11,
             "longitude": 101.62,
             "radius_km": 10,
@@ -347,13 +364,31 @@ def test_live_agent_calls_semantic_retrieval_spy(monkeypatch):
         "participants": [
             {
                 "user_id": "p1",
-                "profile": {"allergy_status": "none", "halal_policy": "none", "requirements_reviewed": True, "max_budget": 50},
-                "response": {"craving": "noodle soup", "budget": 50, "requirements_confirmed": True},
+                "profile": {
+                    "allergy_status": "none",
+                    "halal_policy": "none",
+                    "requirements_reviewed": True,
+                    "max_budget": 50,
+                },
+                "response": {
+                    "craving": "noodle soup",
+                    "budget": 50,
+                    "requirements_confirmed": True,
+                },
             },
             {
                 "user_id": "p2",
-                "profile": {"allergy_status": "none", "halal_policy": "none", "requirements_reviewed": True, "max_budget": 50},
-                "response": {"craving": "hot soup", "budget": 50, "requirements_confirmed": True},
+                "profile": {
+                    "allergy_status": "none",
+                    "halal_policy": "none",
+                    "requirements_reviewed": True,
+                    "max_budget": 50,
+                },
+                "response": {
+                    "craving": "hot soup",
+                    "budget": 50,
+                    "requirements_confirmed": True,
+                },
             },
         ],
     }
@@ -364,7 +399,7 @@ def test_live_agent_calls_semantic_retrieval_spy(monkeypatch):
 
 
 def test_semantic_results_bound_reviewed_candidate_set(monkeypatch):
-    catalog = load_catalog(CATALOG_PATH)
+    catalog = load_catalog(LIVE_CATALOG_PATH)
     index = load_persistent_index(VECTOR_DIR, catalog=catalog)
 
     import dining.recommendation.engine as rec_module
@@ -391,7 +426,9 @@ def test_semantic_results_bound_reviewed_candidate_set(monkeypatch):
         "revision": 1,
         "meal": {
             "id": "test-bound",
-            "meal_at": (datetime.now(timezone.utc) + timedelta(days=1)).replace(hour=4, minute=0, second=0).isoformat(),
+            "meal_at": (datetime.now(timezone.utc) + timedelta(days=1))
+            .replace(hour=4, minute=0, second=0)
+            .isoformat(),
             "latitude": 3.11,
             "longitude": 101.62,
             "radius_km": 10,
@@ -399,13 +436,31 @@ def test_semantic_results_bound_reviewed_candidate_set(monkeypatch):
         "participants": [
             {
                 "user_id": "p1",
-                "profile": {"allergy_status": "none", "halal_policy": "none", "requirements_reviewed": True, "max_budget": 50},
-                "response": {"craving": "chicken", "budget": 50, "requirements_confirmed": True},
+                "profile": {
+                    "allergy_status": "none",
+                    "halal_policy": "none",
+                    "requirements_reviewed": True,
+                    "max_budget": 50,
+                },
+                "response": {
+                    "craving": "chicken",
+                    "budget": 50,
+                    "requirements_confirmed": True,
+                },
             },
             {
                 "user_id": "p2",
-                "profile": {"allergy_status": "none", "halal_policy": "none", "requirements_reviewed": True, "max_budget": 50},
-                "response": {"craving": "chicken", "budget": 50, "requirements_confirmed": True},
+                "profile": {
+                    "allergy_status": "none",
+                    "halal_policy": "none",
+                    "requirements_reviewed": True,
+                    "max_budget": 50,
+                },
+                "response": {
+                    "craving": "chicken",
+                    "budget": 50,
+                    "requirements_confirmed": True,
+                },
             },
         ],
     }
@@ -419,7 +474,7 @@ def test_semantic_results_bound_reviewed_candidate_set(monkeypatch):
 
 
 def test_similarity_1_0_cannot_bypass_deterministic_blocker(monkeypatch):
-    catalog = load_catalog(CATALOG_PATH)
+    catalog = load_catalog(LIVE_CATALOG_PATH)
     index = load_persistent_index(VECTOR_DIR, catalog=catalog)
 
     import dining.recommendation.engine as rec_module
@@ -446,7 +501,9 @@ def test_similarity_1_0_cannot_bypass_deterministic_blocker(monkeypatch):
         "revision": 1,
         "meal": {
             "id": "test-blocker",
-            "meal_at": (datetime.now(timezone.utc) + timedelta(days=1)).replace(hour=4, minute=0, second=0).isoformat(),
+            "meal_at": (datetime.now(timezone.utc) + timedelta(days=1))
+            .replace(hour=4, minute=0, second=0)
+            .isoformat(),
             "latitude": 3.11,
             "longitude": 101.62,
             "radius_km": 10,
@@ -454,13 +511,31 @@ def test_similarity_1_0_cannot_bypass_deterministic_blocker(monkeypatch):
         "participants": [
             {
                 "user_id": "p1",
-                "profile": {"allergy_status": "none", "halal_policy": "certified", "requirements_reviewed": True, "max_budget": 50},
-                "response": {"craving": "chicken", "budget": 50, "requirements_confirmed": True},
+                "profile": {
+                    "allergy_status": "none",
+                    "halal_policy": "certified",
+                    "requirements_reviewed": True,
+                    "max_budget": 50,
+                },
+                "response": {
+                    "craving": "chicken",
+                    "budget": 50,
+                    "requirements_confirmed": True,
+                },
             },
             {
                 "user_id": "p2",
-                "profile": {"allergy_status": "none", "halal_policy": "none", "requirements_reviewed": True, "max_budget": 50},
-                "response": {"craving": "chicken", "budget": 50, "requirements_confirmed": True},
+                "profile": {
+                    "allergy_status": "none",
+                    "halal_policy": "none",
+                    "requirements_reviewed": True,
+                    "max_budget": 50,
+                },
+                "response": {
+                    "craving": "chicken",
+                    "budget": 50,
+                    "requirements_confirmed": True,
+                },
             },
         ],
     }
@@ -479,7 +554,9 @@ def test_unavailable_stale_index_falls_back_to_structured():
         "revision": 1,
         "meal": {
             "id": "test-fallback",
-            "meal_at": (datetime.now(timezone.utc) + timedelta(days=1)).replace(hour=4, minute=0, second=0).isoformat(),
+            "meal_at": (datetime.now(timezone.utc) + timedelta(days=1))
+            .replace(hour=4, minute=0, second=0)
+            .isoformat(),
             "latitude": 3.11,
             "longitude": 101.62,
             "radius_km": 10,
@@ -487,13 +564,31 @@ def test_unavailable_stale_index_falls_back_to_structured():
         "participants": [
             {
                 "user_id": "p1",
-                "profile": {"allergy_status": "none", "halal_policy": "none", "requirements_reviewed": True, "max_budget": 50},
-                "response": {"craving": "food", "budget": 50, "requirements_confirmed": True},
+                "profile": {
+                    "allergy_status": "none",
+                    "halal_policy": "none",
+                    "requirements_reviewed": True,
+                    "max_budget": 50,
+                },
+                "response": {
+                    "craving": "food",
+                    "budget": 50,
+                    "requirements_confirmed": True,
+                },
             },
             {
                 "user_id": "p2",
-                "profile": {"allergy_status": "none", "halal_policy": "none", "requirements_reviewed": True, "max_budget": 50},
-                "response": {"craving": "food", "budget": 50, "requirements_confirmed": True},
+                "profile": {
+                    "allergy_status": "none",
+                    "halal_policy": "none",
+                    "requirements_reviewed": True,
+                    "max_budget": 50,
+                },
+                "response": {
+                    "craving": "food",
+                    "budget": 50,
+                    "requirements_confirmed": True,
+                },
             },
         ],
     }
@@ -505,7 +600,7 @@ def test_unavailable_stale_index_falls_back_to_structured():
 
 
 def test_multilingual_queries_judgment_cases_on_persistent_index():
-    catalog = load_catalog(CATALOG_PATH)
+    catalog = load_catalog(LIVE_CATALOG_PATH)
     index = load_persistent_index(VECTOR_DIR, catalog=catalog)
     assert index is not None
 
@@ -529,7 +624,7 @@ def test_real_58_outlet_flow_full_journey(tmp_path):
     db_path = tmp_path / "real_journey.sqlite3"
     app = create_app(
         db_path=db_path,
-        catalog_path=CATALOG_PATH,
+        catalog_path=LIVE_CATALOG_PATH,
         index_path=VECTOR_DIR,
         async_generation=False,
     )
@@ -539,15 +634,18 @@ def test_real_58_outlet_flow_full_journey(tmp_path):
 
     # Set profiles
     for c in (host, guest):
-        assert c.patch(
-            "/api/profile",
-            json={
-                "allergy_status": "none",
-                "halal_policy": "none",
-                "requirements_reviewed": True,
-                "max_budget": 50,
-            },
-        ).status_code == 200
+        assert (
+            c.patch(
+                "/api/profile",
+                json={
+                    "allergy_status": "none",
+                    "halal_policy": "none",
+                    "requirements_reviewed": True,
+                    "max_budget": 50,
+                },
+            ).status_code
+            == 200
+        )
 
     # Create room & meal in PJ (near several of the 58 verified outlets)
     room_id, _ = setup_room([host, guest])
@@ -589,15 +687,21 @@ def test_real_58_outlet_flow_full_journey(tmp_path):
     assert result["retrieval_status"] == "semantic"
     assert len(result["options"]) >= 1
 
-    manifest = load_activation_manifest(MANIFEST_PATH)
+    manifest = load_activation_manifest(LIVE_MANIFEST_PATH)
     allowed_oids = set(manifest["allowed_outlet_ids"])
 
     # Verify options come strictly from 58 verified outlets
     for opt in result["options"]:
         assert opt["outlet_id"] in allowed_oids
-        assert opt["outlet_id"] != "ditaliane-ioi-alfredo-funghi-fettuccine-3-pcs-beef-meatballs"
+        assert (
+            opt["outlet_id"]
+            != "ditaliane-ioi-alfredo-funghi-fettuccine-3-pcs-beef-meatballs"
+        )
         for item in opt["menu_items"]:
-            assert item["id"] != "ditaliane-ioi-alfredo-funghi-fettuccine-3-pcs-beef-meatballs"
+            assert (
+                item["id"]
+                != "ditaliane-ioi-alfredo-funghi-fettuccine-3-pcs-beef-meatballs"
+            )
 
     # Verify personal alternatives generated and owner-scoped
     host_meal_info = host.get(f"/api/meals/{meal['id']}").json()
@@ -605,7 +709,10 @@ def test_real_58_outlet_flow_full_journey(tmp_path):
     assert len(host_pers) >= 1
     for p_opt in host_pers:
         assert p_opt["outlet_id"] in allowed_oids
-        assert p_opt["item_id"] != "ditaliane-ioi-alfredo-funghi-fettuccine-3-pcs-beef-meatballs"
+        assert (
+            p_opt["item_id"]
+            != "ditaliane-ioi-alfredo-funghi-fettuccine-3-pcs-beef-meatballs"
+        )
 
     # Guest votes & unanimous select
     chosen_opt = result["options"][0]["id"]

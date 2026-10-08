@@ -1,4 +1,5 @@
 import time
+from datetime import datetime, timedelta, timezone
 
 import pytest
 from fastapi import FastAPI
@@ -7,6 +8,16 @@ from test_api import checkin, create_meal, make_client, recommendation
 
 from dining.api import build_router
 from dining.core.store import DiningStore
+
+# Fixed calendar dates go stale and the API rejects meals in the past, so test meals are
+# scheduled two days ahead (12:00 and 19:00 Kuala Lumpur time).
+_MEAL_DAY = datetime.now(timezone.utc) + timedelta(days=2)
+LUNCH_AT = _MEAL_DAY.replace(hour=4, minute=0, second=0, microsecond=0).isoformat()
+DINNER_AT = _MEAL_DAY.replace(hour=11, minute=0, second=0, microsecond=0).isoformat()
+CONFIRMED_AT = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+CONFIRMATION_EXPIRES_AT = (
+    (_MEAL_DAY + timedelta(days=1)).replace(microsecond=0).isoformat()
+)
 
 
 @pytest.fixture
@@ -98,7 +109,7 @@ def test_unauthenticated_requests_refused(auth_fixture):
                     "name": "test",
                     "token": "test",
                     "kind": "lunch",
-                    "meal_at": "2026-10-07T12:00:00+08:00",
+                    "meal_at": LUNCH_AT,
                     "location_label": "SS2",
                     "latitude": 3.12,
                     "longitude": 101.62,
@@ -156,7 +167,7 @@ def test_cross_room_and_outsider_access_refused(auth_fixture):
 
     meal_payload = {
         "kind": "lunch",
-        "meal_at": "2026-10-07T12:00:00+08:00",
+        "meal_at": LUNCH_AT,
         "location_label": "SS2",
         "latitude": 3.12,
         "longitude": 101.62,
@@ -175,8 +186,8 @@ def test_cross_room_and_outsider_access_refused(auth_fixture):
                     "exact_bounded_claim": "test claim",
                     "confirmed_by": "Chef",
                     "confirmation_channel": "phone",
-                    "confirmed_at": "2026-10-07T12:00:00+08:00",
-                    "expires_at": "2026-10-08T12:00:00+08:00",
+                    "confirmed_at": CONFIRMED_AT,
+                    "expires_at": CONFIRMATION_EXPIRES_AT,
                 }
             elif "generate" in path:
                 payload = {"expected_revision": 1}
